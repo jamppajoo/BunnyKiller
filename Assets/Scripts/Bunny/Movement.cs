@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour {
         {
             rb.AddForce((player.transform.position - transform.position + new Vector3((Random.value- 0.5f) *5, 0, (Random.value-0.5f)*5)) * thrust);
 
-            rb.AddForce(transform.up * thrust);
+            rb.AddForce(transform.up * thrust*10f);
             //rb.AddForce(transform.forward * thrust * -1);
             countdown = 0.40f+ Random.value;
         }
