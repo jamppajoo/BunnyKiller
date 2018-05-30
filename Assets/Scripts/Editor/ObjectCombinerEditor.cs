@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(ObjectCombiner))]
+[CanEditMultipleObjects]
 public class ObjectCombinerEditor : Editor
 {
     ObjectCombiner objectCombiner;
@@ -28,15 +29,16 @@ public class ObjectCombinerEditor : Editor
         EditorGUILayout.Space();
         EditorGUILayout.Space();
 
+
         for (int i = 0; i < ThisList.arraySize; i++)
         {
+            
             SerializedProperty MyListRef = ThisList.GetArrayElementAtIndex(i);
             SerializedProperty MyTag1 = MyListRef.FindPropertyRelative("AnTag1");
             SerializedProperty MyTag2 = MyListRef.FindPropertyRelative("AnTag2");
             SerializedProperty MyOutput = MyListRef.FindPropertyRelative("AnOutput");
 
             // Choose to display automatic or custom field types. This is only for example to help display automatic and custom fields.
-            //1. Automatic, No customization <-- Choose me I'm automatic and easy to setup
             EditorGUILayout.LabelField("Two tags that makes the gameobject when combined");
             EditorGUILayout.BeginHorizontal();
             MyTag1.stringValue = EditorGUILayout.TagField(MyTag1.stringValue).ToString();
@@ -54,6 +56,7 @@ public class ObjectCombinerEditor : Editor
             EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+            
         }
 
         EditorGUILayout.Space();
