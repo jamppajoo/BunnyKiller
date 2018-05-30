@@ -41,11 +41,9 @@ GameObject:
   - component: {fileID: 23082347088920688}
   - component: {fileID: 65344121889784616}
   - component: {fileID: 54188438765942746}
-  - component: {fileID: 114092369649982276}
-  - component: {fileID: 114899968591781582}
   m_Layer: 0
   m_Name: Stick12
-  m_TagString: Untagged
+  m_TagString: Stick12
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1714031467952382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.96, y: 1.3233023, z: 4.23}
+  m_LocalPosition: {x: 2.764, y: 1.3233023, z: 4.23}
   m_LocalScale: {x: 0.3, y: 0.3, z: 2}
   m_Children:
   - {fileID: 4594309424303250}
@@ -92,7 +90,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 0891dc2f20c6a984fb0e84d562aeac35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,7 +125,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 9b9bda29115027243aaedcfa65670b35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,32 +194,7 @@ BoxCollider:
   m_GameObject: {fileID: 1660721316976618}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114092369649982276
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714031467952382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49ac4c4cd7967e4c8984db8fe591b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: Stick1
-  damage: 10
-  durability: 0
---- !u!114 &114899968591781582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714031467952382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c257e3930704b469e5975ce324d120, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

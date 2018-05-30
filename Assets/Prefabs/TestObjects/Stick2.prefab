@@ -23,11 +23,9 @@ GameObject:
   - component: {fileID: 23126330432443654}
   - component: {fileID: 65441690024525132}
   - component: {fileID: 54258642880299168}
-  - component: {fileID: 114236596035835952}
-  - component: {fileID: 114965616879195232}
   m_Layer: 0
   m_Name: Stick2
-  m_TagString: Untagged
+  m_TagString: Stick2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406522139348970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.34, y: 1.3233023, z: 4.32}
+  m_LocalPosition: {x: -0.818, y: 1.3233023, z: 4.32}
   m_LocalScale: {x: 0.5, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,7 +58,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 9b9bda29115027243aaedcfa65670b35, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,28 +112,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114236596035835952
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1406522139348970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49ac4c4cd7967e4c8984db8fe591b71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectName: Stick2
-  damage: 15
-  durability: 0
---- !u!114 &114965616879195232
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1406522139348970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c257e3930704b469e5975ce324d120, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
