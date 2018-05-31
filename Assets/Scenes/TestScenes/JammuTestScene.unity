@@ -422,6 +422,11 @@ Prefab:
       propertyPath: throwVelocityWithAttachDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -1609,7 +1614,7 @@ Prefab:
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: grabOverrideButton
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
@@ -2935,6 +2940,7 @@ MonoBehaviour:
   checkType: 3
   identifiers:
   - ExcludeTeleport
+  - Stick1
 --- !u!114 &629358617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3655,7 +3661,7 @@ Prefab:
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: grabOverrideButton
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
@@ -4964,6 +4970,11 @@ Prefab:
       propertyPath: onGrabCollisionDelay
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6093,6 +6104,11 @@ Prefab:
       propertyPath: onGrabCollisionDelay
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -6413,6 +6429,11 @@ Prefab:
       propertyPath: onGrabCollisionDelay
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6532,6 +6553,11 @@ Prefab:
         type: 2}
       propertyPath: onGrabCollisionDelay
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -6995,6 +7021,11 @@ Prefab:
         type: 2}
       propertyPath: onGrabCollisionDelay
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -9286,7 +9317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabButton: 7
+  grabButton: 3
   grabPrecognition: 0
   throwMultiplier: 1
   createRigidBodyWhenNotTouching: 0
@@ -9521,7 +9552,7 @@ Prefab:
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: grabOverrideButton
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
@@ -10748,7 +10779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabButton: 7
+  grabButton: 3
   grabPrecognition: 0
   throwMultiplier: 1
   createRigidBodyWhenNotTouching: 0
