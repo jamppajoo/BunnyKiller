@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - TeleportIgnore
+  - Stick1
+  - Stick2
+  - Stick3
+  - Stick12
+  - Stick13
   layers:
   - Default
   - TransparentFX
