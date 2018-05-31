@@ -2940,7 +2940,7 @@ MonoBehaviour:
   checkType: 3
   identifiers:
   - ExcludeTeleport
-  - Stick1
+  - VRTK_InteractableObject
 --- !u!114 &629358617
 MonoBehaviour:
   m_ObjectHideFlags: 0
