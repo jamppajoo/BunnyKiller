@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65180151888900614}
   m_Layer: 0
   m_Name: Stick3
-  m_TagString: Stick3
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 65585347133613466}
   m_Layer: 0
   m_Name: Stick2
-  m_TagString: Stick2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 65818695455890776}
   m_Layer: 0
   m_Name: Stick2 (1)
-  m_TagString: Stick2
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ BoxCollider:
   m_GameObject: {fileID: 1018231127918892}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -357,7 +357,7 @@ BoxCollider:
   m_GameObject: {fileID: 1333373573644612}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -369,7 +369,7 @@ BoxCollider:
   m_GameObject: {fileID: 1928680961103700}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -392,7 +392,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 0
+  grabOverrideButton: 4
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 114407003994703018}
   secondaryGrabActionScript: {fileID: 114246282888550474}
@@ -425,11 +425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
-  onGrabCollisionDelay: 0
+  onGrabCollisionDelay: 10
   destroyImmediatelyOnThrow: 1
   breakForce: 1500

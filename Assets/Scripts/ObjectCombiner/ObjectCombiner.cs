@@ -99,16 +99,23 @@ public class ObjectCombiner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!objectsInCombiner.Contains(other.gameObject))
-            objectsInCombiner.Add(other.gameObject);
-        objectsInCombinerAmount++;
-        if (objectsInCombinerAmount == 2)
-            CheckCombination();
+        if (other.gameObject.tag.StartsWith("Stick"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        objectsInCombiner.Remove(other.gameObject);
-        objectsInCombinerAmount--;
+        if (other.gameObject.tag.StartsWith("Stick"))
+        {
+            objectsInCombiner.Remove(other.gameObject);
+            objectsInCombinerAmount--;
+        }
     }
 
 

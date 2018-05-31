@@ -402,21 +402,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.10000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
-      propertyPath: m_LocalScale.z
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: throwMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: throwVelocityWithAttachDistance
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
@@ -1601,6 +1605,21 @@ Prefab:
     - target: {fileID: 1732120666892208, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_Name
       value: Stick3 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -3633,6 +3652,21 @@ Prefab:
       propertyPath: m_Name
       value: Stick2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -4920,6 +4954,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6044,6 +6088,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -6354,6 +6403,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6463,6 +6522,16 @@ Prefab:
     - target: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -6921,6 +6990,11 @@ Prefab:
     - target: {fileID: 1732120666892208, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_Name
       value: Stick3 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -8449,7 +8523,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1632757427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -5.62, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2131251415}
@@ -9443,6 +9517,21 @@ Prefab:
     - target: {fileID: 1406522139348970, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
       propertyPath: m_Name
       value: Stick2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: grabOverrideButton
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: precisionGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: onGrabCollisionDelay
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
