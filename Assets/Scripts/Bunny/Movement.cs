@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour {
             Vector3 targetDir = player.transform.position - transform.position;
             // The step size is equal to speed times frame time.
             float step = speed * Time.deltaTime;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, new Vector3(-90, 0, 0), step, 0.0f);
             Debug.DrawRay(transform.position, newDir, Color.red);
             // Move our position a step closer to the target.
             transform.rotation = Quaternion.LookRotation(newDir);
