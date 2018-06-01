@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour {
 
     public float thrust=10f;
     public Rigidbody rb;
-    public float countdown = 60.0f;
+    public float countdown = 6.0f;
     public GameObject player;
 
     // Use this for initialization
@@ -27,8 +27,9 @@ public class Movement : MonoBehaviour {
         {
 //            rb.AddForce((player.transform.position - transform.position + new Vector3((Random.value- 0.5f) *5, 0, (Random.value-0.5f)*5)) * thrust);
 
-            rb.AddForce(new Vector3(0f, 100f, 50f));// transform.up * thrust*10f);
-            //rb.AddForce(transform.forward * thrust * -1);
+            //rb.AddForce(new Vector3(0f, 100f, 50f));// transform.up * thrust*10f);
+            rb.AddForce(transform.forward * 100f);
+            rb.AddForce(transform.up * 100f * (-1));
             countdown = 0.40f+ Random.value;
         }
     }

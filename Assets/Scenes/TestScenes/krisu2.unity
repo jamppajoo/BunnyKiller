@@ -2350,7 +2350,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.09
+      value: 2.0923932
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2358,23 +2358,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9420002
+      value: -3.934501
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.21504945
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.6736125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.6736125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.21504939
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_RootOrder
@@ -2395,6 +2395,14 @@ Prefab:
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalScale.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -144.589
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
@@ -11115,7 +11123,7 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
-  isGrabbable: 0
+  isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
