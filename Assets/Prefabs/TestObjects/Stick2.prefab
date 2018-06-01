@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114000333917349632}
   - component: {fileID: 114630051591951466}
   - component: {fileID: 114587908629180774}
+  - component: {fileID: 114411389582038424}
   m_Layer: 0
   m_Name: Stick2
   m_TagString: Stick2
@@ -40,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1406522139348970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9900002, y: 3.2849998, z: 2.238}
+  m_LocalPosition: {x: 0, y: 0.1, z: -1}
   m_LocalScale: {x: 0.15, y: 0.1, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -129,7 +130,8 @@ MonoBehaviour:
   disableWhenIdle: 1
   touchHighlightColor: {r: 1, g: 1, b: 1, a: 0}
   allowedTouchControllers: 0
-  ignoredColliders: []
+  ignoredColliders:
+  - {fileID: 0}
   isGrabbable: 1
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
@@ -145,6 +147,21 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114411389582038424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1406522139348970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  operation: 0
+  checkType: 1
+  identifiers:
+  - Collision
 --- !u!114 &114587908629180774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,11 +184,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precisionGrab: 0
+  precisionGrab: 1
   rightSnapHandle: {fileID: 0}
   leftSnapHandle: {fileID: 0}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
-  breakForce: 1500
+  breakForce: 10000
