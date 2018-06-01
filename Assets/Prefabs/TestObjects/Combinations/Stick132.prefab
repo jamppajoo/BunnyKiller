@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 114076975897298780}
   - component: {fileID: 114407003994703018}
   - component: {fileID: 114246282888550474}
-  - component: {fileID: 114097523978282274}
   m_Layer: 0
   m_Name: Stick132
   m_TagString: Stick13
@@ -433,21 +432,6 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
---- !u!114 &114097523978282274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1036551867400858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!114 &114246282888550474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,4 +461,4 @@ MonoBehaviour:
   throwMultiplier: 1
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
-  breakForce: Infinity
+  breakForce: 10000

@@ -184,26 +184,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 6646619}
---- !u!1 &13176864 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1732120666892208, guid: f76da0d1aba618341b4766c3ce4e2109,
-    type: 2}
-  m_PrefabInternal: {fileID: 1257995893}
---- !u!114 &13176865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 13176864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &36463489
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +373,7 @@ Prefab:
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -429,8 +409,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
+      propertyPath: breakForce
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
@@ -439,39 +419,14 @@ Prefab:
       objectReference: {fileID: 2102105521}
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
-      propertyPath: breakForce
-      value: Infinity
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
-      propertyPath: ignoredColliders.Array.data[1]
-      value: 
-      objectReference: {fileID: 1575241579}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[2]
-      value: 
-      objectReference: {fileID: 1017536506}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[3]
-      value: 
-      objectReference: {fileID: 1436581265}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[4]
-      value: 
-      objectReference: {fileID: 1625220857}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[5]
-      value: 
-      objectReference: {fileID: 74413751}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[6]
-      value: 
-      objectReference: {fileID: 1407389126}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -537,26 +492,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109,
     type: 2}
   m_PrefabInternal: {fileID: 1257995893}
---- !u!1 &107247815 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1732120666892208, guid: f76da0d1aba618341b4766c3ce4e2109,
-    type: 2}
-  m_PrefabInternal: {fileID: 403657994}
---- !u!114 &107247816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 107247815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &112741801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1643,7 +1578,7 @@ Prefab:
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1699,7 +1634,7 @@ Prefab:
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
@@ -1736,6 +1671,21 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: pointerActivatesUseAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
   m_IsPrefabParent: 0
@@ -2716,41 +2666,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &573829483 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1406522139348970, guid: 8663c585919435d4abe51cadfdea90bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1174365681}
---- !u!114 &573829484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573829483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
---- !u!114 &573829485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573829483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - Collision
 --- !u!1 &577571469
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,26 +2951,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &612475723 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1732120666892208, guid: f76da0d1aba618341b4766c3ce4e2109,
-    type: 2}
-  m_PrefabInternal: {fileID: 1349284362}
---- !u!114 &612475724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 612475723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &629358614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3685,7 @@ Prefab:
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4222362098237462, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3846,7 +3741,7 @@ Prefab:
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
@@ -3883,6 +3778,16 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -4967,26 +4872,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 930895517}
   m_Mesh: {fileID: 0}
---- !u!1 &944154418 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1406522139348970, guid: 8663c585919435d4abe51cadfdea90bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1827832750}
---- !u!114 &944154419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 944154418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &970335896
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,7 +5034,7 @@ Prefab:
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -5213,7 +5098,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
@@ -5250,6 +5135,16 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6345,7 +6240,7 @@ Prefab:
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4222362098237462, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6381,49 +6276,29 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
+      propertyPath: breakForce
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: ignoredColliders.Array.data[0]
       value: 
       objectReference: {fileID: 2102105521}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: holdButtonToGrab
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
-      propertyPath: breakForce
-      value: Infinity
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
-      propertyPath: ignoredColliders.Array.data[1]
-      value: 
-      objectReference: {fileID: 1575241579}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[2]
-      value: 
-      objectReference: {fileID: 1017536506}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[3]
-      value: 
-      objectReference: {fileID: 1436581265}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[4]
-      value: 
-      objectReference: {fileID: 1625220857}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[5]
-      value: 
-      objectReference: {fileID: 74413751}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[6]
-      value: 
-      objectReference: {fileID: 1407389126}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -6665,7 +6540,7 @@ Prefab:
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4381676745117566, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6729,7 +6604,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
@@ -6766,6 +6641,16 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -6847,7 +6732,7 @@ Prefab:
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_LocalPosition.x
@@ -6883,8 +6768,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
+      propertyPath: breakForce
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
@@ -6893,39 +6778,14 @@ Prefab:
       objectReference: {fileID: 2102105521}
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
-      propertyPath: breakForce
-      value: Infinity
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
-      propertyPath: ignoredColliders.Array.data[1]
-      value: 
-      objectReference: {fileID: 1575241579}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[2]
-      value: 
-      objectReference: {fileID: 1017536506}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[3]
-      value: 
-      objectReference: {fileID: 1436581265}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[4]
-      value: 
-      objectReference: {fileID: 1625220857}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[5]
-      value: 
-      objectReference: {fileID: 74413751}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: ignoredColliders.Array.data[6]
-      value: 
-      objectReference: {fileID: 1407389126}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
   m_IsPrefabParent: 0
@@ -7351,7 +7211,7 @@ Prefab:
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_LocalPosition.x
@@ -7402,7 +7262,7 @@ Prefab:
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
@@ -7439,6 +7299,16 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
   m_IsPrefabParent: 0
@@ -8267,26 +8137,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1493376679}
---- !u!1 &1500813956 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1748829075386196, guid: 5590ed249b4b5484ea949920d0a460bd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1245630480}
---- !u!114 &1500813957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1500813956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &1500927870
 GameObject:
   m_ObjectHideFlags: 0
@@ -8871,26 +8721,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
---- !u!1 &1601106104 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1406522139348970, guid: 8663c585919435d4abe51cadfdea90bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 841603592}
---- !u!114 &1601106105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1601106104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &1625220855
 GameObject:
   m_ObjectHideFlags: 0
@@ -9968,7 +9798,7 @@ Prefab:
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: ignoredColliders.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4222362098237462, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
       propertyPath: m_LocalPosition.x
@@ -10024,7 +9854,7 @@ Prefab:
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
@@ -10061,6 +9891,16 @@ Prefab:
       propertyPath: ignoredColliders.Array.data[6]
       value: 
       objectReference: {fileID: 1407389126}
+    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: destroyImmediatelyOnThrow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
+        type: 2}
+      propertyPath: touchHighlightColor.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -10717,26 +10557,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224000013127654674, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
     type: 2}
   m_PrefabInternal: {fileID: 851246429}
---- !u!1 &1892086042 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1748829075386196, guid: 5590ed249b4b5484ea949920d0a460bd,
-    type: 2}
-  m_PrefabInternal: {fileID: 87147958}
---- !u!114 &1892086043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1892086042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &1910099098
 GameObject:
   m_ObjectHideFlags: 0
@@ -11365,26 +11185,6 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
---- !u!1 &2087937933 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1748829075386196, guid: 5590ed249b4b5484ea949920d0a460bd,
-    type: 2}
-  m_PrefabInternal: {fileID: 1003971136}
---- !u!114 &2087937934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2087937933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  operation: 0
-  checkType: 1
-  identifiers:
-  - StickCollisionIgnore
 --- !u!1 &2102105520
 GameObject:
   m_ObjectHideFlags: 0
