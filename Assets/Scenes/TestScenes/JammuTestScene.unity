@@ -402,36 +402,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: destroyImmediatelyOnThrow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: throwMultiplier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: throwVelocityWithAttachDistance
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: grabOverrideButton
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
-        type: 2}
-      propertyPath: breakForce
-      value: Infinity
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
   m_IsPrefabParent: 0
@@ -1629,12 +1599,12 @@ Prefab:
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -3681,12 +3651,12 @@ Prefab:
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
@@ -4983,7 +4953,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
@@ -4993,7 +4963,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
@@ -6119,21 +6089,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000333917349632, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: grabOverrideButton
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
-        type: 2}
-      propertyPath: breakForce
-      value: Infinity
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}
   m_IsPrefabParent: 0
@@ -6452,7 +6407,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114947352307417928, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
@@ -6462,7 +6417,7 @@ Prefab:
     - target: {fileID: 114373915044363992, guid: 5590ed249b4b5484ea949920d0a460bd,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5590ed249b4b5484ea949920d0a460bd, type: 2}
@@ -6573,26 +6528,6 @@ Prefab:
     - target: {fileID: 4786780894415078, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: precisionGrab
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: onGrabCollisionDelay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: grabOverrideButton
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
-        type: 2}
-      propertyPath: breakForce
-      value: Infinity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -7055,7 +6990,7 @@ Prefab:
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114459202022043432, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
@@ -7065,7 +7000,7 @@ Prefab:
     - target: {fileID: 114586996073906284, guid: f76da0d1aba618341b4766c3ce4e2109,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f76da0d1aba618341b4766c3ce4e2109, type: 2}
@@ -9602,12 +9537,12 @@ Prefab:
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: onGrabCollisionDelay
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114630051591951466, guid: 8663c585919435d4abe51cadfdea90bf,
         type: 2}
       propertyPath: breakForce
-      value: Infinity
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8663c585919435d4abe51cadfdea90bf, type: 2}

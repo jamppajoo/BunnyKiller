@@ -459,6 +459,6 @@ MonoBehaviour:
   leftSnapHandle: {fileID: 4679592217932744}
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
-  onGrabCollisionDelay: 0
+  onGrabCollisionDelay: 10
   destroyImmediatelyOnThrow: 1
-  breakForce: Infinity
+  breakForce: 1500
