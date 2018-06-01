@@ -33,5 +33,16 @@ public class Movement : MonoBehaviour {
             rb.AddForce(transform.up * 100f * (-1));
             countdown = 0.40f+ Random.value;
         }
+        else
+        {
+            float speed = 10f;
+            Vector3 targetDir = player.transform.position - transform.position;
+            // The step size is equal to speed times frame time.
+            float step = speed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            Debug.DrawRay(transform.position, newDir, Color.red);
+            // Move our position a step closer to the target.
+            transform.rotation = Quaternion.LookRotation(newDir);
+        }
     }
 }
