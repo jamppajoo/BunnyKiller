@@ -65,9 +65,9 @@ public class ObjectCombiner : MonoBehaviour
         {
             if (item.GetComponent<Rigidbody>())
             {
-                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 3, -.5f), ForceMode.Impulse);
+                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 2.5f, -.5f), ForceMode.Impulse);
 
-                item.GetComponent<Rigidbody>().AddTorque(Random.Range(0, 10), Random.Range(0, 10), Random.Range(0, 10));
+                item.GetComponent<Rigidbody>().AddTorque(Random.Range(0, 10), Random.Range(0, 10), 0);
                 //item.GetComponent<Rigidbody>().isKinematic = true;x   
 
             }

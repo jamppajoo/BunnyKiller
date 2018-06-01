@@ -10,6 +10,7 @@ TagManager:
   - Stick3
   - Stick12
   - Stick13
+  - StickCollisionIgnore
   layers:
   - Default
   - TransparentFX
