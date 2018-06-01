@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.2846213, g: 0.3712097, b: 0.49880555, a: 1}
+  m_IndirectSpecularColor: {r: 0.2846214, g: 0.37120992, b: 0.49880606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -737,7 +737,7 @@ Transform:
   m_GameObject: {fileID: 43702157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 1, z: 40}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -2350,7 +2350,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.09
+      value: 2.0923932
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2358,23 +2358,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9420002
+      value: -3.934501
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.21504945
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.6736125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.6736125
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.21504939
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_RootOrder
@@ -2395,6 +2395,14 @@ Prefab:
     - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
       propertyPath: m_LocalScale.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -144.589
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd766880bd604bc4eb1ce2cabf56a684, type: 3}
@@ -11035,7 +11043,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &833107138
+--- !u!114 &833107141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -11046,7 +11054,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18055ba762aa3994f9c10208cd088bc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &833107139
+<<<<<<< HEAD
+--- !u!114 &833107144
+=======
+--- !u!114 &833107142
+>>>>>>> a831f9194dd79c4e306d43be857e74dd6284dc4e
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -11054,6 +11066,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 833107135}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 8a1ebaa51525b734287157cb3f53f958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -11063,9 +11076,20 @@ MonoBehaviour:
   throwVelocityWithAttachDistance: 0
   throwMultiplier: 1
   onGrabCollisionDelay: 0
-  detachDistance: 5
+  detachDistance: 1
   velocityLimit: Infinity
   angularVelocityLimit: Infinity
+=======
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 0
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
+>>>>>>> a831f9194dd79c4e306d43be857e74dd6284dc4e
 --- !u!114 &833107145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11082,7 +11106,7 @@ MonoBehaviour:
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1
-  holdButtonToGrab: 0
+  holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
   grabOverrideButton: 0
@@ -11096,6 +11120,25 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &833107146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 833107135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afa0b205791c9f4496bf2814aeac078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precisionGrab: 1
+  rightSnapHandle: {fileID: 0}
+  leftSnapHandle: {fileID: 0}
+  throwVelocityWithAttachDistance: 0
+  throwMultiplier: 1
+  onGrabCollisionDelay: 0
+  destroyImmediatelyOnThrow: 1
+  breakForce: 1500
 --- !u!1 &841387510
 GameObject:
   m_ObjectHideFlags: 0
@@ -17532,7 +17575,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1400482859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.791, y: -1.544, z: 0.90275323}
+  m_LocalPosition: {x: -0.791, y: -0.9873333, z: 0.90275323}
   m_LocalScale: {x: 0.5, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 477185834}
@@ -24553,7 +24596,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2058824890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3392587, y: 4.319, z: -12.21343}
+  m_LocalPosition: {x: -3.3392587, y: 4.8683267, z: -12.21343}
   m_LocalScale: {x: 0.5, y: 0.8, z: 2}
   m_Children: []
   m_Father: {fileID: 1359268040}

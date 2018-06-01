@@ -133,7 +133,7 @@ MonoBehaviour:
   throwMultiplier: 1
   onGrabCollisionDelay: 0
   destroyImmediatelyOnThrow: 1
-  breakForce: 1500
+  breakForce: Infinity
 --- !u!114 &114828922137387274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   holdButtonToGrab: 1
   stayGrabbedOnTeleport: 1
   validDrop: 1
-  grabOverrideButton: 4
+  grabOverrideButton: 0
   allowedGrabControllers: 0
   grabAttachMechanicScript: {fileID: 114373915044363992}
   secondaryGrabActionScript: {fileID: 114828922137387274}
