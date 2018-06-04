@@ -53,6 +53,7 @@ namespace VRTK
                 events.TouchpadTouchStart += new ControllerInteractionEventHandler(DoTouchpadTouched);
                 events.TouchpadTouchEnd += new ControllerInteractionEventHandler(DoTouchpadUntouched);
                 events.TouchpadAxisChanged += new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
+                events.TriggerPressed += new ControllerInteractionEventHandler(DoTriggerClicked);
 
                 menu.FireHapticPulse += new HapticPulseEventHandler(AttemptHapticPulse);
             }
@@ -65,6 +66,7 @@ namespace VRTK
             events.TouchpadTouchStart -= new ControllerInteractionEventHandler(DoTouchpadTouched);
             events.TouchpadTouchEnd -= new ControllerInteractionEventHandler(DoTouchpadUntouched);
             events.TouchpadAxisChanged -= new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
+            events.TriggerPressed -= new ControllerInteractionEventHandler(DoTriggerClicked);
 
             menu.FireHapticPulse -= new HapticPulseEventHandler(AttemptHapticPulse);
         }
@@ -136,7 +138,11 @@ namespace VRTK
                 DoChangeAngle(CalculateAngle(e));
             }
         }
-
+        protected virtual void DoTriggerClicked(object sender, ControllerInteractionEventArgs e)
+        {
+            print("ASDIJIO");
+            DoClickButton();
+        }
         protected virtual float CalculateAngle(ControllerInteractionEventArgs e)
         {
             return 360 - e.touchpadAngle;
