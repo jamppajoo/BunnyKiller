@@ -61,7 +61,6 @@ public class ObjectCombinerRoom : MonoBehaviour {
         
         if (other.gameObject.tag == "Player")
         {
-            print("AIOPSDK)");
             playerIsInRoom = true;
 
         }
@@ -71,7 +70,6 @@ public class ObjectCombinerRoom : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            print("AIOPSDK)2");
             playerIsInRoom = false;
             CloseDoors();
             waveController.StartWave();
