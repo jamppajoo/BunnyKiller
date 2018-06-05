@@ -48,7 +48,7 @@ namespace VRTK
             }
             else
             {
-                events.TouchpadPressed += new ControllerInteractionEventHandler(DoTouchpadClicked);
+                //events.TouchpadPressed += new ControllerInteractionEventHandler(DoTouchpadClicked); //DISABLED FOR SPAWNING ONLY WITH TRIGGER
                 events.TouchpadReleased += new ControllerInteractionEventHandler(DoTouchpadUnclicked);
                 events.TouchpadTouchStart += new ControllerInteractionEventHandler(DoTouchpadTouched);
                 events.TouchpadTouchEnd += new ControllerInteractionEventHandler(DoTouchpadUntouched);
@@ -61,7 +61,7 @@ namespace VRTK
 
         protected virtual void OnDisable()
         {
-            events.TouchpadPressed -= new ControllerInteractionEventHandler(DoTouchpadClicked);
+            //events.TouchpadPressed -= new ControllerInteractionEventHandler(DoTouchpadClicked);//DISABLED FOR SPAWNING ONLY WITH TRIGGER
             events.TouchpadReleased -= new ControllerInteractionEventHandler(DoTouchpadUnclicked);
             events.TouchpadTouchStart -= new ControllerInteractionEventHandler(DoTouchpadTouched);
             events.TouchpadTouchEnd -= new ControllerInteractionEventHandler(DoTouchpadUntouched);
@@ -140,8 +140,8 @@ namespace VRTK
         }
         protected virtual void DoTriggerClicked(object sender, ControllerInteractionEventArgs e)
         {
-            print("ASDIJIO");
-            DoClickButton();
+            if (touchpadTouched)
+                DoClickButton();
         }
         protected virtual float CalculateAngle(ControllerInteractionEventArgs e)
         {
