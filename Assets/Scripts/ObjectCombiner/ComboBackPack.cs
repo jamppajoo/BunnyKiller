@@ -46,14 +46,19 @@ public class ComboBackPack : MonoBehaviour
             radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
             rightHandRadialMenu.AddButton(radialMenuButton);
 
-            Destroy(objectAdded);
-            StartCoroutine(OpenLid());
+            objectAdded.transform.position = Vector3.right * 1000;
+            //Destroy(objectAdded);
+            if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
+                BackBagFull();
+            else
+                StartCoroutine(OpenLid());
         }
         else BackBagFull();
     }
     private void BackBagFull()
     {
         bagPackFull = true;
+        myText.text = "BackPack Full";
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,13 +66,13 @@ public class ComboBackPack : MonoBehaviour
         if (other.tag.StartsWith("Stick"))
         {
             StartCoroutine(CloseLid(other.gameObject));
-            
+
         }
     }
     IEnumerator CloseLid(GameObject other)
     {
         bagPackLid.closeLid();
-        yield return new WaitForSeconds(bagPackLid.timeToMove +1);
+        yield return new WaitForSeconds(bagPackLid.timeToMove + 1);
         ObjectAddedToBackBag(other);
 
     }
