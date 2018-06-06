@@ -12,6 +12,8 @@ TagManager:
   - Stick13
   - StickCollisionIgnore
   - Stick132
+  - Carrot
+  - Granade
   layers:
   - Default
   - TransparentFX
