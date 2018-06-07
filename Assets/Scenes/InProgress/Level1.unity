@@ -1122,9 +1122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71910096b7e852a438fb4dd4d3a593cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToExplode: 5
+  timeToExplode: 3
   blastRadius: 5
-  blastForce: 1
+  blastForce: 0.5
   fragments:
   - {fileID: 1268436497460238, guid: c126d89566aac1c42bfafe4048e2c291, type: 2}
   - {fileID: 1977182728990956, guid: c126d89566aac1c42bfafe4048e2c291, type: 2}
