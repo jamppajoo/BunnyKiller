@@ -109,6 +109,15 @@ public class ObjectCombiner : MonoBehaviour
             if (objectsInCombinerAmount == 2)
                 CheckCombination();
         }
+        else if (other.gameObject.tag.StartsWith("Blade"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+
 
     }
     private void OnTriggerExit(Collider other)
