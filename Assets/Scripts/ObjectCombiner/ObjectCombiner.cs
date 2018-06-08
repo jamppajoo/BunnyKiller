@@ -65,7 +65,9 @@ public class ObjectCombiner : MonoBehaviour
         {
             if (item.GetComponent<Rigidbody>())
             {
-                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 3, -.5f), ForceMode.Impulse);
+                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 2.5f, -.5f), ForceMode.Impulse);
+
+                item.GetComponent<Rigidbody>().AddTorque(Random.Range(0, 10), Random.Range(0, 10), 0);
                 //item.GetComponent<Rigidbody>().isKinematic = true;x   
 
             }
@@ -99,16 +101,23 @@ public class ObjectCombiner : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!objectsInCombiner.Contains(other.gameObject))
-            objectsInCombiner.Add(other.gameObject);
-        objectsInCombinerAmount++;
-        if (objectsInCombinerAmount == 2)
-            CheckCombination();
+        if (other.gameObject.tag.StartsWith("Stick"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
-        objectsInCombiner.Remove(other.gameObject);
-        objectsInCombinerAmount--;
+        if (other.gameObject.tag.StartsWith("Stick"))
+        {
+            objectsInCombiner.Remove(other.gameObject);
+            objectsInCombinerAmount--;
+        }
     }
 
 

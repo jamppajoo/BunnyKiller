@@ -48,11 +48,12 @@ namespace VRTK
             }
             else
             {
-                events.TouchpadPressed += new ControllerInteractionEventHandler(DoTouchpadClicked);
+                //events.TouchpadPressed += new ControllerInteractionEventHandler(DoTouchpadClicked); //DISABLED FOR SPAWNING ONLY WITH TRIGGER
                 events.TouchpadReleased += new ControllerInteractionEventHandler(DoTouchpadUnclicked);
                 events.TouchpadTouchStart += new ControllerInteractionEventHandler(DoTouchpadTouched);
                 events.TouchpadTouchEnd += new ControllerInteractionEventHandler(DoTouchpadUntouched);
                 events.TouchpadAxisChanged += new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
+                events.TriggerPressed += new ControllerInteractionEventHandler(DoTriggerClicked);
 
                 menu.FireHapticPulse += new HapticPulseEventHandler(AttemptHapticPulse);
             }
@@ -60,11 +61,12 @@ namespace VRTK
 
         protected virtual void OnDisable()
         {
-            events.TouchpadPressed -= new ControllerInteractionEventHandler(DoTouchpadClicked);
+            //events.TouchpadPressed -= new ControllerInteractionEventHandler(DoTouchpadClicked);//DISABLED FOR SPAWNING ONLY WITH TRIGGER
             events.TouchpadReleased -= new ControllerInteractionEventHandler(DoTouchpadUnclicked);
             events.TouchpadTouchStart -= new ControllerInteractionEventHandler(DoTouchpadTouched);
             events.TouchpadTouchEnd -= new ControllerInteractionEventHandler(DoTouchpadUntouched);
             events.TouchpadAxisChanged -= new ControllerInteractionEventHandler(DoTouchpadAxisChanged);
+            events.TriggerPressed -= new ControllerInteractionEventHandler(DoTriggerClicked);
 
             menu.FireHapticPulse -= new HapticPulseEventHandler(AttemptHapticPulse);
         }
@@ -136,7 +138,11 @@ namespace VRTK
                 DoChangeAngle(CalculateAngle(e));
             }
         }
-
+        protected virtual void DoTriggerClicked(object sender, ControllerInteractionEventArgs e)
+        {
+            if (touchpadTouched)
+                DoClickButton();
+        }
         protected virtual float CalculateAngle(ControllerInteractionEventArgs e)
         {
             return 360 - e.touchpadAngle;
