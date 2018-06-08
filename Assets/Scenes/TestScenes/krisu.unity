@@ -15377,6 +15377,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 0
   scythe: 1
+--- !u!64 &2099224966
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2099224958}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 2160202c37c2caa48b04f0a3a2f5b4b7, type: 3}
 --- !u!64 &2099224967
 MeshCollider:
   m_ObjectHideFlags: 0

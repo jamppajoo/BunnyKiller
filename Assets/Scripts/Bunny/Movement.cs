@@ -30,8 +30,8 @@ public class Movement : MonoBehaviour {
         countdown -= Time.deltaTime;
         if (countdown <= 0.0f && canJump)
         {
-            rb.AddForce(transform.forward * 400f);
-            rb.AddForce(transform.up * 50f * (-1));
+            rb.AddForce(transform.forward * 4000f);
+            rb.AddForce(transform.up * 500f * (-1));
             countdown = 0.80f+ Random.value;
         }
         else if(countdown>-2f)
