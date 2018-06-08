@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParticleDecalPool : MonoBehaviour
 {
 
-	public int maxDecals = 250;
+	public int maxDecals = 1000;
 	public float decalSizeMin = 0.5f;
 	public float decalSizeMax = 1.5f;
 	private ParticleSystem decalParticleSystem;
@@ -26,13 +26,13 @@ public class ParticleDecalPool : MonoBehaviour
 		}
 	}
 
-	public void ParticleHit(ParticleCollisionEvent particleCollisionEvent)
+	public void ParticleHit(ParticleCollisionEvent particleCollisionEvent, Gradient colorGradient)
 	{
-		SetParticleData(particleCollisionEvent);
+		SetParticleData(particleCollisionEvent, colorGradient);
 		DisplayParticles();
 	}
 
-	void SetParticleData(ParticleCollisionEvent particleCollisionEvent)
+	void SetParticleData(ParticleCollisionEvent particleCollisionEvent, Gradient colorGradient)
 	{
 		//records collision position rotation size and color
 
@@ -46,6 +46,7 @@ public class ParticleDecalPool : MonoBehaviour
 		particleRotationEuler.z = Random.Range(0, 360);
 		particleData[particleDecalDataIndex].rotation = particleRotationEuler;
 		particleData[particleDecalDataIndex].size = Random.Range(decalSizeMin, decalSizeMax);
+		particleData[particleDecalDataIndex].color = colorGradient.Evaluate(Random.Range(0f, 1f));
 
 		particleDecalDataIndex++;
 	}
@@ -57,6 +58,7 @@ public class ParticleDecalPool : MonoBehaviour
 			particles[i].position = particleData[i].position;
 			particles[i].rotation3D = particleData[i].rotation;
 			particles[i].startSize = particleData[i].size;
+			particles[i].startColor = particleData[i].color;
 		}
 
 		decalParticleSystem.SetParticles(particles, particles.Length);

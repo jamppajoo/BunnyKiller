@@ -13,7 +13,7 @@ public class PerkeleVittuSaatana : MonoBehaviour
 	{
 		moverTransform = gameObject.transform;
 		currentTime = Time.time;
-		timeBeforeTurn = 2.5f;
+		timeBeforeTurn = 0.5f;
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class PerkeleVittuSaatana : MonoBehaviour
 	{
 		if (Time.time - currentTime < timeBeforeTurn)
 		{
-			moverTransform.Translate(Vector3.forward * Time.deltaTime);
+			moverTransform.Translate(Vector3.forward * Time.deltaTime * 10);
 		}
 		else 
 		{
