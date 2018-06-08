@@ -68,8 +68,18 @@ namespace VRTK
 
             StartCoroutine(AutoGrab());
         }
+        public virtual void SpawnObject()
+        {
+            //Must always clone if the object is a prefab
+            if (objectIsPrefab)
+            {
+                cloneGrabbedObject = true;
+            }
 
-        protected virtual IEnumerator AutoGrab()
+            StartCoroutine(AutoGrab());
+        }
+
+        public virtual IEnumerator AutoGrab()
         {
             yield return new WaitForEndOfFrame();
 
