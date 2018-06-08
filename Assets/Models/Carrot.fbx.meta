@@ -1,20 +1,26 @@
 fileFormatVersion: 2
-guid: 9346f224a9350514f8a22fdd93b770bb
+guid: 04869f314566ea64bba5badec6ceeb0d
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
     2100000: Material.001
+    2100002: Material.002
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Stick
+    4300000: Carrot
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.001
-    second: {fileID: 2100000, guid: 87df151bb446ee846946bfbbbfb21653, type: 2}
+    second: {fileID: 2100000, guid: 065dfdf3dc827fd4587af8b737abc3c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: d82753dbb687f34489c882586bf6ed91, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
