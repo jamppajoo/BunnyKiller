@@ -11,12 +11,13 @@ TagManager:
   - Stick12
   - Stick13
   - StickCollisionIgnore
-  - Stick132
+<<<<<<< HEAD
   - Bunny
+=======
+  - Stick132
   - Carrot
   - Granade
-  - Stick
-  - Blade
+>>>>>>> master
   layers:
   - Default
   - TransparentFX

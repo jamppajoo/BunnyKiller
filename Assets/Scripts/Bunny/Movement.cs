@@ -6,13 +6,17 @@ public class Movement : MonoBehaviour {
 
     public float thrust=10f;
     public Rigidbody rb;
-    public float countdown = 6.0f;
+    public float countdown = 0f;
     public GameObject player;
+    public bool canJump=false;
+    public float explodingPower;
+    //public Collider touching;
 
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
+        //touching = this.GetComponent<CapsuleCollider>();
     }
 	
 	// Update is called once per frame
@@ -22,27 +26,58 @@ public class Movement : MonoBehaviour {
 
     void jump()
     {
+        //print(transform.up);
         countdown -= Time.deltaTime;
-        if (countdown <= 0.0f)
+        if (countdown <= 0.0f && canJump)
         {
-//            rb.AddForce((player.transform.position - transform.position + new Vector3((Random.value- 0.5f) *5, 0, (Random.value-0.5f)*5)) * thrust);
-
-            //rb.AddForce(new Vector3(0f, 100f, 50f));// transform.up * thrust*10f);
-            rb.AddForce(transform.forward * 300f);
-
-            rb.AddForce(transform.up * 100f * (-1));
-            countdown = 0.40f+ Random.value;
+            rb.AddForce(transform.forward * 400f);
+            rb.AddForce(transform.up * 50f * (-1));
+            countdown = 0.80f+ Random.value;
+        }
+        else if(countdown>-2f)
+        {
+            if (transform.position.y < 0.3f)
+            {
+                rb.velocity = Vector3.zero;
+                rb.transform.Rotate(-90f, 0f, rb.rotation.z);
+            }
+            
+            Vector3 targetPostition = new Vector3(0,
+                                       90,
+                                       player.transform.position.z);
+            this.transform.LookAt(targetPostition);
         }
         else
         {
-            float speed = 10f;
-            Vector3 targetDir = player.transform.position - transform.position;
-            // The step size is equal to speed times frame time.
-            float step = speed * Time.deltaTime;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, new Vector3(-90, 0, 0), step, 0.0f);
-            Debug.DrawRay(transform.position, newDir, Color.red);
-            // Move our position a step closer to the target.
-            transform.rotation = Quaternion.LookRotation(newDir);
+            rb.AddForce(transform.forward * 200f);
+            rb.AddForce(transform.up * 30f * (-1));
+            countdown = 0.80f + Random.value;
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        canJump = true;
+        float tes = collision.relativeVelocity.magnitude;
+        /*if (collision.relativeVelocity.magnitude > explodingPower)
+        {
+            print("Bum!!!" + tes);
+            Explode();
+        }
+        */
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        canJump = false;
+    }
+
+    void Explode()
+    {
+        //        var exp = GetComponent<ParticleSystem>();
+        //        exp.Play();
+        //Destroy(gameObject, exp.duration);
+        //Destroy(gameObject);
+    }
+
 }
