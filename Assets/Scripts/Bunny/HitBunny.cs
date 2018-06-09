@@ -25,7 +25,7 @@ public class HitBunny : MonoBehaviour {
 
         if (collision.gameObject.tag == "Bunny")
         {
-	        collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood();
+	        collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
                 Rigidbody body;

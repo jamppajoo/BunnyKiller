@@ -47,7 +47,7 @@ public class ParticleSpawner : MonoBehaviour
 		}
 	}
 
-	public void spillBlood()
+	public void spillBlood(Collision collision)
 	{
 		ParticleSystem.MainModule psMain = particleLauncher.main;
 		psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
