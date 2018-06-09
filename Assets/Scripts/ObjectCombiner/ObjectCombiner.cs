@@ -124,6 +124,7 @@ public class ObjectCombiner : MonoBehaviour
             objectsInCombinerAmount++;
             if (objectsInCombinerAmount == 2)
                 CheckCombination();
+        }
         else if (other.gameObject.tag.StartsWith("Barbedwire"))
         {
             if (!objectsInCombiner.Contains(other.gameObject))
@@ -131,8 +132,6 @@ public class ObjectCombiner : MonoBehaviour
             objectsInCombinerAmount++;
             if (objectsInCombinerAmount == 2)
                 CheckCombination();
-        }
-        
         }
 
     }
