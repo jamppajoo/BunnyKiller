@@ -117,7 +117,23 @@ public class ObjectCombiner : MonoBehaviour
             if (objectsInCombinerAmount == 2)
                 CheckCombination();
         }
-
+        else if (other.gameObject.tag.StartsWith("Baseballbat"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        else if (other.gameObject.tag.StartsWith("Barbedwire"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+        
+        }
 
     }
     private void OnTriggerExit(Collider other)
