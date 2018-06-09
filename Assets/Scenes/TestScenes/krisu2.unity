@@ -1923,6 +1923,25 @@ Transform:
   m_Father: {fileID: 1643685842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &390364923 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1482580202089366, guid: d68eedbda61cac340badb9c759185258,
+    type: 2}
+  m_PrefabInternal: {fileID: 617175885}
+--- !u!64 &390364924
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390364923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 166013e65c18c484180c594fd75b625c, type: 3}
 --- !u!1 &394039546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,7 +3856,13 @@ Prefab:
       propertyPath: m_Name
       value: BunnyPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 64671738213342282, guid: d68eedbda61cac340badb9c759185258,
+        type: 2}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 64671738213342282, guid: d68eedbda61cac340badb9c759185258, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &629358614
