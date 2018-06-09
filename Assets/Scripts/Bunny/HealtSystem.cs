@@ -18,8 +18,8 @@ public class HealtSystem : MonoBehaviour {
 
     public void BaseballHit(float power)
     {
-        
-        health -= power;
+
+        health -= 150f;// power;
         if(health<0)
         {
             if(health<-50)
