@@ -61,6 +61,7 @@ public class ParticleSpawner : MonoBehaviour
 
 		float sizeConstant = psMain.startSize.constant;
 		sizeConstant = collision.relativeVelocity.magnitude * sizeConstant;
+		Debug.Log("Magnitude of hit " + collision.relativeVelocity.magnitude);
 		psMain.startSize = sizeConstant;
 
 		psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
