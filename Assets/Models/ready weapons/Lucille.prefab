@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114286696310350210}
   m_Layer: 0
   m_Name: Lucille
-  m_TagString: Baseballbat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 114162983227190414}
   m_Layer: 0
   m_Name: Barbed_wire (1)
-  m_TagString: Barbedwire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
