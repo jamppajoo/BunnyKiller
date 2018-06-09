@@ -12,7 +12,9 @@ public class CombinerLid : MonoBehaviour {
     void Start()
     {
         closedPosition = gameObject.transform.localPosition;
-        openPosition = new Vector3(gameObject.transform.localPosition.x - (gameObject.transform.localScale.x- 0.1f), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+        
+//        openPosition = new Vector3(gameObject.transform.localPosition.x - (gameObject.transform.localScale.x- 0.1f), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
+        openPosition = new Vector3(gameObject.transform.localPosition.x - (1.126f), gameObject.transform.localPosition.y, gameObject.transform.localPosition.z);
         openLid();
     }
     public void openLid()

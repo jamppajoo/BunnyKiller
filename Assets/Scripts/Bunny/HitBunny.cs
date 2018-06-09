@@ -25,7 +25,7 @@ public class HitBunny : MonoBehaviour {
 
         if (collision.gameObject.tag == "Bunny")
         {
-            
+	        collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
                 Rigidbody body;
@@ -50,16 +50,8 @@ public class HitBunny : MonoBehaviour {
                     //                    print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
                     //                    Debug.DrawRay(contact.point, contact.normal, Color.white);
                 }
-
             }
-            else
-            {
-
-            }
-            
-
         }
-        
     }
 
     /*
