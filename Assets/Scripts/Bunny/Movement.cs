@@ -12,18 +12,37 @@ public class Movement : MonoBehaviour {
     public float explodingPower;
     //public Collider touching;
 
+	private float timeToNextJump;
+	private float currentTime;
+	private bool jumpRequest;
+
     // Use this for initialization
     void Start () {
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
-        //touching = this.GetComponent<CapsuleCollider>();
+	    currentTime = Time.time;
+	    timeToNextJump = 1.5f;
+	    //touching = this.GetComponent<CapsuleCollider>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        jump();        
-    }
+       // jump();
 
+		countdown = Time.time - currentTime;
+		if (countdown > timeToNextJump)
+		{
+			jumpRequest = true;
+		}
+	}
+
+	void FixedUpdate()
+	{
+		if (jumpRequest)
+		{
+			
+		}
+	}
     void jump()
     {
         //print(transform.up);
@@ -32,7 +51,7 @@ public class Movement : MonoBehaviour {
         {
             rb.AddForce(transform.forward * 400f);
             rb.AddForce(transform.up * 50f * (-1));
-            countdown = 0.80f+ Random.value;
+            countdown = 0.80f + Random.value;
         }
         else if(countdown>-2f)
         {
