@@ -9,7 +9,11 @@ ModelImporter:
     400000: //RootNode
     400002: LidIn
     400004: LidOut
-    2100000: No Name
+    2100000: CombinerBody
+    2100002: CombinerFasteners
+    2100004: CombinerPipes
+    2100006: CombinerGears
+    2100008: CombinerLid
     2300000: //RootNode
     2300002: LidIn
     2300004: LidOut
@@ -19,7 +23,32 @@ ModelImporter:
     4300000: Combiner
     4300002: LidOut
     4300004: LidIn
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CombinerBody
+    second: {fileID: 2100000, guid: b4ea206f5786097458d0bd832d2f1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CombinerFasteners
+    second: {fileID: 2100000, guid: 9add0831697859542804b47ccb1b9101, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CombinerGears
+    second: {fileID: 2100000, guid: f47e369988d362b46b49e28227ba2fae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CombinerLid
+    second: {fileID: 2100000, guid: 27c161296ad9dda4ba0e27911cd9e50c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CombinerPipes
+    second: {fileID: 2100000, guid: 187acdbf87b644d4da56a194b15e2861, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
