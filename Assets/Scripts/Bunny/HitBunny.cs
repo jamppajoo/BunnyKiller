@@ -28,8 +28,15 @@ public class HitBunny : MonoBehaviour {
             
             if (baseballbat)
             {
+                Rigidbody body;
+                body = GetComponent<Rigidbody>();
+                float hitPower= collision.relativeVelocity.magnitude * body.velocity.magnitude * body.mass;
+
+                hitPower = Vector3.Dot(collision.contacts[0].normal, collision.relativeVelocity);
+
                 hittedObject = collision.gameObject;
-                hittedObject.GetComponent<HealtSystem>().BaseballHit(collision.relativeVelocity.magnitude);
+                hittedObject.GetComponent<HealtSystem>().BaseballHit(hitPower);
+                if(hitPower>10)print(hitPower);
             }
             if (scythe)
             {
