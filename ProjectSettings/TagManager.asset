@@ -17,6 +17,8 @@ TagManager:
   - Granade
   - Stick
   - Blade
+  - Barbedwire
+  - Baseballbat
   layers:
   - Default
   - TransparentFX
