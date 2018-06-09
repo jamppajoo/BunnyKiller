@@ -826,46 +826,31 @@ MonoBehaviour:
   splatterParticles: {fileID: 1005144695}
   splatDecalPool: {fileID: 1872453448}
   particleColorGradient:
-    key0:
-      r: 0.9150943
-      g: 0.056114297
-      b: 0.056114297
-      a: 1
-    key1:
-      r: 0.46226418
-      g: 0.0152634485
-      b: 0.0152634485
-      a: 1
-    key2:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key3:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key4:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key5:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key6:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key7:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
+    serializedVersion: 2
+    key0: {r: 0.9150943, g: 0.056114297, b: 0.056114297, a: 1}
+    key1: {r: 0.46226418, g: 0.0152634485, b: 0.0152634485, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
@@ -10134,46 +10119,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleLauncher: {fileID: 103811301}
   particleColorGradient:
-    key0:
-      r: 0.9150943
-      g: 0.056114297
-      b: 0.056114297
-      a: 1
-    key1:
-      r: 0.46226418
-      g: 0.0152634485
-      b: 0.0152634485
-      a: 1
-    key2:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key3:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key4:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key5:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key6:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
-    key7:
-      r: 0
-      g: 0
-      b: 0
-      a: 0
+    serializedVersion: 2
+    key0: {r: 0.9150943, g: 0.056114297, b: 0.056114297, a: 1}
+    key1: {r: 0.46226418, g: 0.0152634485, b: 0.0152634485, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
@@ -16269,7 +16239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d205fccd3734e40bd6818011d1e9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moverTransform: {fileID: 0}
   timeBeforeTurn: 0
   currentTime: 0
 --- !u!1 &1269190137
@@ -16669,8 +16638,6 @@ MonoBehaviour:
   maxDecals: 50
   decalSizeMin: 0.1
   decalSizeMax: 0.25
-  decalParticleSystem: {fileID: 0}
-  particleDecalDataIndex: 0
 --- !u!199 &1335197359
 ParticleSystemRenderer:
   serializedVersion: 5
@@ -28348,8 +28315,6 @@ MonoBehaviour:
   maxDecals: 250
   decalSizeMin: 0.5
   decalSizeMax: 1.5
-  decalParticleSystem: {fileID: 0}
-  particleDecalDataIndex: 0
 --- !u!1 &1909442079
 GameObject:
   m_ObjectHideFlags: 0
