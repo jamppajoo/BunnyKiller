@@ -28,6 +28,7 @@ public class ObjectCombiner : MonoBehaviour
     private void Start()
     {
         combinerLid = gameObject.transform.GetComponentInChildren<CombinerLid>();
+        
     }
     private void CheckCombination()
     {
@@ -65,24 +66,32 @@ public class ObjectCombiner : MonoBehaviour
         {
             if (item.GetComponent<Rigidbody>())
             {
-                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 2.5f, -.5f), ForceMode.Impulse);
 
-                item.GetComponent<Rigidbody>().AddTorque(Random.Range(0, 10), Random.Range(0, 10), 0);
+                //                item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 2.5f, -.5f), ForceMode.Impulse);
+                
+                //item.GetComponent<Rigidbody>().AddForce(new Vector3(0, 2.5f, -.5f), ForceMode.Impulse);
+
+                //item.GetComponent<Rigidbody>().AddTorque(Random.Range(0, 10), Random.Range(0, 10), 0);
+                item.GetComponent<Rigidbody>().velocity = (item.GetComponent<Rigidbody>().velocity + new Vector3(0, 1));
                 //item.GetComponent<Rigidbody>().isKinematic = true;x   
 
             }
         }
+        combinerLid.openLid();
     }
 
     private void SpawnObject(List<GameObject> objects, GameObject output)
     {
+        Transform spawn;
+        spawn = this.transform.GetChild(0);
+        
         for (int i = 0; i < objects.Count; i++)
         {
             Destroy(objects[i]);
         }
         objectsInCombiner.Clear();
         objectsInCombinerAmount = 0;
-        GameObject outputResult = Instantiate(output, gameObject.transform.position, Quaternion.identity);
+        GameObject outputResult = Instantiate(output, spawn.position, Quaternion.identity);
         objectsInCombiner.Add(outputResult);
     }
 
@@ -93,7 +102,7 @@ public class ObjectCombiner : MonoBehaviour
         if (isValid)
             SpawnObject(objects, output);
         yield return new WaitForSeconds(2);
-        combinerLid.openLid();
+        
         yield return new WaitForSeconds(combinerLid.timeToMove);
         SpitOutObjects(objectsInCombiner);
 
@@ -149,6 +158,38 @@ public class ObjectCombiner : MonoBehaviour
         {
             objectsInCombiner.Remove(other.gameObject);
             objectsInCombinerAmount--;
+        }
+        else if (other.gameObject.tag.StartsWith("Blade"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+        else if (other.gameObject.tag.StartsWith("Baseballbat"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+        else if (other.gameObject.tag.StartsWith("Barbedwire"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
+        }
+        else if (other.gameObject.tag.StartsWith("Glove"))
+        {
+            if (!objectsInCombiner.Contains(other.gameObject))
+                objectsInCombiner.Add(other.gameObject);
+            objectsInCombinerAmount++;
+            if (objectsInCombinerAmount == 2)
+                CheckCombination();
         }
     }
 

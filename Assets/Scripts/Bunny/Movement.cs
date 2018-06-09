@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour {
 
 		if (Time.time - currentTime > timeToNextJump)
 		{
-			Debug.Log("DINGDING JUMPENING");
+			//Debug.Log("DINGDING JUMPENING");
 			jumpRequest = true;
 			currentTime = Time.time;
 		}
@@ -70,8 +70,12 @@ public class Movement : MonoBehaviour {
 		{
 			rb.velocity = Vector3.zero;
 			rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
-		}
-	}
+                    Vector3 targetPostition = new Vector3(0,
+                                               90,
+                                               player.transform.position.z);
+                    this.transform.LookAt(targetPostition);
+        }
+    }
     //void jump()
     //{
     //    //print(transform.up);

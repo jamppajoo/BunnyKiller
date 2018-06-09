@@ -50,16 +50,8 @@ public class HitBunny : MonoBehaviour {
                     //                    print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
                     //                    Debug.DrawRay(contact.point, contact.normal, Color.white);
                 }
-
             }
-            else
-            {
-
-            }
-            
-
         }
-        
     }
 
     /*
