@@ -28,6 +28,7 @@ public class HealtSystem : MonoBehaviour
 
 	public void BaseballHit(float power)
 	{
+        print("BASEBALL HITTED POWER " +power);
 		if (power < 1) health -= 15f;
 		else health -= 34f;
 
