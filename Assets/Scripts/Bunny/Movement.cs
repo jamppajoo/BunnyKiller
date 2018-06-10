@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour {
 			rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
 			//rb.velocity += Vector3.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
 			rb.AddForce(transform.up * 60f);
-			Debug.Log(rb.velocity.y);
+
 
 			jumpRequest = false;
 		}
