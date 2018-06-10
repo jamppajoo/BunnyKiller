@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8535,7 +8535,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -10199,7 +10199,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -11369,7 +11369,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -18527,7 +18527,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -21621,7 +21621,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -22228,7 +22228,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -22440,7 +22440,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.34
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -26075,7 +26075,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -27388,7 +27388,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -27852,7 +27852,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
@@ -35822,7 +35822,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.6569595
+      value: -5.3400006
       objectReference: {fileID: 0}
     - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
       propertyPath: m_LocalPosition.y
