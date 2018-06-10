@@ -11,8 +11,11 @@ public class ParticleSpawner : MonoBehaviour
 	public ParticleDecalPool splatDecalPool;
 	public Gradient particleColorGradient;
 
+	public List<Material> bloodMaterials;
+
 	void Start()
 	{
+		bloodMaterials = new List<Material>();
 		collisionEvents = new List<ParticleCollisionEvent>();
 	}
 
@@ -50,6 +53,17 @@ public class ParticleSpawner : MonoBehaviour
 	public void spillBlood(Collision collision)
 	{
 		ParticleSystem.MainModule psMain = particleLauncher.main;
+		ParticleSystem.VelocityOverLifetimeModule psVelo = particleLauncher.velocityOverLifetime;
+		float velocityX = psVelo.x.constant;
+		float velocityY = psVelo.y.constant;
+		float velocityZ = psVelo.z.constant;
+		Vector3 velocity = new Vector3(velocityX, velocityY, velocityZ);
+
+		float sizeConstant = psMain.startSize.constant;
+		sizeConstant = collision.relativeVelocity.magnitude * sizeConstant;
+		Debug.Log("Magnitude of hit " + collision.relativeVelocity.magnitude);
+		psMain.startSize = sizeConstant;
+
 		psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
 		particleLauncher.Emit(10);
 	}
