@@ -66,12 +66,12 @@ public class Movement : MonoBehaviour {
 
 			jumpRequest = false;
 		}
-		if (transform.position.y < 0.2f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
+		if (transform.position.y < 0.4f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
 		{
-			rb.velocity = Vector3.zero;
+			//rb.velocity = Vector3.zero;
 			rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
                     Vector3 targetPostition = new Vector3(0,
-                                               90,
+                                               0,
                                                player.transform.position.z);
                     this.transform.LookAt(targetPostition);
         }
