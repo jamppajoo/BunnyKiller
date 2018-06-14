@@ -302,7 +302,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: f11d203afa1432c47bf66be034738448, type: 2}
-  - {fileID: 2100000, guid: f11d203afa1432c47bf66be034738448, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5521,62 +5521,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 201147498}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &212038750
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 28
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &215396603
 GameObject:
   m_ObjectHideFlags: 0
@@ -5653,62 +5597,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215396603}
   m_Mesh: {fileID: 4300006, guid: e99803b507045754b820e9d17ba7f3aa, type: 3}
---- !u!1001 &223230118
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &240428338
 GameObject:
   m_ObjectHideFlags: 0
@@ -8165,62 +8053,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 522443579}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &547802080
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &548951163
 GameObject:
   m_ObjectHideFlags: 0
@@ -9324,62 +9156,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1001 &776594976
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &778618651
 GameObject:
   m_ObjectHideFlags: 0
@@ -9411,7 +9187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f236871b3580bbb4e8f609c526f9583e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDecals: 50
+  maxDecals: 500
   decalSizeMin: 0.1
   decalSizeMax: 0.25
 --- !u!199 &778618653
@@ -9432,7 +9208,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: e6ea7bf4cd9a4ee44b252d8319a04ffa, type: 2}
-  - {fileID: 2100000, guid: e6ea7bf4cd9a4ee44b252d8319a04ffa, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9461,10 +9237,10 @@ ParticleSystemRenderer:
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
-  m_RenderAlignment: 0
+  m_RenderAlignment: 1
   m_Pivot: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 0
-  m_EnableGPUInstancing: 1
+  m_EnableGPUInstancing: 0
   m_VertexStreams: 00010304
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
@@ -15328,118 +15104,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 879249790}
---- !u!1001 &881071493
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &890549805
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &892927181
 GameObject:
   m_ObjectHideFlags: 0
@@ -16232,62 +15896,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1045774249}
   m_Mesh: {fileID: 0}
---- !u!1001 &1048352794
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1048867616
 GameObject:
   m_ObjectHideFlags: 0
@@ -16988,62 +16596,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1109069557}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1116408955
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1124943125
 GameObject:
   m_ObjectHideFlags: 0
@@ -18357,62 +17909,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.7, z: 0.08}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &1295768391
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1295817436
 GameObject:
   m_ObjectHideFlags: 0
@@ -19509,6 +19005,16 @@ Prefab:
       propertyPath: ClampVelocityModule.enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198902764358713494, guid: d68eedbda61cac340badb9c759185258,
+        type: 2}
+      propertyPath: VelocityModule.z.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 199611233935585580, guid: d68eedbda61cac340badb9c759185258,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
   m_IsPrefabParent: 0
@@ -19872,62 +19378,6 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 4c0615eb9f5f53c4b87d4a334c085994, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a51679e81efd904a90b8918f721e596, type: 3}
-  m_IsPrefabParent: 0
---- !u!1001 &1436389872
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
   m_IsPrefabParent: 0
 --- !u!65 &1436581265 stripped
 BoxCollider:
@@ -20316,62 +19766,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1500927870}
   m_Mesh: {fileID: 0}
---- !u!1001 &1502070616
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1510939934
 GameObject:
   m_ObjectHideFlags: 0
@@ -22928,62 +22322,6 @@ MonoBehaviour:
   startMenuAlias: 102
   touchModifier: 116
   hairTouchModifier: 104
---- !u!1001 &1851979591
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1863256411
 GameObject:
   m_ObjectHideFlags: 0
@@ -28724,62 +28062,6 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1947260452
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.6569595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0.36118543
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4101410726902446, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_RootOrder
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974907455390408, guid: d68eedbda61cac340badb9c759185258, type: 2}
-      propertyPath: m_Name
-      value: BunnyPrefab (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatterParticles
-      value: 
-      objectReference: {fileID: 2077886223}
-    - target: {fileID: 114396336090894640, guid: d68eedbda61cac340badb9c759185258,
-        type: 2}
-      propertyPath: splatDecalPool
-      value: 
-      objectReference: {fileID: 2077886222}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: d68eedbda61cac340badb9c759185258, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &2071816440
 GameObject:
   m_ObjectHideFlags: 0
@@ -32578,7 +31860,7 @@ ParticleSystem:
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
-    collidesWithDynamic: 1
+    collidesWithDynamic: 0
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
