@@ -62,19 +62,25 @@ public class Movement : MonoBehaviour {
 			rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
 			//rb.velocity += Vector3.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
 			rb.AddForce(transform.up * 60f);
-			Debug.Log(rb.velocity.y);
+
 
 			jumpRequest = false;
 		}
-		if (transform.position.y < 0.2f)
+		if (transform.position.y < 0.4f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
 		{
-			rb.velocity = Vector3.zero;
+			//rb.velocity = Vector3.zero;
 			rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
                     Vector3 targetPostition = new Vector3(0,
-                                               90,
+                                               0,
                                                player.transform.position.z);
                     this.transform.LookAt(targetPostition);
         }
+
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
     //void jump()
     //{
@@ -93,7 +99,7 @@ public class Movement : MonoBehaviour {
     //            rb.velocity = Vector3.zero;
     //            rb.transform.Rotate(-90f, 0f, rb.rotation.z);
     //        }
-            
+
     //        Vector3 targetPostition = new Vector3(0,
     //                                   90,
     //                                   player.transform.position.z);

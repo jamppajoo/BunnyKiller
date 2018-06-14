@@ -28,9 +28,9 @@ public class HealtSystem : MonoBehaviour
 
 	public void BaseballHit(float power)
 	{
-        print("BASEBALL HITTED POWER " +power);
-		if (power < 1) health -= 15f;
-		else health -= 34f;
+		if (power < 6) health -= 10f;
+        else if(power > 16) health -= 200f;
+        else health -= 34f;
 
 		if (health < 0)
 		{
@@ -64,7 +64,7 @@ public class HealtSystem : MonoBehaviour
 	public void Die()
     {
         print("Bunny died!");
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
     public void Explode()
     {
