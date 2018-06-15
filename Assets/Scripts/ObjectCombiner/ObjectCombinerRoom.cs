@@ -34,6 +34,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
 
     public void OpenDoors()
     {
+        print("OPEN DOOR");
         StartCoroutine(MoveDoor(leftDoor, leftDoorOpenPosition, timeToMoveDoors));
         StartCoroutine(MoveDoor(rightDoor, rightDoorOpenPosition, timeToMoveDoors));
     }

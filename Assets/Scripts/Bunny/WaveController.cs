@@ -8,7 +8,7 @@ public class WaveController : MonoBehaviour
     public int waveLength = 60;
 
     private float timer = 0;
-    private bool waveStarted = false;
+    public bool waveStarted = false;
     private ObjectCombinerRoom objectCombinerRoom;
 
     private void Start()
