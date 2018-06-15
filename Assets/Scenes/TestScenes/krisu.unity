@@ -11912,6 +11912,7 @@ GameObject:
   - component: {fileID: 714895782}
   - component: {fileID: 714895781}
   - component: {fileID: 714895780}
+  - component: {fileID: 714895783}
   m_Layer: 0
   m_Name: Huone_lattia
   m_TagString: Untagged
@@ -11939,11 +11940,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714895778}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.0252485, y: 0.010010957, z: 3.9999998}
-  m_Center: {x: -0.48737574, y: -0.99500173, z: 0.0000035810806}
+  m_Size: {x: 3.0252485, y: 2.24, z: 3.9999998}
+  m_Center: {x: -0.48737574, y: -0.08, z: 0.0000035810806}
 --- !u!23 &714895781
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11988,6 +11989,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 714895778}
   m_Mesh: {fileID: 4300008, guid: dc1171d94cad44946b312e52de8bb23e, type: 3}
+--- !u!114 &714895783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 714895778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951c32b18e2452a41b31a5c550ef8dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToMoveDoors: 1
+  leftDoor: {fileID: 719944671}
+  rightDoor: {fileID: 2034563544}
 --- !u!1 &716711402
 GameObject:
   m_ObjectHideFlags: 0
@@ -22751,7 +22766,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1382381714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 951c32b18e2452a41b31a5c550ef8dbb, type: 3}
   m_Name: 
@@ -22767,9 +22782,9 @@ BoxCollider:
   m_GameObject: {fileID: 1382381714}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1388963599
 GameObject:
