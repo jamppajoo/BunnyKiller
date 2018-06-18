@@ -17,6 +17,8 @@ public class ParticleSpawner : MonoBehaviour
 	{
 		bloodMaterials = new List<Material>();
 		collisionEvents = new List<ParticleCollisionEvent>();
+        splatterParticles = FindObjectOfType<SplatterOnHit>().gameObject.GetComponent<ParticleSystem>();
+        splatDecalPool = FindObjectOfType<ParticleDecalPool>();
 	}
 
 	void OnParticleCollision(GameObject other)
