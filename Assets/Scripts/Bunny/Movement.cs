@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour {
 	private bool jumpRequest;
 	public float jumpMultiplier;
 	public float fallMultiplier;
+    private float bunnySpeed;
 
 	public float gravityScale = 1.0f;
 	public static float globalGravity = -9.81f;
@@ -26,8 +27,9 @@ public class Movement : MonoBehaviour {
 	    currentTime = Time.time;
 	    timeToNextJump = 2.5f;
 	    jumpRequest = false;
-	    jumpMultiplier = 2.5f;
+	    jumpMultiplier = 2.0f;
 	    fallMultiplier = 1.5f;
+        bunnySpeed = Random.value;
 	    //touching = this.GetComponent<CapsuleCollider>();
     }
 	
@@ -44,7 +46,7 @@ public class Movement : MonoBehaviour {
 		Debug.DrawRay(transform.position, Vector3.forward, Color.red);
 		Debug.DrawRay(transform.position, Vector3.up, Color.cyan);
 
-		if (Time.time - currentTime > timeToNextJump)
+		if (Time.time - currentTime > timeToNextJump+bunnySpeed)
 		{
 			//Debug.Log("DINGDING JUMPENING");
 			jumpRequest = true;
@@ -57,7 +59,7 @@ public class Movement : MonoBehaviour {
 		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
 		rb.AddForce(gravity, ForceMode.Acceleration);
 
-		if (jumpRequest)
+		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
 			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
 			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
@@ -66,7 +68,7 @@ public class Movement : MonoBehaviour {
 			jumpRequest = false;
 		}
         
-		if (transform.position.y < 0.2f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
+		if (transform.position.y < 0.2f&& transform.position.y > -0.2 && GetComponent<HealtSystem>().alive) //if bunny is low enough, gravity is normal and it disappears faster
 		{
 			//rb.velocity = Vector3.zero;
 			//rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
@@ -76,6 +78,14 @@ public class Movement : MonoBehaviour {
 
                     this.transform.LookAt(targetPostition);
             //jumpRequest = true;
+        }
+        else if(GetComponent<HealtSystem>().alive==false)
+        {
+            Vector3 targetPostition = new Vector3(0,
+                                               0,
+                                               -90);
+
+            this.transform.LookAt(targetPostition);
         }
         
 

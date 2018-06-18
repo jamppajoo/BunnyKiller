@@ -13,6 +13,7 @@ public class HealtSystem : MonoBehaviour
 	private AudioSource audioSource;
 
 	public Rigidbody bunnyRB;
+    public bool alive = true;
 
 	// Use this for initialization
 	void Start ()
@@ -63,11 +64,13 @@ public class HealtSystem : MonoBehaviour
 
 	public void Die()
     {
+        alive = false;
         print("Bunny died!");
         //Destroy(gameObject);
     }
     public void Explode()
     {
+        alive = false;
         print("Bunny Explodes");
     }
 
