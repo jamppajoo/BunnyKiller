@@ -81,7 +81,7 @@ public class Movement : MonoBehaviour {
         }
         else if(GetComponent<HealtSystem>().alive==false)
         {
-            Vector3 targetPostition = new Vector3(0,
+            Vector3 targetPostition = new Vector3(-90,
                                                0,
                                                -90);
 
