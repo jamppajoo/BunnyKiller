@@ -28,6 +28,7 @@ public class ParticleDecalPool : MonoBehaviour
 
 	public void ParticleHit(ParticleCollisionEvent particleCollisionEvent, Gradient colorGradient)
 	{
+        Debug.Log(particleCollisionEvent.colliderComponent.gameObject.name);
 		SetParticleData(particleCollisionEvent, colorGradient);
 		DisplayParticles();
 	}
