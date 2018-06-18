@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	public static float globalGravity = -9.81f;
 	
 	void Start () {
-		player = GameObject.Find("Player");
+		player = GameObject.Find("Carrot");
 	    currentTime = Time.time;
 	    timeToNextJump = 2.5f;
 	    jumpRequest = false;
@@ -59,22 +59,25 @@ public class Movement : MonoBehaviour {
 
 		if (jumpRequest)
 		{
-			rb.AddForce(Vector3.up * 5f, ForceMode.Impulse);
-			//rb.velocity += Vector3.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
+			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
+			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
 			rb.AddForce(transform.up * 60f);
-
 
 			jumpRequest = false;
 		}
-		if (transform.position.y < 0.4f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
+        
+		if (transform.position.y < 0.2f&& transform.position.y > -0.2) //if bunny is low enough, gravity is normal and it disappears faster
 		{
 			//rb.velocity = Vector3.zero;
-			rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
-                    Vector3 targetPostition = new Vector3(0,
+			//rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
+                    Vector3 targetPostition = new Vector3(player.transform.position.x,
                                                0,
-                                               player.transform.position.z);
+                                               0);
+
                     this.transform.LookAt(targetPostition);
+            //jumpRequest = true;
         }
+        
 
     }
 
