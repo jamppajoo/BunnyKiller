@@ -15,12 +15,19 @@ public class HealtSystem : MonoBehaviour
 	public Rigidbody bunnyRB;
     public bool alive = true;
 
-	// Use this for initialization
-	void Start ()
+    private GameObject head;
+    private GameObject body;
+
+    // Use this for initialization
+    void Start ()
 	{
 		bloodParticleSystem = GetComponentInChildren<ParticleSystem>();
 		bunnyRB = GetComponentInParent<Rigidbody>();
-	}
+        head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
+        body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+
+        print(body.name.ToString());
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,7 +36,9 @@ public class HealtSystem : MonoBehaviour
 
 	public void BaseballHit(float power)
 	{
-		if (power < 6) health -= 10f;
+        //Explode();
+
+        if (power < 6) health -= 10f;
         else if(power > 16) health -= 200f;
         else health -= 34f;
 
@@ -72,6 +81,10 @@ public class HealtSystem : MonoBehaviour
     {
         alive = false;
         print("Bunny Explodes");
+
+//        head.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
+//        body.transform.localScale += new Vector3(-0.1f, 0.1f, 0.1f);
+        this.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
     }
 
 	//void OnCollisionEnter(Collision hitCollision)
