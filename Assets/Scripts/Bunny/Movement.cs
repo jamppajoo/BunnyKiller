@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour {
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
 			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
-			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
+			//rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
 			rb.AddForce(transform.up * 60f);
 
 			jumpRequest = false;
@@ -77,13 +77,23 @@ public class Movement : MonoBehaviour {
                                                0);
 
                     this.transform.LookAt(targetPostition);
+
             //jumpRequest = true;
         }
         else if(GetComponent<HealtSystem>().alive==false)
-        {
+        {/*
             Vector3 targetPostition = new Vector3(-90,
-                                               0,
+                                               -90,
                                                -90);
+
+            this.transform.LookAt(targetPostition);*/
+         //rb.transform.Rotate(-90f, 0f, rb.rotation.z);
+         ///rb.transform.rotation = Quaternion.Euler(90, rb.transform.rotation.y, rb.transform.rotation.z);
+            //rb.transform.eulerAngles = new Vector3(90.0f, rb.rotation.y, rb.rotation.z);
+            //rb.transform.rotation = (-90f, 0f, rb.rotation.z);
+            Vector3 targetPostition = new Vector3(0f,
+                                               -1000f,
+                                               0);
 
             this.transform.LookAt(targetPostition);
         }
