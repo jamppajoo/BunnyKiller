@@ -28,7 +28,7 @@ public class HitBunny : MonoBehaviour {
 	        collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
-                /*
+
                 Rigidbody body;
                 body = GetComponent<Rigidbody>();
                 float hitPower= collision.relativeVelocity.magnitude * body.velocity.magnitude * body.mass;
@@ -38,9 +38,7 @@ public class HitBunny : MonoBehaviour {
                 hittedObject = collision.gameObject;
                 hittedObject.GetComponent<HealtSystem>().BaseballHit(hitPower);
                 if(hitPower>10)print(hitPower);
-                */
-                hittedObject = collision.gameObject;
-                hittedObject.GetComponent<HealtSystem>().BaseballHit(collision.relativeVelocity.magnitude);
+
             }
             if (scythe)
             {
