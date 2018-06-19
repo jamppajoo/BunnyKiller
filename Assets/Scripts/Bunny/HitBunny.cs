@@ -40,7 +40,7 @@ public class HitBunny : MonoBehaviour {
                 if(hitPower>10)print(hitPower);
                 */
                 hittedObject = collision.gameObject;
-                hittedObject.GetComponent<HealtSystem>().ScytheHit(collision.relativeVelocity.magnitude);
+                hittedObject.GetComponent<HealtSystem>().BaseballHit(collision.relativeVelocity.magnitude);
             }
             if (scythe)
             {
