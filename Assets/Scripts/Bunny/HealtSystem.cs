@@ -30,11 +30,14 @@ public class HealtSystem : MonoBehaviour
         body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
 
         if(this.gameObject.transform.GetChild(0).gameObject.name.Equals("bunbun")) bunbun = this.gameObject.transform.GetChild(0).gameObject;
-        if (this.gameObject.transform.GetChild(2).gameObject.name.Equals("BunnyLimbz")) bodyParts = this.gameObject.transform.GetChild(2).gameObject;
+        if (this.gameObject.transform.GetChild(2).gameObject.name.Equals("BunnyLimbz"))
+        {
+            bodyParts = this.gameObject.transform.GetChild(2).gameObject;
+            bodyParts.SetActive(false);
+        }
 
-        bodyParts.SetActive(false);
-        print(body.name.ToString());
-    }
+
+        }
 	
 	// Update is called once per frame
 	void Update () {
@@ -82,6 +85,7 @@ public class HealtSystem : MonoBehaviour
     {
         alive = false;
         print("Bunny died!");
+        if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
         //Destroy(gameObject);
     }
     public void Explode()
@@ -89,8 +93,9 @@ public class HealtSystem : MonoBehaviour
         alive = false;
         print("Bunny Explodes");
 
-        bodyParts.SetActive(true);
         bunbun.SetActive(false);
+        bodyParts.SetActive(true);
+       
 //        head.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
 //        body.transform.localScale += new Vector3(-0.1f, 0.1f, 0.1f);
         if(this.transform.localScale.z>0.02)this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
