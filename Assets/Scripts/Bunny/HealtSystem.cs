@@ -18,6 +18,9 @@ public class HealtSystem : MonoBehaviour
     private GameObject head;
     private GameObject body;
 
+    private GameObject bunbun;
+    private GameObject bodyParts;
+
     // Use this for initialization
     void Start ()
 	{
@@ -26,6 +29,10 @@ public class HealtSystem : MonoBehaviour
         head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
         body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
 
+        bunbun = this.gameObject.transform.GetChild(0).gameObject;
+        bodyParts = this.gameObject.transform.GetChild(2).gameObject;
+
+        bodyParts.SetActive(false);
         print(body.name.ToString());
     }
 	
@@ -82,9 +89,11 @@ public class HealtSystem : MonoBehaviour
         alive = false;
         print("Bunny Explodes");
 
+        bodyParts.SetActive(true);
+        bunbun.SetActive(false);
 //        head.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
 //        body.transform.localScale += new Vector3(-0.1f, 0.1f, 0.1f);
-        this.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
+        if(this.transform.localScale.z>0.02)this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
     }
 
 	//void OnCollisionEnter(Collision hitCollision)
