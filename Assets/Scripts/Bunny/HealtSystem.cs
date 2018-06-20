@@ -29,8 +29,8 @@ public class HealtSystem : MonoBehaviour
         head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
         body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
 
-        bunbun = this.gameObject.transform.GetChild(0).gameObject;
-        bodyParts = this.gameObject.transform.GetChild(2).gameObject;
+        if(this.gameObject.transform.GetChild(0).gameObject.name.Equals("bunbun")) bunbun = this.gameObject.transform.GetChild(0).gameObject;
+        if (this.gameObject.transform.GetChild(2).gameObject.name.Equals("BunnyLimbz")) bodyParts = this.gameObject.transform.GetChild(2).gameObject;
 
         bodyParts.SetActive(false);
         print(body.name.ToString());
