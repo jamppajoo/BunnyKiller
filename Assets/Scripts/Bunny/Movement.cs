@@ -57,7 +57,8 @@ public class Movement : MonoBehaviour {
 	void FixedUpdate()
 	{
 		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
-		rb.AddForce(gravity, ForceMode.Acceleration);
+        rb.AddForce(gravity, ForceMode.Acceleration);
+        
 
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
@@ -67,20 +68,20 @@ public class Movement : MonoBehaviour {
 
 			jumpRequest = false;
 		}
-        
-		if (transform.position.y < 0.2f&& transform.position.y > -0.2 && GetComponent<HealtSystem>().alive) //if bunny is low enough, gravity is normal and it disappears faster
-		{
-			//rb.velocity = Vector3.zero;
-			//rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
-                    Vector3 targetPostition = new Vector3(player.transform.position.x,
-                                               0,
-                                               0);
 
-                    this.transform.LookAt(targetPostition);
+        if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive) //if bunny is low enough, gravity is normal and it disappears faster
+        {
+            //rb.velocity = Vector3.zero;
+            //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
+            Vector3 targetPostition = new Vector3(player.transform.position.x,
+                                       0,
+                                       0);
+
+            this.transform.LookAt(targetPostition);
 
             //jumpRequest = true;
         }
-        else if(GetComponent<HealtSystem>().alive==false)
+        else if (GetComponent<HealtSystem>().alive == false)
         {/*
             Vector3 targetPostition = new Vector3(-90,
                                                -90,
@@ -91,11 +92,14 @@ public class Movement : MonoBehaviour {
          ///rb.transform.rotation = Quaternion.Euler(90, rb.transform.rotation.y, rb.transform.rotation.z);
             //rb.transform.eulerAngles = new Vector3(90.0f, rb.rotation.y, rb.rotation.z);
             //rb.transform.rotation = (-90f, 0f, rb.rotation.z);
+            if (GetComponent<HealtSystem>().alive) { 
+
             Vector3 targetPostition = new Vector3(0f,
                                                -1000f,
                                                0);
 
             this.transform.LookAt(targetPostition);
+        }
         }
         
 

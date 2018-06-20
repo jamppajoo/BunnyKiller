@@ -84,7 +84,6 @@ public class HealtSystem : MonoBehaviour
 	public void Die()
     {
         this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
-        //rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
         alive = false;
@@ -94,6 +93,9 @@ public class HealtSystem : MonoBehaviour
     }
     public void Explode()
     {
+//        this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
+//        this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
+
         alive = false;
         print("Bunny Explodes");
 
