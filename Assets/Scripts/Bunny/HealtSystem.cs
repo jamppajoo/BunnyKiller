@@ -83,6 +83,10 @@ public class HealtSystem : MonoBehaviour
 
 	public void Die()
     {
+        this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
+        //rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
+        this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
+
         alive = false;
         print("Bunny died!");
         if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
