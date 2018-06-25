@@ -1,0 +1,4 @@
+#0 default;
+#1-25 grab ctrl;
+#26-34 clench fist;
+#34-46 raise middle finger
