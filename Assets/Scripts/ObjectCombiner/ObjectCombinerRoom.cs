@@ -71,6 +71,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            print("Player has left the building");
             playerIsInRoom = false;
             CloseDoors();
             waveController.StartWave();

@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour {
 	public float jumpMultiplier;
 	public float fallMultiplier;
     private float bunnySpeed;
+    private bool targetRandomized;
 
 	public float gravityScale = 1.0f;
 	public static float globalGravity = -9.81f;
@@ -63,22 +64,23 @@ public class Movement : MonoBehaviour {
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
 			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
-			//rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
+			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
 			rb.AddForce(transform.up * 60f);
 
 			jumpRequest = false;
+            targetRandomized = false;
 		}
 
-        if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive) //if bunny is low enough, gravity is normal and it disappears faster
+        else if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive && !targetRandomized) //if bunny is low enough, it turns towards target
         {
             //rb.velocity = Vector3.zero;
             //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
-            Vector3 targetPostition = new Vector3(player.transform.position.x,
+            Vector3 targetPostition = new Vector3(player.transform.position.x+(Random.value*2-1),
                                        0,
                                        0);
 
             this.transform.LookAt(targetPostition);
-
+            targetRandomized = true;
             //jumpRequest = true;
         }
         else if (GetComponent<HealtSystem>().alive == false)

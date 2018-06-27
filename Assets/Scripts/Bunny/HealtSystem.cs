@@ -64,18 +64,12 @@ public class HealtSystem : MonoBehaviour
 
 	public void ScytheHit(float power)
 	{
-		health -= 1001f;// power;
+		health -= power;
 		if (health < 0)
 		{
-			if (health < -1000)
+			if (health < -100)
 			{
-				print("Bunny died at ones!!!");
-				Die();
-			}
-			else if (health < -50)
-			{
-				Explode();
-				Die();
+                Explode();
 			}
 			else Die();
 		}
@@ -87,43 +81,16 @@ public class HealtSystem : MonoBehaviour
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
         alive = false;
-        print("Bunny died!");
-        if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
-        //Destroy(gameObject);
+        //this makes bunny flat if player hits it after it is dead
+        //if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f); 
     }
     public void Explode()
     {
-//        this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
-//        this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
-
         alive = false;
-        print("Bunny Explodes");
-
         bunbun.SetActive(false);
         bodyParts.SetActive(true);
-       
-//        head.transform.localScale += new Vector3(0.1f, 0.1f, -0.1f);
-//        body.transform.localScale += new Vector3(-0.1f, 0.1f, 0.1f);
-        if(this.transform.localScale.z>0.02)this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
+
+        if (this.transform.localScale.z>0.02)this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f);
     }
 
-	//void OnCollisionEnter(Collision hitCollision)
-	//{
-	//	if (bluntWeapons.Contains(hitCollision.gameObject))
-	//	{
-	//		ContactPoint contactPoint = hitCollision.contacts[0];
-	//		Vector3 direction = contactPoint.point - transform.position;
-	//		direction = -direction.normalized;
-	//		Debug.Log(direction + " Direction Vector");
-	//		bunnyRB.AddForce(direction * 3f, ForceMode.Impulse);
-	//	}
-	//	else if (bladeWeapons.Contains(hitCollision.gameObject))
-	//	{
-
-	//	}
-	//	else
-	//	{
-	//		Debug.Log("Object not in either list :D");
-	//	}
-	//}
 }
