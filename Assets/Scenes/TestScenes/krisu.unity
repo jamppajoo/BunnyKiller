@@ -22509,6 +22509,7 @@ GameObject:
   - component: {fileID: 663592245}
   - component: {fileID: 663592244}
   - component: {fileID: 663592243}
+  - component: {fileID: 663592246}
   m_Layer: 0
   m_Name: PlayArea
   m_TagString: Untagged
@@ -22567,7 +22568,7 @@ MonoBehaviour:
   customRaycast: {fileID: 0}
   layersToIgnore:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 5
 --- !u!114 &663592245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22610,6 +22611,23 @@ MonoBehaviour:
   customBodyColliderContainer: {fileID: 1668922889435436, guid: c0be422575905d84ba842f1231c2f167,
     type: 2}
   customFootColliderContainer: {fileID: 0}
+--- !u!114 &663592246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 663592241}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef7e6bfad51b1f24f8bba548c8dcecb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkToColor: {r: 0, g: 0, b: 0, a: 1}
+  blinkTransitionSpeed: 0.6
+  distanceBlinkDelay: 0
+  headsetPositionCompensation: 1
+  targetListPolicy: {fileID: 0}
+  navMeshLimitDistance: 0
 --- !u!1 &665667148
 GameObject:
   m_ObjectHideFlags: 0
@@ -27918,7 +27936,7 @@ GameObject:
   - component: {fileID: 714895781}
   - component: {fileID: 714895780}
   - component: {fileID: 714895783}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Huone_lattia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34558,7 +34576,7 @@ GameObject:
   - component: {fileID: 799500549}
   - component: {fileID: 799500548}
   - component: {fileID: 799500552}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
