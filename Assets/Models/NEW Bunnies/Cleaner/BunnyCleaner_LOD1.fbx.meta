@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: c0c5311454b398941b401eee4a6474d1
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bottom
+    100002: brow.L
+    100004: brow.L_end
+    100006: brow.R
+    100008: brow.R_end
+    100010: bunbun
+    100012: bunny
+    100014: //RootNode
+    100016: ear1.L
+    100018: ear1.R
+    100020: ear2.L
+    100022: ear2.L_end
+    100024: ear2.R
+    100026: ear2.R_end
+    100028: hand1.L
+    100030: hand1.R
+    100032: hand2.L
+    100034: hand2.L_end
+    100036: hand2.R
+    100038: hand2.R_end
+    100040: head
+    100042: leg1.L
+    100044: leg1.R
+    100046: leg2.L
+    100048: leg2.R
+    100050: leg3.L
+    100052: leg3.L_end
+    100054: leg3.R
+    100056: leg3.R_end
+    400000: bottom
+    400002: brow.L
+    400004: brow.L_end
+    400006: brow.R
+    400008: brow.R_end
+    400010: bunbun
+    400012: bunny
+    400014: //RootNode
+    400016: ear1.L
+    400018: ear1.R
+    400020: ear2.L
+    400022: ear2.L_end
+    400024: ear2.R
+    400026: ear2.R_end
+    400028: hand1.L
+    400030: hand1.R
+    400032: hand2.L
+    400034: hand2.L_end
+    400036: hand2.R
+    400038: hand2.R_end
+    400040: head
+    400042: leg1.L
+    400044: leg1.R
+    400046: leg2.L
+    400048: leg2.R
+    400050: leg3.L
+    400052: leg3.L_end
+    400054: leg3.R
+    400056: leg3.R_end
+    2100000: valk
+    2100002: must
+    2100004: pink
+    2100006: red
+    2100008: brown
+    2100010: valk.001
+    4300000: bunbun
+    7400000: bunny|attack1
+    7400002: bunny|attack2
+    7400004: bunny|bounce1
+    7400006: bunny|cleaningCleaner1
+    7400008: bunny|cleaningCleaner2
+    7400010: bunny|dab1
+    7400012: bunny|death1
+    7400014: bunny|death2
+    7400016: bunny|idleCleaner1
+    7400018: bunny|scared1
+    7400020: bunny|scared2
+    7400022: bunny|think1
+    7400024: bunny|walk1
+    9500000: //RootNode
+    13700000: bunbun
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
