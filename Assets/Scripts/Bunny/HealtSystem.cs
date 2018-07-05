@@ -70,7 +70,9 @@ public class HealtSystem : MonoBehaviour
 		health -= power;
 		if (health < 0)
 		{
-			if (health < -100)
+            if (alive) addDeath();
+
+            if (health < -100)
 			{
                 Explode();
 			}
@@ -78,9 +80,21 @@ public class HealtSystem : MonoBehaviour
 		}
 	}
 
-	public void Die()
+    public void Suicide()
+    {
+        health -= 1000;
+        Explode();
+        Collision hitt = null;
+        this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
+    }
+
+    public void addDeath()
     {
         gameController.GetComponent<GameProgression>().addKill();
+    }
+	public void Die()
+    {
+        
         this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
@@ -90,7 +104,6 @@ public class HealtSystem : MonoBehaviour
     }
     public void Explode()
     {
-        gameController.GetComponent<GameProgression>().addKill();
         alive = false;
         bunbun.SetActive(false);
         bodyParts.SetActive(true);

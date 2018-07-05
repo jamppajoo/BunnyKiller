@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveController : MonoBehaviour
 {
@@ -13,11 +14,17 @@ public class WaveController : MonoBehaviour
     private ObjectCombinerRoom objectCombinerRoom;
 
     private GameObject gameController;
+    private GameObject timeCountPanel;
+    private GameObject doorCloser;
+    private GameObject enemyParent;
 
 
     private void Start()
     {
         gameController = GameObject.Find("GameController");
+        timeCountPanel = GameObject.Find("timeText");
+        doorCloser = GameObject.Find("Huone_lattia");
+        enemyParent = GameObject.Find("enemies");
 
     }
     private void Update()
@@ -25,12 +32,18 @@ public class WaveController : MonoBehaviour
         if (waveStarted)
         {
             if (timer < waveLength)
+            {
                 timer += Time.deltaTime;
+                timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
+            }
+
             else
             {
                 WaveEnded();
+                timeCountPanel.GetComponent<Text>().text = "0";
             }
         }
+        else timeCountPanel.GetComponent<Text>().text = "0";
     }
     public void StartWave()
     {
@@ -43,9 +56,16 @@ public class WaveController : MonoBehaviour
     }
     private void WaveEnded()
     {
+        print("Wave Ended");
         timer = 0;
         waveStarted = false;
-        objectCombinerRoom.OpenDoors();
+        doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
+
+        HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
+        foreach (HealtSystem child in allChildren)
+        {
+            child.Suicide();
+        }
     }
 
 }
