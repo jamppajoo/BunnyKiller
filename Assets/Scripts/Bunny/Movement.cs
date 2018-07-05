@@ -10,10 +10,14 @@ public class Movement : MonoBehaviour {
 	//public float explodingPower;
 	//public Collider touching;
 	public Rigidbody rb;
-	public GameObject player;
+    private GameObject carrotParent;
+	public GameObject targetCarrot;
+    private int carrotCount;
 
 	private float timeToNextJump;
-	private float currentTime;
+    private float timeToNextTarget;
+	private float timeFromLastJump;
+    private float timeFromTargetChange;
 	private bool jumpRequest;
 	public float jumpMultiplier;
 	public float fallMultiplier;
@@ -24,14 +28,20 @@ public class Movement : MonoBehaviour {
 	public static float globalGravity = -9.81f;
 	
 	void Start () {
-		player = GameObject.Find("Carrot");
-	    currentTime = Time.time;
+
+        //Bunny will randomly choose which carrot it will eat
+        carrotParent = GameObject.Find("carrotsParent");
+        carrotCount = carrotParent.transform.childCount;
+        targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+
+        timeFromLastJump = Time.time;
+        timeFromTargetChange = Time.time;
 	    timeToNextJump = 2.5f;
+        timeToNextTarget = 30f;
 	    jumpRequest = false;
 	    jumpMultiplier = 2.0f;
 	    fallMultiplier = 1.5f;
         bunnySpeed = Random.value;
-	    //touching = this.GetComponent<CapsuleCollider>();
     }
 	
 	void OnEnable()
@@ -42,24 +52,29 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//jump();
-
 		Debug.DrawRay(transform.position, Vector3.forward, Color.red);
 		Debug.DrawRay(transform.position, Vector3.up, Color.cyan);
 
-		if (Time.time - currentTime > timeToNextJump+bunnySpeed)
+		if (Time.time - timeFromLastJump > timeToNextJump+bunnySpeed)
 		{
-			//Debug.Log("DINGDING JUMPENING");
 			jumpRequest = true;
-			currentTime = Time.time;
+            timeFromLastJump = Time.time;
 		}
-	}
+
+        if(Time.time - timeFromTargetChange>timeToNextTarget||targetCarrot==null)
+        {
+            carrotCount = carrotParent.transform.childCount;
+            targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+            timeFromTargetChange = Time.time;
+        }
+
+        Debug.DrawRay(targetCarrot.transform.position, Vector3.up, Color.blue);
+    }
 
 	void FixedUpdate()
 	{
 		Vector3 gravity = globalGravity * gravityScale * Vector3.up;
         rb.AddForce(gravity, ForceMode.Acceleration);
-        
 
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
@@ -75,36 +90,23 @@ public class Movement : MonoBehaviour {
         {
             //rb.velocity = Vector3.zero;
             //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
-            Vector3 targetPostition = new Vector3(player.transform.position.x+(Random.value*2-1),
+            Vector3 targetPostition = new Vector3(targetCarrot.transform.position.x+(Random.value*2-1),
                                        0,
-                                       0);
+                                       targetCarrot.transform.position.z);
 
             this.transform.LookAt(targetPostition);
             targetRandomized = true;
             //jumpRequest = true;
         }
         else if (GetComponent<HealtSystem>().alive == false)
-        {/*
-            Vector3 targetPostition = new Vector3(-90,
-                                               -90,
-                                               -90);
-
-            this.transform.LookAt(targetPostition);*/
-         //rb.transform.Rotate(-90f, 0f, rb.rotation.z);
-         ///rb.transform.rotation = Quaternion.Euler(90, rb.transform.rotation.y, rb.transform.rotation.z);
-            //rb.transform.eulerAngles = new Vector3(90.0f, rb.rotation.y, rb.rotation.z);
-            //rb.transform.rotation = (-90f, 0f, rb.rotation.z);
-            if (GetComponent<HealtSystem>().alive) { 
-
-            Vector3 targetPostition = new Vector3(0f,
-                                               -1000f,
-                                               0);
-
-            this.transform.LookAt(targetPostition);
+        {
+            //if (GetComponent<HealtSystem>().alive) { 
+                Vector3 targetPostition = new Vector3(0f,
+                                                     -1000f,
+                                                      0);
+                this.transform.LookAt(targetPostition);
+            //}
         }
-        }
-        
-
     }
 
     void OnBecameInvisible()

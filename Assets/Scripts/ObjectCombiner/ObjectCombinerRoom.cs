@@ -80,3 +80,54 @@ public class ObjectCombinerRoom : MonoBehaviour {
 
 
 }
+
+
+public class LevelExitCollider : MonoBehaviour
+{
+
+    public bool playerHasEntered = false;
+//    private LevelExitTime levelExitTime;
+    private GameObject killedBunniesObj;
+
+//    private GameObject deathButtonObj;
+//    private GameObject deadliestTrapObj;
+//    private GameObject deadliestTrapText;
+    private AnalyticsClass analyticsValues;
+//    public List<Sprite> spriteList;
+//    [SerializeField]
+//    private List<string> trapNameList;
+//    private LevelManager levelManager;
+
+    void Start()
+    {
+        //        levelExitTime = FindObjectOfType<LevelExitTime>();
+        killedBunniesObj = GameObject.Find("killedBunnies");
+
+        ///analyticsValues = AnalyticsClass.analyticsResults;
+
+        /*        deathButtonObj = GameObject.Find("deathValue");
+                deadliestTrapObj = GameObject.Find("deadliestTrap");
+                deadliestTrapText = GameObject.Find("deadliestTrapText");
+
+                trapNameList = new List<string>();
+                trapNameList.Add("  BLENDER");
+                trapNameList.Add("  LASER");
+                trapNameList.Add("  TURRET");
+                trapNameList.Add("  LASERBLENDER");
+                levelManager = FindObjectOfType<LevelManager>();
+        */
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerCollider" && !playerHasEntered)
+        {
+            playerHasEntered = true;
+            //            levelExitTime.TimerStop();
+///            killedBunniesObj.GetComponent<Text>().text = analyticsValues.rotationCount.ToString();
+//            deathButtonObj.GetComponent<Text>().text = analyticsValues.deathCount.ToString();
+//            deadliestTrapObj.GetComponent<Image>().sprite = spriteList[analyticsValues.getDeadliestTrap()];
+//            deadliestTrapText.GetComponent<Text>().text = trapNameList[analyticsValues.getDeadliestTrap()];
+//            levelManager.EndLevel();
+        }
+    }
+}

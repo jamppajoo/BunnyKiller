@@ -6,14 +6,19 @@ public class WaveController : MonoBehaviour
 {
 
     public int waveLength = 60;
+    public int waveNumber = 0;
 
     private float timer = 0;
     public bool waveStarted = false;
     private ObjectCombinerRoom objectCombinerRoom;
 
+    private GameObject gameController;
+
+
     private void Start()
     {
-        objectCombinerRoom = FindObjectOfType<ObjectCombinerRoom>();
+        gameController = GameObject.Find("GameController");
+
     }
     private void Update()
     {
@@ -29,7 +34,12 @@ public class WaveController : MonoBehaviour
     }
     public void StartWave()
     {
+        gameController.GetComponent<GameProgression>().addWave();
+        waveNumber++;
+        GetComponent<BunnyMaker>().amount = 10 + waveNumber;
+        GetComponent<BunnyMaker>().health = 100 + waveNumber*10;
         waveStarted = true;
+        GetComponent<BunnyMaker>().maded = 0;
     }
     private void WaveEnded()
     {

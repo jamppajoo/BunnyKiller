@@ -21,6 +21,8 @@ public class HealtSystem : MonoBehaviour
     private GameObject bunbun;
     private GameObject bodyParts;
 
+    private GameObject gameController;
+
     // Use this for initialization
     void Start ()
 	{
@@ -28,8 +30,9 @@ public class HealtSystem : MonoBehaviour
 		bunnyRB = GetComponentInParent<Rigidbody>();
         head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
         body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+        gameController = GameObject.Find("GameController");
 
-        if(this.gameObject.transform.GetChild(0).gameObject.name.Equals("bunbun")) bunbun = this.gameObject.transform.GetChild(0).gameObject;
+        if (this.gameObject.transform.GetChild(0).gameObject.name.Equals("bunbun")) bunbun = this.gameObject.transform.GetChild(0).gameObject;
         if (this.gameObject.transform.GetChild(2).gameObject.name.Equals("BunnyLimbz"))
         {
             bodyParts = this.gameObject.transform.GetChild(2).gameObject;
@@ -77,6 +80,7 @@ public class HealtSystem : MonoBehaviour
 
 	public void Die()
     {
+        gameController.GetComponent<GameProgression>().addKill();
         this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
@@ -86,6 +90,7 @@ public class HealtSystem : MonoBehaviour
     }
     public void Explode()
     {
+        gameController.GetComponent<GameProgression>().addKill();
         alive = false;
         bunbun.SetActive(false);
         bodyParts.SetActive(true);

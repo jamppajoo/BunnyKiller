@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bloodParticleSystem: {fileID: 0}
-  health: -100
+  health: 100
   bluntWeapons: []
   bladeWeapons: []
   bunnyRB: {fileID: 0}
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54925939088547188}
-  player: {fileID: 0}
+  targetCarrot: {fileID: 0}
   jumpMultiplier: 0
   fallMultiplier: 0
   gravityScale: 1
