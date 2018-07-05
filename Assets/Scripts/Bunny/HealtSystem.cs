@@ -22,6 +22,8 @@ public class HealtSystem : MonoBehaviour
     private GameObject bodyParts;
 
     private GameObject gameController;
+    private float suicideTime;
+    private bool suicideActivated=false;
 
     // Use this for initialization
     void Start ()
@@ -44,7 +46,14 @@ public class HealtSystem : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (suicideActivated && suicideTime < 0 && alive)
+        {
+            health -= 1000;
+            Explode();
+            Collision hitt = null;
+            this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
+        }
+        else if (suicideActivated && alive) suicideTime -= Time.deltaTime;
 	}
 
 	public void BaseballHit(float power)
@@ -80,12 +89,10 @@ public class HealtSystem : MonoBehaviour
 		}
 	}
 
-    public void Suicide()
+    public void Suicide(float time)
     {
-        health -= 1000;
-        Explode();
-        Collision hitt = null;
-        this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
+        suicideTime = time;
+        suicideActivated = true;
     }
 
     public void addDeath()

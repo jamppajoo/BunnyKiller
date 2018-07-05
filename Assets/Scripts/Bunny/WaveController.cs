@@ -62,9 +62,11 @@ public class WaveController : MonoBehaviour
         doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
 
         HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
+        float i = 0f;
         foreach (HealtSystem child in allChildren)
         {
-            child.Suicide();
+            child.Suicide(i);
+            i++;
         }
     }
 
