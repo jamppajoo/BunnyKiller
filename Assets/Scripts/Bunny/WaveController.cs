@@ -24,7 +24,7 @@ public class WaveController : MonoBehaviour
         gameController = GameObject.Find("GameController");
         timeCountPanel = GameObject.Find("timeText");
         doorCloser = GameObject.Find("Huone_lattia");
-        enemyParent = GameObject.Find("enemies");
+        enemyParent = GameObject.Find("Enemies");
 
     }
     private void Update()
@@ -51,21 +51,29 @@ public class WaveController : MonoBehaviour
         waveNumber++;
         GetComponent<BunnyMaker>().amount = 10 + waveNumber;
         GetComponent<BunnyMaker>().health = 100 + waveNumber*10;
+        GetComponent<BunnyMaker>().startWave();
         waveStarted = true;
         GetComponent<BunnyMaker>().maded = 0;
+        
     }
     private void WaveEnded()
     {
-        print("Wave Ended");
+//        print("Wave Ended");
         timer = 0;
         waveStarted = false;
         doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
 
         HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
         float i = 0f;
+        /*
+        for(int j=0; j< allChildren.Length; j++)
+        {
+            allChildren[j].Suicide(i / 2);
+            i++;
+        }*/
         foreach (HealtSystem child in allChildren)
         {
-            child.Suicide(i);
+            child.Suicide(i/4);
             i++;
         }
     }

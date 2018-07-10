@@ -8,12 +8,13 @@ public class GameProgression : MonoBehaviour {
     public int wave;
     public int kills;
     private GameObject killCountPanel;
+    private GameObject statsPanel;
 
 	// Use this for initialization
 	void Start () {
         killCountPanel = GameObject.Find("killCountText");
         updateScoreBoard();
-
+        statsPanel = GameObject.Find("gameStatText");
     }
 	
 	// Update is called once per frame
@@ -43,5 +44,13 @@ public class GameProgression : MonoBehaviour {
     public void updateScoreBoard()
     {
         killCountPanel.GetComponent<Text>().text = "\nKills "+kills + "\nWave "+wave;
+    }
+
+    public void playerDied()
+    {
+        statsPanel.GetComponent<Text>().text = "Latest Score"+
+                                                    "\nYou killed "+kills+ " bunnies"+
+                                                    "\nYou survived "+wave+ " waves";
+        reset();
     }
 }

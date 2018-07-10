@@ -86,7 +86,7 @@ public class KilledByListObject
 
 /*
  * How to use
- * Rhis add different strings to deathlistcounter. That list keeps tracking amount of every string. When used just add names of the weapons to keep track how many times every weapon has killed bunny
+ * This add different strings to deathlistcounter. That list keeps tracking amount of every string. When used just add names of the weapons to keep track how many times every weapon has killed bunny
   
         public static AnalyticsClass analyticsResults = new AnalyticsClass();
       
