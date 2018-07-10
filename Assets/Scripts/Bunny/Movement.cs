@@ -32,7 +32,12 @@ public class Movement : MonoBehaviour {
         //Bunny will randomly choose which carrot it will eat
         carrotParent = GameObject.Find("carrotsParent");
         carrotCount = carrotParent.transform.childCount;
-        targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+        if (carrotCount == 0)
+        {
+            targetCarrot = GameObject.Find("Camera");
+            if (targetCarrot == null) targetCarrot = GameObject.Find("Camera (head)");
+        }
+        else targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
 
         timeFromLastJump = Time.time;
         timeFromTargetChange = Time.time;
@@ -64,7 +69,12 @@ public class Movement : MonoBehaviour {
         if(Time.time - timeFromTargetChange>timeToNextTarget||targetCarrot==null)
         {
             carrotCount = carrotParent.transform.childCount;
-            targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+            if (carrotCount == 0)
+            {
+                targetCarrot = GameObject.Find("Camera");
+                if(targetCarrot==null) targetCarrot = GameObject.Find("Camera (head)");
+            }
+            else targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
             timeFromTargetChange = Time.time;
         }
 

@@ -45,7 +45,8 @@ public class HealtSystem : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (suicideActivated && suicideTime < 0 && alive)
         {
             transform.parent = deathBunnies.transform;
@@ -61,7 +62,6 @@ public class HealtSystem : MonoBehaviour
         {
             Destroy(deathBunnies.transform.GetChild(0).gameObject);
         }
-//        else print(deathBunnies.transform.childCount);
     }
 
 	public void BaseballHit(float power)
