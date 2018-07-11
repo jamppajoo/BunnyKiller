@@ -56,14 +56,16 @@ public class GameProgression : MonoBehaviour {
 
     public void updateScoreBoard()
     {
-        killCountPanel.GetComponent<Text>().text = "\nKills "+kills + "\nWave "+wave + "\nScore " + score;
+        killCountPanel.GetComponent<Text>().text = "\nKills "+kills + "\nWave "+wave + "\nScore " + Mathf.Round(score);
     }
 
     public void playerDied()
     {
         statsPanel.GetComponent<Text>().text = "Latest Score"+
                                                     "\nYou killed "+kills+ " bunnies"+
-                                                    "\nYou survived "+wave+ " waves";
+                                                    "\nYou survived "+wave+ " waves"+
+                                                    "\nYour score " + Mathf.Round(score) + " points"
+                                                    ;
         reset();
     }
 }
