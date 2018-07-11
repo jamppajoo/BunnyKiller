@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23536378813537182}
   m_Layer: 0
   m_Name: Glove
-  m_TagString: Glove
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
