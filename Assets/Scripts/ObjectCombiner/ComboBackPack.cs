@@ -35,7 +35,7 @@ public class ComboBackPack : MonoBehaviour
             if (firstObject)
             {
                 rightHandRadialMenu.GetButton(0).ButtonIcon = texture;
-                rightHandRadialMenu.GetButton(0).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+                rightHandRadialMenu.GetButton(0).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.name); });
                 firstObject = false;
                 objectAdded.transform.position = Vector3.right * 1000;
                 StartCoroutine(OpenLid());
@@ -43,7 +43,7 @@ public class ComboBackPack : MonoBehaviour
             }
 
             radialMenuButton.ButtonIcon = texture;
-            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.name); });
             rightHandRadialMenu.AddButton(radialMenuButton);
 
             objectAdded.transform.position = Vector3.right * 1000;

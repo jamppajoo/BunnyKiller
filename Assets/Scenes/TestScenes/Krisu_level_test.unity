@@ -6293,7 +6293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c236433c56f22124e9ebc22b4eaaf43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveLength: 180
+  waveLength: 60
   waveNumber: 0
   waveStarted: 0
 --- !u!4 &625188561
@@ -8855,48 +8855,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 835228864}
   m_Mesh: {fileID: 4300006, guid: dc1171d94cad44946b312e52de8bb23e, type: 3}
---- !u!1001 &845740284
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0.0000018099951
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &849638074
 GameObject:
   m_ObjectHideFlags: 0
@@ -14126,6 +14084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wave: 0
   kills: 0
+  score: 0
 --- !u!114 &1396198294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18568,7 +18527,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.9023809, y: 1.053}
-  m_SizeDelta: {x: 250, y: 250}
+  m_SizeDelta: {x: 500, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1854697795
 Prefab:

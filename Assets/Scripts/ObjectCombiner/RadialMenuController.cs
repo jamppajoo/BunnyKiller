@@ -13,7 +13,7 @@ public class RadialMenuController : MonoBehaviour {
     {
         foreach(GameObject item in objectsToSpawn)
         {
-            if(item.tag == objectToSpawn)
+            if(item.name == objectToSpawn)
             {
                 rightHandAutoGrab.ClearPreviousClone();
                 rightHandAutoGrab.objectToGrab = item.GetComponent<VRTK_InteractableObject>();
@@ -26,7 +26,7 @@ public class RadialMenuController : MonoBehaviour {
     {
         foreach (GameObject item in objectsToSpawn)
         {
-            if (item.tag == objectToSpawn)
+            if (item.name == objectToSpawn)
             {
                 leftHandAutoGrab.ClearPreviousClone();
                 leftHandAutoGrab.objectToGrab = item.GetComponent<VRTK_InteractableObject>();
