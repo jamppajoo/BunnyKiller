@@ -21,6 +21,7 @@ TagManager:
   - Baseballbat
   - Glove
   - CarrotsParent
+  - Weapon
   layers:
   - Default
   - TransparentFX
