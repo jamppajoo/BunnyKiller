@@ -1369,6 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  eatSound: {fileID: 0}
 --- !u!136 &180795998
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2790,6 +2791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  eatSound: {fileID: 0}
 --- !u!136 &314309864
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8853,6 +8855,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 835228864}
   m_Mesh: {fileID: 4300006, guid: dc1171d94cad44946b312e52de8bb23e, type: 3}
+--- !u!1001 &845740284
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000018099951
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4393110299695210, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9acfed140ec85ce47aedbb17f00e01bf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &849638074
 GameObject:
   m_ObjectHideFlags: 0
@@ -9025,6 +9069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  eatSound: {fileID: 0}
 --- !u!136 &861779122
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14092,7 +14137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add7e42d80c9b244086b4d13b0c56c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carrotObject: {fileID: 1933187726036650, guid: 9acfed140ec85ce47aedbb17f00e01bf,
+  carrotObject: {fileID: 1541468946267736, guid: 9acfed140ec85ce47aedbb17f00e01bf,
     type: 2}
   amount: 0
   health: 10
@@ -19764,6 +19809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  eatSound: {fileID: 0}
 --- !u!136 &1969630881
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21267,6 +21313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 15
+  eatSound: {fileID: 0}
 --- !u!136 &2100010371
 CapsuleCollider:
   m_ObjectHideFlags: 0
