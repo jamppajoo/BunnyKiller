@@ -100,6 +100,17 @@ public class Movement : MonoBehaviour {
         {
             //rb.velocity = Vector3.zero;
             //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
+            if(targetCarrot==null)
+            {
+                carrotCount = carrotParent.transform.childCount;
+                if (carrotCount == 0)
+                {
+                    targetCarrot = GameObject.Find("Camera");
+                    if (targetCarrot == null) targetCarrot = GameObject.Find("Camera (head)");
+                }
+                else targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+            }
+
             Vector3 targetPostition = new Vector3(targetCarrot.transform.position.x+(Random.value*2-1),
                                        0,
                                        targetCarrot.transform.position.z);

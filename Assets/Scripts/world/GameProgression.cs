@@ -39,6 +39,8 @@ public class GameProgression : MonoBehaviour {
         wave = 0;
         kills = 0;
         updateScoreBoard();
+        //respawn carrots
+        //teleport player in front of score board
     }
 
     public void updateScoreBoard()
