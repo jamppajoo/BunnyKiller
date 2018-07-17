@@ -20,7 +20,6 @@ public class RadialMenuController : MonoBehaviour {
                 rightHandAutoGrab.SpawnObject();
             }
         }
-
     }
     public void SpawnItemToLefttHand(string objectToSpawn)
     {
@@ -32,6 +31,14 @@ public class RadialMenuController : MonoBehaviour {
                 leftHandAutoGrab.objectToGrab = item.GetComponent<VRTK_InteractableObject>();
                 leftHandAutoGrab.SpawnObject();
             }
+        }
+    }
+
+    public void Update()
+    {
+        foreach (GameObject item in objectsToSpawn)
+        {
+            print("repussa "+item.name.ToString());
         }
     }
 }

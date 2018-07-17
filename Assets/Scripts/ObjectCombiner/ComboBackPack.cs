@@ -20,7 +20,6 @@ public class ComboBackPack : MonoBehaviour
 
     void Start()
     {
-
         bagPackLid = gameObject.transform.GetComponentInChildren<BackPackLid>();
         myText = gameObject.transform.GetComponentInChildren<TextMeshPro>();
         rightHandRadialMenu = FindObjectOfType<RightHandRadialMenuPanel>().gameObject.GetComponent<VRTK_RadialMenu>();
