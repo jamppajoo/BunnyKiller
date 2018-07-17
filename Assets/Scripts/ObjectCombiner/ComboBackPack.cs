@@ -63,10 +63,10 @@ public class ComboBackPack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.StartsWith("Stick"))
-        {
+        //if (other.tag.StartsWith("Stick"))
+        //{
             StartCoroutine(CloseLid(other.gameObject));
-        }
+        //}
     }
     IEnumerator CloseLid(GameObject other)
     {

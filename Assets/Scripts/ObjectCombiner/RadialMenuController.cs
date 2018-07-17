@@ -33,7 +33,5 @@ public class RadialMenuController : MonoBehaviour {
                 leftHandAutoGrab.SpawnObject();
             }
         }
-
     }
-
 }
