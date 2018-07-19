@@ -41,9 +41,11 @@ public class ComboBackPack : MonoBehaviour
                 return;
             }
 
-            radialMenuButton.ButtonIcon = texture;
-            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
-            rightHandRadialMenu.AddButton(radialMenuButton);
+            rightHandRadialMenu.GetButton(4 - maxButtons).ButtonIcon = texture;
+            rightHandRadialMenu.GetButton(4 - maxButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+//            radialMenuButton.ButtonIcon = texture;
+//            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+//            rightHandRadialMenu.AddButton(radialMenuButton);
 
             objectAdded.transform.position = Vector3.right * 1000;
             //Destroy(objectAdded);
@@ -72,7 +74,6 @@ public class ComboBackPack : MonoBehaviour
         bagPackLid.closeLid();
         yield return new WaitForSeconds(bagPackLid.timeToMove + 1);
         ObjectAddedToBackBag(other);
-
     }
 
     IEnumerator OpenLid()
@@ -80,5 +81,4 @@ public class ComboBackPack : MonoBehaviour
         bagPackLid.openLid();
         yield return new WaitForSeconds(bagPackLid.timeToMove);
     }
-
 }

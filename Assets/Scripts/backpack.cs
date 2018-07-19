@@ -7,7 +7,7 @@ public class backpack : MonoBehaviour
 {
 public GameObject spawnObject;
 
-private void OnTriggerStay(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
         VRTK_InteractGrab grabbingObject = (collider.gameObject.GetComponent<VRTK_InteractGrab>() ? collider.gameObject.GetComponent<VRTK_InteractGrab>() : collider.gameObject.GetComponentInParent<VRTK_InteractGrab>());
         if (CanGrab(grabbingObject))
@@ -17,11 +17,11 @@ private void OnTriggerStay(Collider collider)
             GameObject spawned = Instantiate(spawnObject);
             grabbingObject.GetComponent<VRTK_InteractTouch>().ForceTouch(spawned);
             grabbingObject.AttemptGrab();
-                   }
-           }
+        }
+    }
 
 	private bool CanGrab(VRTK_InteractGrab grabbingObject)
     {
-             return (grabbingObject && grabbingObject.GetGrabbedObject() == null && grabbingObject.gameObject.GetComponent<VRTK_ControllerEvents>().grabPressed);
-          }
+        return (grabbingObject && grabbingObject.GetGrabbedObject() == null && grabbingObject.gameObject.GetComponent<VRTK_ControllerEvents>().grabPressed);
+    }
 }

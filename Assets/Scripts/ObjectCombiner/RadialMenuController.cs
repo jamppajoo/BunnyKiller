@@ -33,12 +33,4 @@ public class RadialMenuController : MonoBehaviour {
             }
         }
     }
-
-    public void Update()
-    {
-        foreach (GameObject item in objectsToSpawn)
-        {
-            print("repussa "+item.name.ToString());
-        }
-    }
 }
