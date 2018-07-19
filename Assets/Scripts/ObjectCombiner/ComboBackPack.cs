@@ -30,6 +30,10 @@ public class ComboBackPack : MonoBehaviour
 
     private void ObjectAddedToBackBag(GameObject objectAdded)
     {
+        VRTK_RadialMenu.RadialMenuButton radialMenuButton2;
+        radialMenuButton2 = new VRTK_RadialMenu.RadialMenuButton();
+
+
         if (rightHandRadialMenu.GetButton(maxButtons - 1) == null)
         {
             if (firstObject)
@@ -42,12 +46,12 @@ public class ComboBackPack : MonoBehaviour
                 return;
             }
 
-            rightHandRadialMenu.GetButton(currentButtons).ButtonIcon = texture;
-            rightHandRadialMenu.GetButton(currentButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
-            currentButtons++;
-//            radialMenuButton.ButtonIcon = texture;
-//            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
-//            rightHandRadialMenu.AddButton(radialMenuButton);
+///            rightHandRadialMenu.GetButton(currentButtons).ButtonIcon = texture;
+///            rightHandRadialMenu.GetButton(currentButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+///            currentButtons++;
+            radialMenuButton2.ButtonIcon = texture;
+            radialMenuButton2.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            rightHandRadialMenu.AddButton(radialMenuButton2);
 
             objectAdded.transform.position = Vector3.right * 1000;
             //Destroy(objectAdded);
