@@ -25,7 +25,9 @@ public class HitBunny : MonoBehaviour {
 
         if (collision.gameObject.tag == "Bunny")
         {
-	        collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
+            //            SteamVR_Controller.Input([the index of the controller you want to vibrate]).TriggerHapticPulse([length in microseconds as ushort]);
+            SteamVR_Controller.Input(1).TriggerHapticPulse(250);
+            collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
 
