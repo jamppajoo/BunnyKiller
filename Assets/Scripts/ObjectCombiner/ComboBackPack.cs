@@ -14,7 +14,7 @@ public class ComboBackPack : MonoBehaviour
     private BackPackLid bagPackLid;
     private TextMeshPro myText;
     private VRTK_RadialMenu rightHandRadialMenu;
-    private VRTK_RadialMenu.RadialMenuButton radialMenuButton;
+//    private VRTK_RadialMenu.RadialMenuButton radialMenuButton;
     private RadialMenuController radialMenuController;
     private bool firstObject = true;
     private bool bagPackFull = false;
@@ -25,13 +25,13 @@ public class ComboBackPack : MonoBehaviour
         myText = gameObject.transform.GetComponentInChildren<TextMeshPro>();
         rightHandRadialMenu = FindObjectOfType<RightHandRadialMenuPanel>().gameObject.GetComponent<VRTK_RadialMenu>();
         radialMenuController = FindObjectOfType<RadialMenuController>();
-        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
+//        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
     }
 
     private void ObjectAddedToBackBag(GameObject objectAdded)
     {
-        VRTK_RadialMenu.RadialMenuButton radialMenuButton2;
-        radialMenuButton2 = new VRTK_RadialMenu.RadialMenuButton();
+        VRTK_RadialMenu.RadialMenuButton radialMenuButton;
+        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
 
 
         if (rightHandRadialMenu.GetButton(maxButtons - 1) == null)
@@ -46,12 +46,9 @@ public class ComboBackPack : MonoBehaviour
                 return;
             }
 
-///            rightHandRadialMenu.GetButton(currentButtons).ButtonIcon = texture;
-///            rightHandRadialMenu.GetButton(currentButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
-///            currentButtons++;
-            radialMenuButton2.ButtonIcon = texture;
-            radialMenuButton2.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
-            rightHandRadialMenu.AddButton(radialMenuButton2);
+            radialMenuButton.ButtonIcon = texture;
+            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            rightHandRadialMenu.AddButton(radialMenuButton);
 
             objectAdded.transform.position = Vector3.right * 1000;
             //Destroy(objectAdded);
