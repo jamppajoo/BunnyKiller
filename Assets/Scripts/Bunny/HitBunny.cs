@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 public class HitBunny : MonoBehaviour {
 
+    private SteamVR_TrackedObject trackedObj;
+
     public bool baseballbat = false;
     public bool scythe = false;
 
@@ -26,7 +28,10 @@ public class HitBunny : MonoBehaviour {
         if (collision.gameObject.tag == "Bunny")
         {
             //            SteamVR_Controller.Input([the index of the controller you want to vibrate]).TriggerHapticPulse([length in microseconds as ushort]);
-            SteamVR_Controller.Input(1).TriggerHapticPulse(250);
+            //SteamVR_Controller.Input(1).TriggerHapticPulse(250);
+            trackedObj = GetComponent<SteamVR_TrackedObject>();
+
+            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(500);
             collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
