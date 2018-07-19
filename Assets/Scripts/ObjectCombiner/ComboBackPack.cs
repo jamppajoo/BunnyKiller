@@ -8,6 +8,7 @@ public class ComboBackPack : MonoBehaviour
 {
 
     public int maxButtons = 4;
+    private int currentButtons = 1;
     public Sprite texture;
 
     private BackPackLid bagPackLid;
@@ -41,8 +42,9 @@ public class ComboBackPack : MonoBehaviour
                 return;
             }
 
-            rightHandRadialMenu.GetButton(4 - maxButtons).ButtonIcon = texture;
-            rightHandRadialMenu.GetButton(4 - maxButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            rightHandRadialMenu.GetButton(currentButtons).ButtonIcon = texture;
+            rightHandRadialMenu.GetButton(currentButtons).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            currentButtons++;
 //            radialMenuButton.ButtonIcon = texture;
 //            radialMenuButton.OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
 //            rightHandRadialMenu.AddButton(radialMenuButton);
