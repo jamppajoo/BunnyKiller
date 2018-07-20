@@ -31,6 +31,8 @@ public class HitBunny : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        controllerReference = VRTK_ControllerReference.GetControllerReference(this.gameObject);
+
         float tes = collision.relativeVelocity.magnitude;
 
         if (VRTK_ControllerReference.IsValid(controllerReference))
@@ -86,24 +88,43 @@ public class HitBunny : MonoBehaviour {
     }
 
     /*
-    void OnTriggerEnter(Collider other)
+    public float CollisionForce()
     {
-        Destroy(other.gameObject);
-    }
-    */
-    void rumbleController()
-    {
-        StartCoroutine(LongVibration(1, 3999));
+        return collisionForce;
     }
 
-
-    IEnumerator LongVibration(float length, ushort strength)
+    public void Grabbed(VRTK_InteractGrab grabbingObject)
     {
-        for (float i = 0; i < length; i += Time.deltaTime)
+        base.Grabbed(grabbingObject);
+        controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
+    }
+
+    public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
+    {
+        base.Ungrabbed(previousGrabbingObject);
+        controllerReference = null;
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        controllerReference = null;
+        interactableRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (VRTK_ControllerReference.IsValid(controllerReference) && IsGrabbed())
         {
-            device.TriggerHapticPulse(strength);
-            yield return null; //every single frame for the duration of "length" you will vibrate at "strength" amount
+            collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier;
+            var hapticStrength = collisionForce / maxCollisionForce;
+            VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
+        }
+        else
+        {
+            collisionForce = collision.relativeVelocity.magnitude * impactMagnifier;
         }
     }
+    */
 
 }
