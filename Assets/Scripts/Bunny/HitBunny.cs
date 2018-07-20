@@ -30,9 +30,10 @@ public class HitBunny : MonoBehaviour {
         {
             //            SteamVR_Controller.Input([the index of the controller you want to vibrate]).TriggerHapticPulse([length in microseconds as ushort]);
             //SteamVR_Controller.Input(1).TriggerHapticPulse(250);
-            trackedObj = GetComponent<SteamVR_TrackedObject>();
+/*            trackedObj = GetComponent<SteamVR_TrackedObject>();
             device = SteamVR_Controller.Input((int)trackedObj.index);
             rumbleController();
+            */
 
 //            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(500);
             collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);

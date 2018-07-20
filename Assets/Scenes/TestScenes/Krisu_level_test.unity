@@ -1108,7 +1108,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2160202c37c2caa48b04f0a3a2f5b4b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49477893
+      value: 0.693
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2160202c37c2caa48b04f0a3a2f5b4b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8067,7 +8067,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2160202c37c2caa48b04f0a3a2f5b4b7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.49477613
+      value: 0.735
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2160202c37c2caa48b04f0a3a2f5b4b7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9336,6 +9336,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+--- !u!114 &878867517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878867509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2283b752a0364e546bc919b3d4caaffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableWhenIdle: 1
+  touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
+  allowedTouchControllers: 0
+  ignoredColliders: []
+  isGrabbable: 1
+  holdButtonToGrab: 1
+  stayGrabbedOnTeleport: 1
+  validDrop: 1
+  grabOverrideButton: 0
+  allowedGrabControllers: 0
+  grabAttachMechanicScript: {fileID: 0}
+  secondaryGrabActionScript: {fileID: 0}
+  isUsable: 0
+  holdButtonToUse: 1
+  useOnlyIfGrabbed: 0
+  pointerActivatesUseAction: 0
+  useOverrideButton: 0
+  allowedUseControllers: 0
+  usingState: 0
+--- !u!114 &878867518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 878867509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817f15b2a0426974bb4e88ef34aa22b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideControllerOnTouch: 0
+  hideDelayOnTouch: 0
+  hideControllerOnGrab: 1
+  hideDelayOnGrab: 0
+  hideControllerOnUse: 0
+  hideDelayOnUse: 0
 --- !u!1 &879987208
 GameObject:
   m_ObjectHideFlags: 0
