@@ -1,10 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
+
 public class HitBunny : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
     SteamVR_Controller.Device device;
+
+    private float impactMagnifier = 120f;
+    private float collisionForce = 0f;
+    private float maxCollisionForce = 4000f;
+    private VRTK_ControllerReference controllerReference;
 
     public bool baseballbat = false;
     public bool scythe = false;
@@ -25,6 +32,17 @@ public class HitBunny : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
         float tes = collision.relativeVelocity.magnitude;
+
+        if (VRTK_ControllerReference.IsValid(controllerReference))
+        {
+            collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier*5;
+            var hapticStrength = collisionForce / maxCollisionForce;
+            VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
+        }
+        else
+        {
+            collisionForce = collision.relativeVelocity.magnitude * impactMagnifier*5;
+        }
 
         if (collision.gameObject.tag == "Bunny")
         {
