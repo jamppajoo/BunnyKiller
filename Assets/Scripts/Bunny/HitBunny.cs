@@ -4,6 +4,7 @@ using UnityEngine;
 public class HitBunny : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
+    SteamVR_Controller.Device device;
 
     public bool baseballbat = false;
     public bool scythe = false;
@@ -30,8 +31,10 @@ public class HitBunny : MonoBehaviour {
             //            SteamVR_Controller.Input([the index of the controller you want to vibrate]).TriggerHapticPulse([length in microseconds as ushort]);
             //SteamVR_Controller.Input(1).TriggerHapticPulse(250);
             trackedObj = GetComponent<SteamVR_TrackedObject>();
+            device = SteamVR_Controller.Input((int)trackedObj.index);
+            rumbleController();
 
-            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(500);
+//            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(500);
             collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
@@ -69,4 +72,19 @@ public class HitBunny : MonoBehaviour {
         Destroy(other.gameObject);
     }
     */
+    void rumbleController()
+    {
+        StartCoroutine(LongVibration(1, 3999));
+    }
+
+
+    IEnumerator LongVibration(float length, ushort strength)
+    {
+        for (float i = 0; i < length; i += Time.deltaTime)
+        {
+            device.TriggerHapticPulse(strength);
+            yield return null; //every single frame for the duration of "length" you will vibrate at "strength" amount
+        }
+    }
+
 }
