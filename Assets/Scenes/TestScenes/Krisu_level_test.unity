@@ -17907,7 +17907,7 @@ GameObject:
   - component: {fileID: 1706277356}
   - component: {fileID: 1706277364}
   m_Layer: 0
-  m_Name: Sword (1)
+  m_Name: RumbleBat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19971,6 +19971,7 @@ MonoBehaviour:
   - {fileID: 587474760}
   - {fileID: 878867509}
   - {fileID: 1888474589}
+  - {fileID: 1706277355}
   rightHandAutoGrab: {fileID: 1029974081}
   leftHandAutoGrab: {fileID: 1999681966}
 --- !u!4 &1902994096
