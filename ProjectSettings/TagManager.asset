@@ -22,6 +22,8 @@ TagManager:
   - Glove
   - CarrotsParent
   - Weapon
+  - IgnoreHeightAdjustment
+  - Lucielle
   layers:
   - Default
   - TransparentFX
