@@ -17905,6 +17905,7 @@ GameObject:
   - component: {fileID: 1706277358}
   - component: {fileID: 1706277357}
   - component: {fileID: 1706277356}
+  - component: {fileID: 1706277364}
   m_Layer: 0
   m_Name: Sword (1)
   m_TagString: Untagged
@@ -18058,6 +18059,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1706277364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706277355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3118d430ba550b4d801ceac5801e12d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseballbat: 1
+  scythe: 0
 --- !u!1 &1733069413
 GameObject:
   m_ObjectHideFlags: 0
@@ -20152,7 +20166,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933507641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3118d430ba550b4d801ceac5801e12d, type: 3}
   m_Name: 
