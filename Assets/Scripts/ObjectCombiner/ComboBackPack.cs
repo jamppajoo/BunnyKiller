@@ -19,6 +19,7 @@ public class ComboBackPack : MonoBehaviour
     private RadialMenuController radialMenuController;
     private bool firstObject = true;
     private bool bagPackFull = false;
+    private GameObject slotImage;
 
     void Start()
     {
@@ -34,7 +35,6 @@ public class ComboBackPack : MonoBehaviour
         VRTK_RadialMenu.RadialMenuButton radialMenuButton;
         radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
 
-
         if (rightHandRadialMenu.GetButton(maxButtons - 1) == null)
         {
             if (firstObject)
@@ -44,6 +44,7 @@ public class ComboBackPack : MonoBehaviour
                 firstObject = false;
                 objectAdded.transform.position = Vector3.right * 1000;
                 StartCoroutine(OpenLid());
+                addImagetoSlot(rightHandRadialMenu.buttons.Count, objectAdded);
                 return;
             }
 
@@ -53,16 +54,28 @@ public class ComboBackPack : MonoBehaviour
 
             objectAdded.transform.position = Vector3.right * 1000;
             //Destroy(objectAdded);
-            if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
-                BackBagFull();
-            else StartCoroutine(OpenLid());
+            //if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
+            //    BackBagFull();
+            //else 
+            StartCoroutine(OpenLid());
+            addImagetoSlot(rightHandRadialMenu.buttons.Count, objectAdded);
         }
         else
         {
             rightHandRadialMenu.GetButton(slotNumber).ButtonIcon = texture;
             rightHandRadialMenu.GetButton(slotNumber).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+            addImagetoSlot(slotNumber, objectAdded);
         }
-//            BackBagFull();
+        
+        //            BackBagFull();
+    }
+    private void addImagetoSlot(int slot, GameObject objectAdded)
+    {
+        print("OBJETC COPIET");
+        slotImage = objectAdded;
+        Instantiate(slotImage, this.transform);
+        slotImage.GetComponent<Rigidbody>().useGravity = false;
+        slotImage.GetComponent<MeshCollider>().enabled = false;
     }
     private void BackBagFull()
     {
