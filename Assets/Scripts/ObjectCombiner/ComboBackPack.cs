@@ -10,6 +10,7 @@ public class ComboBackPack : MonoBehaviour
     public int maxButtons = 4;
     private int currentButtons = 1;
     public Sprite texture;
+    public int slotNumber;
 
     private BackPackLid bagPackLid;
     private TextMeshPro myText;
@@ -54,10 +55,14 @@ public class ComboBackPack : MonoBehaviour
             //Destroy(objectAdded);
             if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
                 BackBagFull();
-            else
-                StartCoroutine(OpenLid());
+            else StartCoroutine(OpenLid());
         }
-        else BackBagFull();
+        else
+        {
+            rightHandRadialMenu.GetButton(slotNumber).ButtonIcon = texture;
+            rightHandRadialMenu.GetButton(slotNumber).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
+        }
+//            BackBagFull();
     }
     private void BackBagFull()
     {
