@@ -18,6 +18,7 @@ public class WaveController : MonoBehaviour
     private GameObject doorCloser;
     private GameObject enemyParent;
 
+    private TeleportArea teleportArea;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class WaveController : MonoBehaviour
         timeCountPanel = GameObject.Find("timeText");
         doorCloser = GameObject.Find("Huone_lattia");
         enemyParent = GameObject.Find("Enemies");
+        teleportArea = FindObjectOfType<TeleportArea>();
 
     }
     private void Update()
@@ -35,12 +37,14 @@ public class WaveController : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
+                teleportArea.DisableGarageCollider();
             }
 
             else
             {
                 WaveEnded();
                 timeCountPanel.GetComponent<Text>().text = "0";
+                teleportArea.EnableGarageCollider();
             }
         }
         else timeCountPanel.GetComponent<Text>().text = "0";
