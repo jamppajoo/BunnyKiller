@@ -14,18 +14,20 @@ public class ComboBackPack : MonoBehaviour
     private BackPackLid bagPackLid;
     private TextMeshPro myText;
     private VRTK_RadialMenu rightHandRadialMenu;
-//    private VRTK_RadialMenu.RadialMenuButton radialMenuButton;
+    //    private VRTK_RadialMenu.RadialMenuButton radialMenuButton;
     private RadialMenuController radialMenuController;
     private bool firstObject = true;
     private bool bagPackFull = false;
+    private LevelManager levelManager;
 
     void Start()
     {
+        levelManager = FindObjectOfType<LevelManager>();
         bagPackLid = gameObject.transform.GetComponentInChildren<BackPackLid>();
         myText = gameObject.transform.GetComponentInChildren<TextMeshPro>();
         rightHandRadialMenu = FindObjectOfType<RightHandRadialMenuPanel>().gameObject.GetComponent<VRTK_RadialMenu>();
         radialMenuController = FindObjectOfType<RadialMenuController>();
-//        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
+        //        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
     }
 
     private void ObjectAddedToBackBag(GameObject objectAdded)
@@ -67,10 +69,10 @@ public class ComboBackPack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.tag.StartsWith("Stick"))
-        //{
+        if (levelManager.IsRightHandObjectTag(other.gameObject.tag))
+        {
             StartCoroutine(CloseLid(other.gameObject));
-        //}
+        }
     }
     IEnumerator CloseLid(GameObject other)
     {
