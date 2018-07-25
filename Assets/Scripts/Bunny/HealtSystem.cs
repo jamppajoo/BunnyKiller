@@ -118,8 +118,6 @@ public class HealtSystem : MonoBehaviour
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
         alive = false;
-        //this makes bunny flat if player hits it after it is dead
-        //if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f); 
     }
     public void Explode()
     {

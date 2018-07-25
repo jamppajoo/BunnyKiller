@@ -48,14 +48,6 @@ public class HitBunny : MonoBehaviour {
 
         if (collision.gameObject.tag == "Bunny")
         {
-            //            SteamVR_Controller.Input([the index of the controller you want to vibrate]).TriggerHapticPulse([length in microseconds as ushort]);
-            //SteamVR_Controller.Input(1).TriggerHapticPulse(250);
-/*            trackedObj = GetComponent<SteamVR_TrackedObject>();
-            device = SteamVR_Controller.Input((int)trackedObj.index);
-            rumbleController();
-            */
-
-//            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(500);
             collision.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(collision);
             if (baseballbat)
             {
@@ -68,8 +60,6 @@ public class HitBunny : MonoBehaviour {
 
                 hittedObject = collision.gameObject;
                 hittedObject.GetComponent<HealtSystem>().BaseballHit(hitPower);
-                if(hitPower>10)print(hitPower);
-
             }
             if (scythe)
             {
@@ -80,51 +70,8 @@ public class HitBunny : MonoBehaviour {
                         hittedObject = collision.gameObject;
                         hittedObject.GetComponent<HealtSystem>().ScytheHit(collision.relativeVelocity.magnitude);
                     }
-                    //                    print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
-                    //                    Debug.DrawRay(contact.point, contact.normal, Color.white);
                 }
             }
         }
     }
-
-    /*
-    public float CollisionForce()
-    {
-        return collisionForce;
-    }
-
-    public void Grabbed(VRTK_InteractGrab grabbingObject)
-    {
-        base.Grabbed(grabbingObject);
-        controllerReference = VRTK_ControllerReference.GetControllerReference(grabbingObject.controllerEvents.gameObject);
-    }
-
-    public override void Ungrabbed(VRTK_InteractGrab previousGrabbingObject)
-    {
-        base.Ungrabbed(previousGrabbingObject);
-        controllerReference = null;
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        controllerReference = null;
-        interactableRigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (VRTK_ControllerReference.IsValid(controllerReference) && IsGrabbed())
-        {
-            collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier;
-            var hapticStrength = collisionForce / maxCollisionForce;
-            VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
-        }
-        else
-        {
-            collisionForce = collision.relativeVelocity.magnitude * impactMagnifier;
-        }
-    }
-    */
-
 }

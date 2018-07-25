@@ -71,9 +71,7 @@ public class ComboBackPack : MonoBehaviour
     }
     private void addImagetoSlot(int slot, GameObject objectAdded)
     {
-        slotImage = Instantiate(objectAdded, this.transform);
-        slotImage.GetComponent<Rigidbody>().useGravity = false;
-        slotImage.GetComponent<MeshCollider>().isTrigger = true;
+        //Load image
         
     }
     private void BackBagFull()
