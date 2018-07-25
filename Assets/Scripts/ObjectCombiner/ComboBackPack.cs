@@ -71,11 +71,10 @@ public class ComboBackPack : MonoBehaviour
     }
     private void addImagetoSlot(int slot, GameObject objectAdded)
     {
-        print("OBJETC COPIET");
-        slotImage = objectAdded;
-        Instantiate(slotImage, this.transform);
+        slotImage = Instantiate(objectAdded, this.transform);
         slotImage.GetComponent<Rigidbody>().useGravity = false;
-        slotImage.GetComponent<MeshCollider>().enabled = false;
+        slotImage.GetComponent<MeshCollider>().isTrigger = true;
+        
     }
     private void BackBagFull()
     {
