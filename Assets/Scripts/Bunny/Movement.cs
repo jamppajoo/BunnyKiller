@@ -96,10 +96,9 @@ public class Movement : MonoBehaviour {
             targetRandomized = false;
 		}
 
-        else if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive && !targetRandomized) //if bunny is low enough, it turns towards target
+        //if bunny is low enough, it turns towards target
+        else if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive && !targetRandomized) 
         {
-            //rb.velocity = Vector3.zero;
-            //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
             if(targetCarrot==null)
             {
                 carrotCount = carrotParent.transform.childCount;

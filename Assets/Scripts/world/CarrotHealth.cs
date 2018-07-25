@@ -51,7 +51,7 @@ public class CarrotHealth : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Bunny"))
+        if (other.tag.Equals("Bunny") && other.GetComponent<HealtSystem>().alive)
         {
             //ChangeHealth(1f);
             eatingBunnyAmount++;

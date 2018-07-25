@@ -25,11 +25,15 @@ public class HealtSystem : MonoBehaviour
     private float suicideTime;
     private bool suicideActivated=false;
     private GameObject deathBunnies;
+    private GameObject aliveBunnies;
+    private GameObject wavecontroller;
 
     // Use this for initialization
     void Start ()
 	{
         deathBunnies = GameObject.Find("Bodies");
+        aliveBunnies = GameObject.Find("Enemies");
+        wavecontroller = GameObject.Find("WaveController");
         bloodParticleSystem = GetComponentInChildren<ParticleSystem>();
 		bunnyRB = GetComponentInParent<Rigidbody>();
         head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
@@ -47,6 +51,7 @@ public class HealtSystem : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        //when time is up, kill all the bunnies
         if (suicideActivated && suicideTime < 0 && alive)
         {
             transform.parent = deathBunnies.transform;
@@ -118,6 +123,11 @@ public class HealtSystem : MonoBehaviour
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
         alive = false;
+        if(aliveBunnies.transform.childCount==0)
+        {
+            //all bunnies has died, end wave
+            wavecontroller.GetComponent<WaveController>().WaveEnded();
+        }
     }
     public void Explode()
     {

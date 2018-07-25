@@ -36,17 +36,19 @@ public class WaveController : MonoBehaviour
                 timer += Time.deltaTime;
                 timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
             }
-
             else
             {
                 WaveEnded();
                 timeCountPanel.GetComponent<Text>().text = "0";
             }
+
+
         }
         else timeCountPanel.GetComponent<Text>().text = "0";
     }
     public void StartWave()
     {
+        timer = 0;
         gameController.GetComponent<GameProgression>().addWave();
         waveNumber++;
         GetComponent<BunnyMaker>().amount = 10 + waveNumber;
@@ -56,21 +58,17 @@ public class WaveController : MonoBehaviour
         GetComponent<BunnyMaker>().maded = 0;
         
     }
-    private void WaveEnded()
+    public void WaveEnded()
     {
 //        print("Wave Ended");
         timer = 0;
+        timeCountPanel.GetComponent<Text>().text = "0";
         waveStarted = false;
         doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
 
+        //kill all still alive bunnies. Kill them 4 by second
         HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
         float i = 0f;
-        /*
-        for(int j=0; j< allChildren.Length; j++)
-        {
-            allChildren[j].Suicide(i / 2);
-            i++;
-        }*/
         foreach (HealtSystem child in allChildren)
         {
             child.Suicide(i/4);
