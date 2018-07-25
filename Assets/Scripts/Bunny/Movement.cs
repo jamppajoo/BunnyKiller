@@ -114,7 +114,8 @@ public class Movement : MonoBehaviour {
                                        0,
                                        targetCarrot.transform.position.z);
 
-            this.transform.LookAt(targetPostition);
+            //this.transform.LookAt(targetPostition);
+            this.transform.LookAt(new Vector3(0f,targetPostition.y,0f));
             targetRandomized = true;
             //jumpRequest = true;
         }
