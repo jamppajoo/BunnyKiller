@@ -19,8 +19,11 @@ public class ComboBackPack : MonoBehaviour
     private RadialMenuController radialMenuController;
     private bool firstObject = true;
     private bool bagPackFull = false;
-    private LevelManager levelManager;
+<<<<<<< HEAD
     private GameObject slotImage;
+=======
+    private LevelManager levelManager;
+>>>>>>> jammus
 
     private void OnEnable()
     {
@@ -64,6 +67,8 @@ public class ComboBackPack : MonoBehaviour
             rightHandRadialMenu.AddButton(radialMenuButton);
 
             objectAdded.transform.position = Vector3.right * 1000;
+<<<<<<< HEAD
+            //Destroy(objectAdded);
             //if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
             //    BackBagFull();
             //else 
@@ -75,6 +80,12 @@ public class ComboBackPack : MonoBehaviour
             rightHandRadialMenu.GetButton(slotNumber).ButtonIcon = texture;
             rightHandRadialMenu.GetButton(slotNumber).OnClick.AddListener(() => { radialMenuController.SpawnItemToRightHand(objectAdded.tag); });
             addImagetoSlot(slotNumber, objectAdded);
+=======
+            if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
+                BackBagFull();
+            else
+                StartCoroutine(OpenLid());
+>>>>>>> jammus
         }
         
         //            BackBagFull();

@@ -2022,7 +2022,21 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 6d80d3fa07e88ff4fa0fdeb3e8dcdb0b, type: 3}
+<<<<<<< HEAD
+=======
+--- !u!65 &65481275328891196
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1944866250428212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> jammus
 --- !u!95 &95249639948629260
 Animator:
   serializedVersion: 3
