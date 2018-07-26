@@ -26,6 +26,7 @@ public class Movement : MonoBehaviour {
 
 	public float gravityScale = 1.0f;
 	public static float globalGravity = -9.81f;
+    //private bool 
 	
 	void Start () {
 
@@ -44,8 +45,9 @@ public class Movement : MonoBehaviour {
 	    timeToNextJump = 2.5f;
         timeToNextTarget = 30f;
 	    jumpRequest = false;
-	    jumpMultiplier = 2.0f;
-	    fallMultiplier = 1.5f;
+        //jumpMultiplier = 2.0f;
+        jumpMultiplier = 10.0f;
+        fallMultiplier = 1.5f;
         bunnySpeed = Random.value;
     }
 	
@@ -90,10 +92,11 @@ public class Movement : MonoBehaviour {
 		{
 			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
 			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
-			rb.AddForce(transform.up * 60f);
+			rb.AddForce(transform.up * 60f*(jumpMultiplier-1));
 
 			jumpRequest = false;
             targetRandomized = false;
+            jumpMultiplier = 2.0f;
 		}
 
         //if bunny is low enough, it turns towards target
