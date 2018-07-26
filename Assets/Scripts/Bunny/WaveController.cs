@@ -37,14 +37,15 @@ public class WaveController : MonoBehaviour
             {
                 timer += Time.deltaTime;
                 timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
-                teleportArea.DisableGarageCollider();
+                EventManager.eventManager.OnWaveStarted();
             }
 
             else
             {
                 WaveEnded();
                 timeCountPanel.GetComponent<Text>().text = "0";
-                teleportArea.EnableGarageCollider();
+                EventManager.eventManager.OnWaveStopped();
+                //EventManager.eventManager.OnWaveHold();
             }
         }
         else timeCountPanel.GetComponent<Text>().text = "0";

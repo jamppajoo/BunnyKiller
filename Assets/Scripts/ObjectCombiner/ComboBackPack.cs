@@ -20,6 +20,15 @@ public class ComboBackPack : MonoBehaviour
     private bool bagPackFull = false;
     private LevelManager levelManager;
 
+    private void OnEnable()
+    {
+        EventManager.WaveEnded += EmptyBackBag;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.WaveEnded -= EmptyBackBag;
+    }
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
@@ -53,7 +62,6 @@ public class ComboBackPack : MonoBehaviour
             rightHandRadialMenu.AddButton(radialMenuButton);
 
             objectAdded.transform.position = Vector3.right * 1000;
-            //Destroy(objectAdded);
             if (rightHandRadialMenu.GetButton(maxButtons - 1) != null)
                 BackBagFull();
             else
@@ -65,7 +73,19 @@ public class ComboBackPack : MonoBehaviour
     {
         bagPackFull = true;
         myText.text = "BackPack Full";
+        firstObject = true;
     }
+
+    private void EmptyBackBag()
+    {
+        VRTK_RadialMenu.RadialMenuButton radialMenuButton;
+        radialMenuButton = new VRTK_RadialMenu.RadialMenuButton();
+        radialMenuButton.ButtonIcon = texture;
+
+        rightHandRadialMenu.buttons.Clear();
+        rightHandRadialMenu.AddButton(radialMenuButton);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

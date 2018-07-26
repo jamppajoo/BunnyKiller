@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 114833207166947848}
   - component: {fileID: 114106832473002314}
   - component: {fileID: 114187735952470952}
+  - component: {fileID: 114160691736270302}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Stick
@@ -177,6 +178,17 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!114 &114160691736270302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1975600411853768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f0095f0a6319542bd0618115c7d3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114187735952470952
 MonoBehaviour:
   m_ObjectHideFlags: 1

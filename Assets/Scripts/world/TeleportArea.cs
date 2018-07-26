@@ -6,11 +6,22 @@ public class TeleportArea : MonoBehaviour {
 
     public BoxCollider garageTeleportArea;
 
-    public void EnableGarageCollider()
+    private void OnEnable()
+    {
+        EventManager.WaveStarted += DisableGarageCollider;
+        EventManager.WaveEnded += EnableGarageCollider;
+    }
+    private void OnDisable()
+    {
+        EventManager.WaveStarted -= DisableGarageCollider;
+        EventManager.WaveEnded -= EnableGarageCollider;
+    }
+
+    private void EnableGarageCollider()
     {
         garageTeleportArea.enabled = true;
     }
-    public void DisableGarageCollider()
+    private void DisableGarageCollider()
     {
         garageTeleportArea.enabled = false;
     }
