@@ -114,8 +114,15 @@ public class Movement : MonoBehaviour {
                                        0,
                                        targetCarrot.transform.position.z);
 
-            //this.transform.LookAt(targetPostition);
-            this.transform.LookAt(new Vector3(0f,targetPostition.y,0f));
+            this.transform.LookAt(targetPostition);
+            //          this.transform.rotation=new Vector3(0f,targetPostition.y,0f);
+            /*this.transform.eulerAngles = new Vector3(
+                0f,
+                this.transform.eulerAngles.y,
+                0f);
+            */
+            this.transform.eulerAngles = new Quaternion(30, transform.eulerAngles.y, transform.eulerAngles.z);
+
             targetRandomized = true;
             //jumpRequest = true;
         }
