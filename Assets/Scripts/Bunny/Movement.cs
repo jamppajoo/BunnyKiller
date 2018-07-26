@@ -121,7 +121,8 @@ public class Movement : MonoBehaviour {
                 this.transform.eulerAngles.y,
                 0f);
             */
-            this.transform.eulerAngles = new Quaternion(30, transform.eulerAngles.y, transform.eulerAngles.z);
+            //this.transform.eulerAngles = new Quaternion(30, transform.eulerAngles.y, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
 
             targetRandomized = true;
             //jumpRequest = true;
@@ -135,6 +136,8 @@ public class Movement : MonoBehaviour {
                 this.transform.LookAt(targetPostition);
             //}
         }
+        //turn rabbit to normal rotation, only x and z, y still towards to target
+        transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
     }
 
     void OnBecameInvisible()

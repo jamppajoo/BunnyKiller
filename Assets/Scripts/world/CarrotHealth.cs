@@ -14,6 +14,7 @@ public class CarrotHealth : MonoBehaviour {
     private AudioSource source;
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
+    private bool bunnyOnCarrot = false;
 
     // Use this for initialization
     void Start ()
@@ -25,11 +26,13 @@ public class CarrotHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ChangeHealth(Time.deltaTime*eatingBunnyAmount);		
+        if(bunnyOnCarrot)ChangeHealth(Time.deltaTime*eatingBunnyAmount);
+        if(eatingBunnyAmount!=0)print("EATERS " + eatingBunnyAmount);
 	}
 
     void ChangeHealth(float amount)
     {
+        bunnyOnCarrot = false;
         health -= amount;
         if(amount>0)
         {
@@ -49,23 +52,55 @@ public class CarrotHealth : MonoBehaviour {
         }
     }
 
+    
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Bunny") && other.GetComponent<HealtSystem>().alive)
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
         {
-            //ChangeHealth(1f);
             eatingBunnyAmount++;
+            bunnyOnCarrot = true;
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Bunny"))
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
         {
-            //ChangeHealth(1f);
             eatingBunnyAmount--;
+            if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
+        {
+            bunnyOnCarrot = true;
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("OSUMA "+collision.gameObject.tag);
+        if (collision.gameObject.tag.Equals("Bunny")){ print("IN nimi "+collision.gameObject.name.ToString()); }
+        if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
+        {
+            eatingBunnyAmount++;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag.Equals("Bunny")) { print("POIS nimi " + collision.gameObject.name.ToString()); }
+        if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
+        {
+            eatingBunnyAmount--;
+            if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
+        }
+    }
+
+
 }
 
 
