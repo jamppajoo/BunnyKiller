@@ -74,6 +74,7 @@ public class CarrotMaker : MonoBehaviour {
             for(int j=0; j<10;j++)
             {
                 GameObject carrot = Instantiate(carrotObject, new Vector3(-6.81f+(i*0.7f), 0.04f, -3.45f+(j*0.7f)), Quaternion.identity);
+                carrot.isStatic = true;
                 carrot.GetComponent<CarrotHealth>().health = health;
                 carrot.transform.parent = carrotParent.transform;
             }
