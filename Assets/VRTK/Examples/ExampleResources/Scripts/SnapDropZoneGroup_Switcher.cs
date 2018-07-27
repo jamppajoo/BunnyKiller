@@ -4,43 +4,84 @@
 
     public class SnapDropZoneGroup_Switcher : MonoBehaviour
     {
-        private GameObject cubeZone;
-        private GameObject sphereZone;
+        public int slotPosition = 0;
+        private GameObject baseballBatZone;
+        private GameObject lucielleZone;
+        private BackPack1 backpack;
+
+        private VRTK_SnapDropZone baseballBatDropZone;
+
+        private VRTK_SnapDropZone lucielleDropZone;
+
+        private GameObject baseBallbat;
+        private GameObject lucielle;
+
 
         private void Start()
         {
-            cubeZone = transform.Find("Cube_SnapDropZone").gameObject;
-            sphereZone = transform.Find("Sphere_SnapDropZone").gameObject;
+            backpack = gameObject.transform.parent.GetComponent<BackPack1>();
 
-            cubeZone.GetComponent<VRTK_SnapDropZone>().ObjectEnteredSnapDropZone += new SnapDropZoneEventHandler(DoCubeZoneSnapped);
-            cubeZone.GetComponent<VRTK_SnapDropZone>().ObjectSnappedToDropZone += new SnapDropZoneEventHandler(DoCubeZoneSnapped);
-            cubeZone.GetComponent<VRTK_SnapDropZone>().ObjectExitedSnapDropZone += new SnapDropZoneEventHandler(DoCubeZoneUnsnapped);
-            cubeZone.GetComponent<VRTK_SnapDropZone>().ObjectUnsnappedFromDropZone += new SnapDropZoneEventHandler(DoCubeZoneUnsnapped);
+            baseballBatZone = transform.Find("BaseballBat_SnapDropZone").gameObject;
+            lucielleZone = transform.Find("Lucielle_SnapDropZone").gameObject;
 
-            sphereZone.GetComponent<VRTK_SnapDropZone>().ObjectEnteredSnapDropZone += new SnapDropZoneEventHandler(DoSphereZoneSnapped);
-            sphereZone.GetComponent<VRTK_SnapDropZone>().ObjectSnappedToDropZone += new SnapDropZoneEventHandler(DoSphereZoneSnapped);
-            sphereZone.GetComponent<VRTK_SnapDropZone>().ObjectExitedSnapDropZone += new SnapDropZoneEventHandler(DoSphereZoneUnsnapped);
-            sphereZone.GetComponent<VRTK_SnapDropZone>().ObjectUnsnappedFromDropZone += new SnapDropZoneEventHandler(DoSphereZoneUnsnapped);
+            baseballBatDropZone = baseballBatZone.GetComponent<VRTK_SnapDropZone>();
+            lucielleDropZone = lucielleZone.GetComponent<VRTK_SnapDropZone>();
+
+            //baseballBatDropZone.ObjectEnteredSnapDropZone += new SnapDropZoneEventHandler(DoBaseballBatZoneSnapped);
+            baseballBatDropZone.ObjectSnappedToDropZone += new SnapDropZoneEventHandler(DoBaseballBatZoneSnapped);
+            baseballBatDropZone.ObjectExitedSnapDropZone += new SnapDropZoneEventHandler(DoBaseballBatZoneUnsnapped);
+            baseballBatDropZone.ObjectUnsnappedFromDropZone += new SnapDropZoneEventHandler(DoBaseballBatZoneUnsnapped);
+
+            //lucielleDropZone.ObjectEnteredSnapDropZone += new SnapDropZoneEventHandler(DoLucielleZoneSnapped);
+            lucielleDropZone.ObjectSnappedToDropZone += new SnapDropZoneEventHandler(DoLucielleZoneSnapped);
+            lucielleDropZone.ObjectExitedSnapDropZone += new SnapDropZoneEventHandler(DoLucielleZoneUnsnapped);
+            lucielleDropZone.ObjectUnsnappedFromDropZone += new SnapDropZoneEventHandler(DoLucielleZoneUnsnapped);
         }
 
-        private void DoCubeZoneSnapped(object sender, SnapDropZoneEventArgs e)
+        private void DoBaseballBatZoneSnapped(object sender, SnapDropZoneEventArgs e)
         {
-            sphereZone.SetActive(false);
+
+            baseBallbat = baseballBatDropZone.GetCurrentSnappedObject();
+            baseBallbat.GetComponent<Weapon>().canBeDestroyed = false;
+
+            lucielleZone.SetActive(false);
+            backpack.AddGameObjectToSlot(slotPosition, baseBallbat);
         }
 
-        private void DoCubeZoneUnsnapped(object sender, SnapDropZoneEventArgs e)
+        private void DoBaseballBatZoneUnsnapped(object sender, SnapDropZoneEventArgs e)
         {
-            sphereZone.SetActive(true);
+            if (baseBallbat != null)
+            {
+                baseBallbat.GetComponent<Weapon>().canBeDestroyed = true;
+                baseBallbat = null;
+            }
+            lucielleZone.SetActive(true);
+            backpack.RemoveGameObjectFromSlot(slotPosition);
         }
 
-        private void DoSphereZoneSnapped(object sender, SnapDropZoneEventArgs e)
+        private void DoLucielleZoneSnapped(object sender, SnapDropZoneEventArgs e)
         {
-            cubeZone.SetActive(false);
+
+            lucielle = lucielleDropZone.GetCurrentSnappedObject();
+            lucielle.GetComponent<Weapon>().canBeDestroyed = false;
+
+
+            baseballBatZone.SetActive(false);
+            backpack.AddGameObjectToSlot(slotPosition, lucielle);
+
         }
 
-        private void DoSphereZoneUnsnapped(object sender, SnapDropZoneEventArgs e)
+        private void DoLucielleZoneUnsnapped(object sender, SnapDropZoneEventArgs e)
         {
-            cubeZone.SetActive(true);
+            if (lucielle != null)
+            {
+                lucielle.GetComponent<Weapon>().canBeDestroyed = true;
+                lucielle = null;
+            }
+            baseballBatZone.SetActive(true);
+            backpack.RemoveGameObjectFromSlot(slotPosition);
+            
         }
+        
     }
 }

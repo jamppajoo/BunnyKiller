@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
+public class Weapon : MonoBehaviour
+{
 
+    [HideInInspector]
+    public bool canBeDestroyed = true;
 
     private void OnEnable()
     {
@@ -16,6 +19,7 @@ public class Weapon : MonoBehaviour {
 
     private void DestroyObject()
     {
-        Destroy(gameObject);
+        if (canBeDestroyed)
+            Destroy(gameObject);
     }
 }
