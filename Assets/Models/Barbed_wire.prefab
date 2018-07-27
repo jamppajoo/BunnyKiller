@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23213376315113080}
   m_Layer: 0
   m_Name: Barbed_wire
-  m_TagString: Barbedwire
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

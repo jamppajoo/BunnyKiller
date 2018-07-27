@@ -13,81 +13,126 @@ public class HealtSystem : MonoBehaviour
 	private AudioSource audioSource;
 
 	public Rigidbody bunnyRB;
+    public bool alive = true;
 
-	// Use this for initialization
-	void Start ()
+    private GameObject head;
+    private GameObject body;
+
+    private GameObject bunbun;
+    private GameObject bodyParts;
+
+    private GameObject gameController;
+    private float suicideTime;
+    private bool suicideActivated=false;
+    private GameObject deathBunnies;
+    private GameObject aliveBunnies;
+    private GameObject wavecontroller;
+
+    // Use this for initialization
+    void Start ()
 	{
-		bloodParticleSystem = GetComponentInChildren<ParticleSystem>();
+        deathBunnies = GameObject.Find("Bodies");
+        aliveBunnies = GameObject.Find("Enemies");
+        wavecontroller = GameObject.Find("WaveController");
+        bloodParticleSystem = GetComponentInChildren<ParticleSystem>();
 		bunnyRB = GetComponentInParent<Rigidbody>();
-	}
+        head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
+        body = this.gameObject.transform.GetChild(1).GetChild(0).gameObject;
+        gameController = GameObject.Find("GameController");
+
+        if (this.gameObject.transform.GetChild(0).gameObject.name.Equals("bunbun")) bunbun = this.gameObject.transform.GetChild(0).gameObject;
+        if (this.gameObject.transform.GetChild(2).gameObject.name.Equals("BunnyLimbz"))
+        {
+            bodyParts = this.gameObject.transform.GetChild(2).gameObject;
+            bodyParts.SetActive(false);
+        }
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        //when time is up, kill all the bunnies
+        if (suicideActivated && suicideTime < 0 && alive)
+        {
+            transform.parent = deathBunnies.transform;
+
+            health -= 1000;
+            Collision hitt = null;
+            this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
+            Explode();
+        }
+        else if (suicideActivated && alive) suicideTime -= Time.deltaTime;
+
+        if (deathBunnies.transform.childCount > 10)
+        {
+            Destroy(deathBunnies.transform.GetChild(0).gameObject);
+        }
+    }
 
 	public void BaseballHit(float power)
 	{
-		if (power < 6) health -= 10f;
+        if (power < 6) health -= 10f;
         else if(power > 16) health -= 200f;
         else health -= 34f;
-
-		if (health < 0)
-		{
-			if (health < -50)
-			{
-				Explode();
-			}
-			else Die();
-		}
-	}
+        
+        checkDeath();
+    }
 
 	public void ScytheHit(float power)
 	{
-		health -= 1001f;// power;
-		if (health < 0)
-		{
-			if (health < -1000)
-			{
-				print("Bunny died at ones!!!");
-				Die();
-			}
-			else if (health < -50)
-			{
-				Explode();
-				Die();
-			}
-			else Die();
-		}
+		health -= power;
+        checkDeath();
 	}
 
+    public void Suicide(float time)
+    {
+        suicideTime = time;
+        suicideActivated = true;
+    }
+
+    private void checkDeath()
+    {
+        if (health < 0)
+        {
+            if (alive) addDeath();
+            if (transform.parent.name.ToString().Equals("Enemies"))
+            {
+                transform.parent = deathBunnies.transform;
+                if (deathBunnies.transform.childCount > 10)
+                {
+                    Destroy(deathBunnies.transform.GetChild(0));
+                }
+                else print(deathBunnies.transform.childCount);
+            }
+
+            if (health < -100)
+            {
+                Explode();
+            }
+            else Die();
+        }
+    }
+
+    public void addDeath()
+    {
+        gameController.GetComponent<GameProgression>().addKill();
+    }
 	public void Die()
     {
-        print("Bunny died!");
-        //Destroy(gameObject);
+        this.GetComponent<Rigidbody>().AddForce(transform.up * 5f, ForceMode.Impulse);
+        this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
+
+        alive = false;
+        if(aliveBunnies.transform.childCount==0)
+        {
+            //all bunnies has died, end wave
+            wavecontroller.GetComponent<WaveController>().WaveEnded();
+        }
     }
     public void Explode()
     {
-        print("Bunny Explodes");
+        alive = false;
+        bunbun.SetActive(false);
+        bodyParts.SetActive(true);
     }
-
-	//void OnCollisionEnter(Collision hitCollision)
-	//{
-	//	if (bluntWeapons.Contains(hitCollision.gameObject))
-	//	{
-	//		ContactPoint contactPoint = hitCollision.contacts[0];
-	//		Vector3 direction = contactPoint.point - transform.position;
-	//		direction = -direction.normalized;
-	//		Debug.Log(direction + " Direction Vector");
-	//		bunnyRB.AddForce(direction * 3f, ForceMode.Impulse);
-	//	}
-	//	else if (bladeWeapons.Contains(hitCollision.gameObject))
-	//	{
-
-	//	}
-	//	else
-	//	{
-	//		Debug.Log("Object not in either list :D");
-	//	}
-	//}
 }

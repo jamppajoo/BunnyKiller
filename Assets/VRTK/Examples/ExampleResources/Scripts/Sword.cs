@@ -38,12 +38,12 @@
             if (VRTK_ControllerReference.IsValid(controllerReference) && IsGrabbed())
             {
                 collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier;
-                var hapticStrength = collisionForce / maxCollisionForce;
+                var hapticStrength = collisionForce*5 / maxCollisionForce;
                 VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
             }
             else
             {
-                collisionForce = collision.relativeVelocity.magnitude * impactMagnifier;
+                collisionForce = collision.relativeVelocity.magnitude * impactMagnifier*5;
             }
         }
     }

@@ -20,6 +20,11 @@ TagManager:
   - Barbedwire
   - Baseballbat
   - Glove
+  - CarrotsParent
+  - Weapon
+  - IgnoreHeightAdjustment
+  - Lucielle
+  - TeleportArea
   layers:
   - Default
   - TransparentFX
@@ -30,8 +35,8 @@ TagManager:
   - 
   - 
   - Environment
-  - 
-  - 
+  - Teleport
+  - IgnoreTeleport
   - 
   - 
   - 

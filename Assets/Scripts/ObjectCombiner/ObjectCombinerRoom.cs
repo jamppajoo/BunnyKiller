@@ -34,6 +34,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
 
     public void OpenDoors()
     {
+        //print("OPEN DOOR");
         StartCoroutine(MoveDoor(leftDoor, leftDoorOpenPosition, timeToMoveDoors));
         StartCoroutine(MoveDoor(rightDoor, rightDoorOpenPosition, timeToMoveDoors));
     }
@@ -70,6 +71,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            //print("Player has left the building");
             playerIsInRoom = false;
             CloseDoors();
             waveController.StartWave();
@@ -77,4 +79,26 @@ public class ObjectCombinerRoom : MonoBehaviour {
     }
 
 
+}
+
+
+public class LevelExitCollider : MonoBehaviour
+{
+
+    public bool playerHasEntered = false;
+    private GameObject killedBunniesObj;
+
+    private AnalyticsClass analyticsValues;
+
+    void Start()
+    {
+        killedBunniesObj = GameObject.Find("killedBunnies");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "PlayerCollider" && !playerHasEntered)
+        {
+            playerHasEntered = true;
+        }
+    }
 }

@@ -1,41 +1,84 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 public class WaveController : MonoBehaviour
 {
 
     public int waveLength = 60;
+    public int waveNumber = 0;
 
     private float timer = 0;
-    private bool waveStarted = false;
+    public bool waveStarted = false;
     private ObjectCombinerRoom objectCombinerRoom;
+
+    private GameObject gameController;
+    private GameObject timeCountPanel;
+    private GameObject doorCloser;
+    private GameObject enemyParent;
+
+    private TeleportArea teleportArea;
 
     private void Start()
     {
-        objectCombinerRoom = FindObjectOfType<ObjectCombinerRoom>();
+        gameController = GameObject.Find("GameController");
+        timeCountPanel = GameObject.Find("timeText");
+        doorCloser = GameObject.Find("Huone_lattia");
+        enemyParent = GameObject.Find("Enemies");
+        teleportArea = FindObjectOfType<TeleportArea>();
     }
     private void Update()
     {
         if (waveStarted)
         {
             if (timer < waveLength)
+            {
                 timer += Time.deltaTime;
+                timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
+                EventManager.eventManager.OnWaveStarted();
+            }
             else
             {
                 WaveEnded();
+                timeCountPanel.GetComponent<Text>().text = "0";
+                EventManager.eventManager.OnWaveStopped();
+                //EventManager.eventManager.OnWaveHold();
             }
+
+
         }
+        else timeCountPanel.GetComponent<Text>().text = "0";
     }
     public void StartWave()
     {
-        waveStarted = true;
-    }
-    private void WaveEnded()
-    {
         timer = 0;
+        gameController.GetComponent<GameProgression>().addWave();
+        waveNumber++;
+        GetComponent<BunnyMaker>().amount = 10 + waveNumber;
+        GetComponent<BunnyMaker>().health = 100 + waveNumber*10;
+        GetComponent<BunnyMaker>().startWave();
+        waveStarted = true;
+        GetComponent<BunnyMaker>().maded = 0;
+        
+    }
+    public void WaveEnded()
+    {
+//        print("Wave Ended");
+        timer = 0;
+        timeCountPanel.GetComponent<Text>().text = "0";
         waveStarted = false;
-        objectCombinerRoom.OpenDoors();
+        doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
+
+        //kill all still alive bunnies. Kill them 4 by second
+        HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
+        float i = 0f;
+        foreach (HealtSystem child in allChildren)
+        {
+            child.Suicide(i/4);
+            i++;
+        }
     }
 
 }
