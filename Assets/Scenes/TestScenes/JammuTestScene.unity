@@ -4657,11 +4657,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDetector: 0
   ignoreTriggerColliders: 1
-  rewindDelay: 0.1
-  pushbackDistance: 0.2
+  rewindDelay: 0.01
+  pushbackDistance: 0.01
   crouchThreshold: 0.5
   crouchRewindThreshold: 0.1
-  targetListPolicy: {fileID: 0}
+  targetListPolicy: {fileID: 663592243}
   bodyPhysics: {fileID: 0}
   headsetCollision: {fileID: 0}
 --- !u!114 &663592249
