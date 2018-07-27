@@ -27,7 +27,6 @@ public class CarrotHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if(bunnyOnCarrot)ChangeHealth(Time.deltaTime*eatingBunnyAmount);
-        if(eatingBunnyAmount!=0)print("EATERS " + eatingBunnyAmount);
 	}
 
     void ChangeHealth(float amount)
@@ -82,8 +81,6 @@ public class CarrotHealth : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("OSUMA "+collision.gameObject.tag);
-        if (collision.gameObject.tag.Equals("Bunny")){ print("IN nimi "+collision.gameObject.name.ToString()); }
         if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
         {
             eatingBunnyAmount++;
@@ -92,7 +89,6 @@ public class CarrotHealth : MonoBehaviour {
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag.Equals("Bunny")) { print("POIS nimi " + collision.gameObject.name.ToString()); }
         if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
         {
             eatingBunnyAmount--;
