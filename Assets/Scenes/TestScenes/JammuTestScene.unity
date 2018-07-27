@@ -2984,7 +2984,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -4821,7 +4821,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -6639,7 +6639,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -7669,7 +7669,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -10863,7 +10863,7 @@ GameObject:
   - component: {fileID: 1139218181}
   - component: {fileID: 1139218182}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DropZones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14769,7 +14769,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -16008,7 +16008,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -16571,7 +16571,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
@@ -17355,7 +17355,7 @@ Prefab:
     - target: {fileID: 135000010323760288, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
       propertyPath: m_Radius
-      value: 0.15
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 114000012880271118, guid: 5d323709f0cbd454196647d9d8f2dd84,
         type: 2}
