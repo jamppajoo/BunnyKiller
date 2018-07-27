@@ -10,6 +10,12 @@ public class BackPack1 : MonoBehaviour
     public GameObject slot3GameObject;
     public GameObject slot4GameObject;
 
+    private HolsterController holsterController;
+    private void Start()
+    {
+        holsterController = FindObjectOfType<HolsterController>();
+    }
+
     public void AddGameObjectToSlot(int slotPosition, GameObject slotObject)
     {
         switch (slotPosition)
@@ -27,6 +33,7 @@ public class BackPack1 : MonoBehaviour
                 slot4GameObject = slotObject;
                 break;
         }
+        holsterController.GetObjectsFromBackPack();
     }
     public void RemoveGameObjectFromSlot(int slotPosition)
     {
