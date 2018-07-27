@@ -80,7 +80,7 @@
             }
             baseballBatZone.SetActive(true);
             backpack.RemoveGameObjectFromSlot(slotPosition);
-            baseballBatDropZone.InitaliseHighlightObject(false);
+            
         }
         
     }
