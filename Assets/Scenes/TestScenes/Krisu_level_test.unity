@@ -2519,7 +2519,7 @@ GameObject:
   - component: {fileID: 236583734}
   - component: {fileID: 236583733}
   m_Layer: 0
-  m_Name: Baseball_bat
+  m_Name: scythe
   m_TagString: Baseballbat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2549,8 +2549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3118d430ba550b4d801ceac5801e12d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseballbat: 1
-  scythe: 0
+  baseballbat: 0
+  scythe: 1
 --- !u!114 &236583735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26189,7 +26189,7 @@ GameObject:
   - component: {fileID: 2125115976}
   - component: {fileID: 2125115975}
   m_Layer: 0
-  m_Name: Blade
+  m_Name: scythe
   m_TagString: Blade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26203,7 +26203,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2125115973}
   m_LocalRotation: {x: 0.011383563, y: -0.011383567, z: -0.70701516, w: 0.70701516}
-  m_LocalPosition: {x: -0.006, y: -0.039999843, z: 0.403}
+  m_LocalPosition: {x: -0.006, y: 0.0093, z: 0.403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 236583742}
@@ -26228,7 +26228,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2125115973}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3118d430ba550b4d801ceac5801e12d, type: 3}
   m_Name: 
