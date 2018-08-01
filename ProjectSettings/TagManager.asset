@@ -25,6 +25,13 @@ TagManager:
   - IgnoreHeightAdjustment
   - Lucielle
   - TeleportArea
+  - Cubes
+  - Spheres
+  - Leg
+  - Arm
+  - Saucers
+  - Torso
+  - OtherSaucers
   layers:
   - Default
   - TransparentFX
@@ -36,7 +43,7 @@ TagManager:
   - 
   - Environment
   - Teleport
-  - 
+  - Weapon
   - 
   - 
   - 
