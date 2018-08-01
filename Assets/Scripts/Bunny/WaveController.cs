@@ -45,7 +45,7 @@ public class WaveController : MonoBehaviour
                 WaveEnded();
                 timeCountPanel.GetComponent<Text>().text = "0";
                 EventManager.eventManager.OnWaveStopped();
-                //EventManager.eventManager.OnWaveHold();
+                EventManager.eventManager.OnWaveHold();
             }
         }
         else timeCountPanel.GetComponent<Text>().text = "0";

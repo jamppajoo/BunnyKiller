@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool canBeDestroyed = true;
 
     private void OnEnable()
