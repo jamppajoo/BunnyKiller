@@ -3839,6 +3839,16 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 64112805937819644, guid: 8bfd8e2f6b35f42429b6bfc9e17fe98e,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54131203812438354, guid: 8bfd8e2f6b35f42429b6bfc9e17fe98e,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8bfd8e2f6b35f42429b6bfc9e17fe98e, type: 2}
   m_IsPrefabParent: 0
@@ -4031,6 +4041,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!1 &366151478
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,6 +4835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!1 &441562827
 GameObject:
   m_ObjectHideFlags: 0
@@ -7097,6 +7111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 0
   scythe: 1
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!1 &592143901
 GameObject:
   m_ObjectHideFlags: 0
@@ -10773,6 +10789,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 0
   scythe: 1
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!1 &878867509 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 1a51679e81efd904a90b8918f721e596, type: 3}
@@ -10881,6 +10899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!114 &878867518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12322,6 +12342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!1 &1029974080
 GameObject:
   m_ObjectHideFlags: 0
@@ -22393,6 +22415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 0
   scythe: 1
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!4 &1888474597 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f341361e5d5f568459b508050f06d648, type: 3}

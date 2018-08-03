@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour {
         //Bunny will randomly choose which carrot it will eat
         carrotParent = GameObject.Find("carrotsParent");
         carrotCount = carrotParent.transform.childCount;
+
+        //if there isn't any carrots, bunny will target player
         if (carrotCount == 0)
         {
             targetCarrot = GameObject.Find("Camera");
@@ -146,6 +148,11 @@ public class Movement : MonoBehaviour {
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    public void HitBunny(Vector3 direction, float force)
+    {
+        rb.AddForce(direction*force,  ForceMode.Impulse);
     }
     //void jump()
     //{

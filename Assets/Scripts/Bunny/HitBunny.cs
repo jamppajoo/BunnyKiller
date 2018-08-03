@@ -18,16 +18,21 @@ public class HitBunny : MonoBehaviour {
 
     private GameObject hittedObject;
 
+    public float weaponMass;
+    public float weaponKillMultipler;
+    private Vector3 lastPosition;
+
 
     // Use this for initialization
     void Start () {
+        lastPosition = transform.position;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        lastPosition = transform.position;
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -72,6 +77,14 @@ public class HitBunny : MonoBehaviour {
                     }
                 }
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Bunny")
+        {
+            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
         }
     }
 }
