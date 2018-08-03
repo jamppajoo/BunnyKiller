@@ -85,8 +85,9 @@ public class HitBunny : MonoBehaviour {
 //        print("TÖRMÄYS "+other.tag);
         if(other.gameObject.tag.ToString().Equals("Bunny"))
         {
+            print("bunny hit");
 //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
-            other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
+            //other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
         }
     }
 }
