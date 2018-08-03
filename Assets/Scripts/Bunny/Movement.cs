@@ -152,7 +152,8 @@ public class Movement : MonoBehaviour {
 
     public void HitBunny(Vector3 direction, float force)
     {
-        rb.AddForce(direction*force,  ForceMode.Impulse);
+        rb.AddForce(direction*force);
+        print("FORCE ADDED " + direction * force);
     }
     //void jump()
     //{
