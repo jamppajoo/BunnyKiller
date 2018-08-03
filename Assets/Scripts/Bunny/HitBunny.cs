@@ -82,8 +82,8 @@ public class HitBunny : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        print("TÖRMÄYS "+other.tag);
-        if(other.gameObject.tag == "Bunny")
+//        print("TÖRMÄYS "+other.tag);
+        if(other.gameObject.tag.Equals("Bunny"))
         {
 //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
             other.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
