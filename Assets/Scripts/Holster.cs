@@ -34,12 +34,10 @@ public class Holster : MonoBehaviour {
 
     private void ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
     {
-        e.snappedObject.GetComponent<Weapon>().canBeDestroyed = false;
         weapon = e.snappedObject;
     }
     private void ObjectUnSnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
     {
-        e.snappedObject.GetComponent<Weapon>().canBeDestroyed = true;
         weapon = null;
     }
 

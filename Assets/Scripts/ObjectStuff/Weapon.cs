@@ -6,7 +6,7 @@ using VRTK;
 public class Weapon : MonoBehaviour
 {
     //[HideInInspector]
-    public bool canBeDestroyed = true;
+    public bool canBeDestroyed = false;
 
     private void OnEnable()
     {
@@ -21,4 +21,21 @@ public class Weapon : MonoBehaviour
         if (canBeDestroyed)
             Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
+        {
+            canBeDestroyed = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
+        {
+            canBeDestroyed = false;
+        }
+    }
+
+
 }
