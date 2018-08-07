@@ -19,6 +19,8 @@ public class Holster : MonoBehaviour {
     {
         EventManager.WaveStarted -= DisableChangeWeapon;
         EventManager.WaveOnHold -= EnableChangeWeapon;
+        dropZone.ObjectSnappedToDropZone -= new SnapDropZoneEventHandler(ObjectSnappedToDropZone);
+        dropZone.ObjectUnsnappedFromDropZone -= new SnapDropZoneEventHandler(ObjectUnSnappedFromDropZone);
 
     }
 

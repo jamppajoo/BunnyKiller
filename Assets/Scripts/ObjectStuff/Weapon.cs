@@ -14,13 +14,17 @@ public class Weapon : MonoBehaviour
     private void OnEnable()
     {
         EventManager.WaveStarted += WaveStarted;
-        EventManager.WaveEnded += WaveEnded;
+        EventManager.WaveOnHold += WaveEnded;
 
     }
     private void OnDisable()
     {
         EventManager.WaveStarted -= WaveStarted;
-        EventManager.WaveEnded -= DestroyObject;
+        EventManager.WaveOnHold -= WaveEnded;
+        interactableObject.InteractableObjectSnappedToDropZone -= new InteractableObjectEventHandler(ObjectSnappedToDropZone);
+        interactableObject.InteractableObjectUnsnappedFromDropZone -= new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
+
+        interactableObject.InteractableObjectUngrabbed -= new InteractableObjectEventHandler(ObjectUnGrabbed);
     }
     private void Awake()
     {
@@ -30,6 +34,8 @@ public class Weapon : MonoBehaviour
 
         interactableObject.InteractableObjectUngrabbed += new InteractableObjectEventHandler(ObjectUnGrabbed);
     }
+
+    
 
     private void ObjectSnappedToDropZone(object sender, InteractableObjectEventArgs e)
     {
@@ -53,12 +59,14 @@ public class Weapon : MonoBehaviour
     }
     private void WaveEnded()
     {
+        print("Wave edned");
         waveOnHold = true;
-        DestroyObject();
+        if (canBeDestroyed)
+            DestroyObject();
     }
     private void DestroyObject()
     {
-        if (canBeDestroyed)
+        if(gameObject != null)
             Destroy(gameObject);
     }
 
