@@ -88,7 +88,10 @@ public class HitBunny : MonoBehaviour {
             hittedObject = other.gameObject;
             Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
             float speed = Vector3.Distance(transform.position, lastPosition);
-            hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position- lastPosition), speed);
+            hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position- lastPosition), 10000f);
+
+            print("direction "+direction+" speed "+speed);
+            print("old direction " + (transform.position - lastPosition));
             
                 //.BaseballHit(hitPower);
             //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
