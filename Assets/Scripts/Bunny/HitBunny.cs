@@ -76,7 +76,7 @@ public class HitBunny : MonoBehaviour {
         }
 
         float hitPower = speed;
-        hittedObject.GetComponentInParent<HealtSystem>().BaseballHit(hitPower);
+        hittedObject.GetComponentInParent<HealtSystem>().Hit(hitPower, 100f);
         print("Hit power " + hitPower);
 
         collision.transform.parent.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood();

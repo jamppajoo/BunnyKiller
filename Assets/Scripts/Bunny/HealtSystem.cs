@@ -69,7 +69,15 @@ public class HealtSystem : MonoBehaviour
         }
     }
 
-	public void BaseballHit(float power)
+    public void Hit(float power, float maxPower)
+    {
+        if (power < maxPower) health -= power;
+        else health -= maxPower;
+
+        checkDeath();
+    }
+
+    public void BaseballHit(float power)
 	{
         if (power < 6) health -= 10f;
         else if(power > 16) health -= 200f;
