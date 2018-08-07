@@ -69,4 +69,12 @@ public class ParticleSpawner : MonoBehaviour
 		psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
 		particleLauncher.Emit(1);
 	}
+
+    public void spillBlood()
+    {
+        ParticleSystem.MainModule psMain = particleLauncher.main;
+
+        psMain.startColor = particleColorGradient.Evaluate(Random.Range(0f, 1f));
+        particleLauncher.Emit(1);
+    }
 }
