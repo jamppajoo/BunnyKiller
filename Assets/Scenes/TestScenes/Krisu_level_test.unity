@@ -15739,7 +15739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c236433c56f22124e9ebc22b4eaaf43d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveLength: 25
+  waveLength: 180
   waveNumber: 0
   waveStarted: 0
 --- !u!1001 &1309858575
