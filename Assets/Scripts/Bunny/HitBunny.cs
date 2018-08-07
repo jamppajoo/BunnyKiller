@@ -87,7 +87,7 @@ public class HitBunny : MonoBehaviour {
         {
             hittedObject = other.gameObject;
             Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
-            float speed = Vector3.Distance(transform.position, lastPosition);
+            float speed = Vector3.Distance(transform.position, lastPosition)/Time.deltaTime;
             hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position- lastPosition), speed);
 
             print("direction "+direction+" speed "+speed);
