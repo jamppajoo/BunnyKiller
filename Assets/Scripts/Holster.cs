@@ -46,7 +46,6 @@ public class Holster : MonoBehaviour {
     private void EnableChangeWeapon()
     {
         dropZone.cloneNewOnUnsnap = false;
-        
     }
     private void DisableChangeWeapon()
     {

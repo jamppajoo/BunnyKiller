@@ -32,6 +32,7 @@ TagManager:
   - Saucers
   - Torso
   - OtherSaucers
+  - ExcludeTeleport
   layers:
   - Default
   - TransparentFX
@@ -44,10 +45,10 @@ TagManager:
   - Environment
   - Teleport
   - Weapon
-  - 
-  - 
-  - 
-  - 
+  - FootCollider
+  - BodyCollider
+  - Bunny
+  - OutsideBorders
   - 
   - 
   - 

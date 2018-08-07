@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class Weapon : MonoBehaviour
 {
-
     //[HideInInspector]
     public bool canBeDestroyed = true;
 
@@ -16,7 +16,6 @@ public class Weapon : MonoBehaviour
     {
         EventManager.WaveEnded -= DestroyObject;
     }
-
     private void DestroyObject()
     {
         if (canBeDestroyed)
