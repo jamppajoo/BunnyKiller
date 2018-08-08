@@ -33,7 +33,7 @@ public class BackPack1 : MonoBehaviour
                 slot4GameObject = slotObject;
                 break;
         }
-        holsterController.GetObjectsFromBackPack();
+        //holsterController.GetObjectsFromBackPack();
     }
     public void RemoveGameObjectFromSlot(int slotPosition)
     {

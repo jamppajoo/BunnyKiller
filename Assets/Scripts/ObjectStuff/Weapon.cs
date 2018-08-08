@@ -12,6 +12,8 @@ public class Weapon : MonoBehaviour
     private bool waveOnHold = true;
     private ObjectCombinerRoom objectCombinerRoom;
 
+    private HolsterController holsterController;
+
     private void OnEnable()
     {
         EventManager.WaveStarted += WaveStarted;
@@ -31,6 +33,7 @@ public class Weapon : MonoBehaviour
     {
         interactableObject = GetComponent<VRTK_InteractableObject>();
         objectCombinerRoom = FindObjectOfType<ObjectCombinerRoom>();
+        holsterController = FindObjectOfType<HolsterController>();
     }
     private void Start()
     {
@@ -51,12 +54,15 @@ public class Weapon : MonoBehaviour
     }
     private void ObjectUnGrabbed(object sender, InteractableObjectEventArgs e)
     {
-        if(!objectCombinerRoom.IsPlayerOnGarage())
+        if (!objectCombinerRoom.IsPlayerOnGarage())
         {
-            mySnapDropZone.ForceSnap(gameObject);
+            if (mySnapDropZone != null)
+                mySnapDropZone.ForceSnap(gameObject);
+            else
+                holsterController.GetEmptyDropZone().ForceSnap(gameObject);
         }
     }
-        private void WaveStarted()
+    private void WaveStarted()
     {
         waveOnHold = false;
     }
@@ -68,7 +74,7 @@ public class Weapon : MonoBehaviour
     }
     private void DestroyObject()
     {
-        if(gameObject != null)
+        if (gameObject != null)
             Destroy(gameObject);
     }
 
