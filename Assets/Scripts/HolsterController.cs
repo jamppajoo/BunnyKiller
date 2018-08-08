@@ -37,6 +37,7 @@ public class HolsterController : MonoBehaviour
 
     public VRTK_SnapDropZone GetEmptyDropZone()
     {
+        CheckWeapons();
         if (slot1Weapon == null)
             return slot1DropZone;
         if (slot2Weapon == null)
