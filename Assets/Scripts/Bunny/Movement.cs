@@ -92,13 +92,13 @@ public class Movement : MonoBehaviour {
 
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
-			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
+			//rb.AddForce(transform.up * 5f * Time.fixedDeltaTime*jumpMultiplier, ForceMode.Impulse);
 			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
-			rb.AddForce(transform.up * 60f*(jumpMultiplier-1));
+			rb.AddForce(transform.up * 60f*(jumpMultiplier-1)*Time.fixedDeltaTime, ForceMode.Impulse);
 
 			jumpRequest = false;
             targetRandomized = false;
-            jumpMultiplier = 2.0f;
+            jumpMultiplier = jumpMultiplier/3;
 		}
 
         //if bunny is low enough, it turns towards target
