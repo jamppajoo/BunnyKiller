@@ -9,6 +9,7 @@ public class Holster : MonoBehaviour {
     private GameObject weapon;
 
     private VRTK_SnapDropZone dropZone;
+    private MeshRenderer meshRenderer;
 
     private void OnEnable()
     {
@@ -27,6 +28,7 @@ public class Holster : MonoBehaviour {
     private void Start()
     {
         dropZone = GetComponent<VRTK_SnapDropZone>();
+        meshRenderer = GetComponent<MeshRenderer>();
 
         dropZone.ObjectSnappedToDropZone += new SnapDropZoneEventHandler(ObjectSnappedToDropZone);
         dropZone.ObjectUnsnappedFromDropZone += new SnapDropZoneEventHandler(ObjectUnSnappedFromDropZone);
@@ -37,10 +39,12 @@ public class Holster : MonoBehaviour {
     private void ObjectSnappedToDropZone(object sender, SnapDropZoneEventArgs e)
     {
         weapon = e.snappedObject;
+        meshRenderer.enabled = false;
     }
     private void ObjectUnSnappedFromDropZone(object sender, SnapDropZoneEventArgs e)
     {
         weapon = null;
+        meshRenderer.enabled = true;
     }
 
     private void EnableChangeWeapon()
