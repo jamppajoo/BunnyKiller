@@ -9,7 +9,7 @@ public class Weapon : MonoBehaviour
     public bool canBeDestroyed = false;
     private VRTK_InteractableObject interactableObject;
     private VRTK_SnapDropZone mySnapDropZone;
-    private bool waveOnHold = false;
+    private bool waveOnHold = true;
 
     private void OnEnable()
     {
@@ -29,16 +29,22 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         interactableObject = GetComponent<VRTK_InteractableObject>();
+    }
+    private void Start()
+    {
+
+        //interactableObject.SetInteractableObjectEvent(gameObject);
         interactableObject.InteractableObjectSnappedToDropZone += new InteractableObjectEventHandler(ObjectSnappedToDropZone);
         interactableObject.InteractableObjectUnsnappedFromDropZone += new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
 
         interactableObject.InteractableObjectUngrabbed += new InteractableObjectEventHandler(ObjectUnGrabbed);
     }
 
-    
+
 
     private void ObjectSnappedToDropZone(object sender, InteractableObjectEventArgs e)
     {
+        print("ASDOKPASDOPK" + e.interactingObject);
         mySnapDropZone = e.interactingObject.GetComponent<VRTK_SnapDropZone>();
     }
     private void ObjectUnSnappedFromDropZone(object sender, InteractableObjectEventArgs e)

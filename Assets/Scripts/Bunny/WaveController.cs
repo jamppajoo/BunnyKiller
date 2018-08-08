@@ -27,6 +27,7 @@ public class WaveController : MonoBehaviour
         doorCloser = GameObject.Find("Huone_lattia");
         enemyParent = GameObject.Find("Enemies");
         teleportArea = FindObjectOfType<TeleportArea>();
+        EventManager.eventManager.OnWaveHold();
 
     }
     private void Update()

@@ -6297,9 +6297,8 @@ MonoBehaviour:
   ignoreCollisionsWith:
   - {fileID: 981555899}
   - {fileID: 1118826907}
-  - {fileID: 0}
-  - {fileID: 268742549}
   - {fileID: 505971772}
+  - {fileID: 268742549}
   headsetYOffset: 0.2
   movementThreshold: 0.0015
   playAreaMovementThreshold: 0.00075
