@@ -511,7 +511,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -529,7 +529,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &72911571
 CapsuleCollider:
@@ -2026,7 +2026,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -2044,7 +2044,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &264717241
 CapsuleCollider:
@@ -3162,7 +3162,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -3180,7 +3180,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &329046500
 CapsuleCollider:
@@ -3527,8 +3527,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -3546,7 +3546,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &355585471
 CapsuleCollider:
@@ -4444,7 +4444,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -4462,7 +4462,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &471277068
 CapsuleCollider:
@@ -5467,8 +5467,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -5486,7 +5486,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &553445222
 CapsuleCollider:
@@ -9029,8 +9029,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -9048,7 +9048,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &815311447
 CapsuleCollider:
@@ -10120,7 +10120,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -10138,7 +10138,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &896733076
 CapsuleCollider:
@@ -10410,8 +10410,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -10429,7 +10429,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &950613781
 CapsuleCollider:
@@ -10961,7 +10961,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -10979,7 +10979,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!1 &993464468
 GameObject:
@@ -11219,7 +11219,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -11237,7 +11237,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1006412593
 CapsuleCollider:
@@ -12218,7 +12218,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -12236,7 +12236,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1084285266
 CapsuleCollider:
@@ -13665,7 +13665,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -13683,7 +13683,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1294942665
 CapsuleCollider:
@@ -16150,7 +16150,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 1
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -16168,7 +16168,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1597276799
 CapsuleCollider:
@@ -17998,8 +17998,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -18017,7 +18017,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1712248291
 CapsuleCollider:
@@ -18137,8 +18137,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -18156,7 +18156,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1727481663
 CapsuleCollider:
@@ -18333,8 +18333,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -18352,7 +18352,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1739191550
 CapsuleCollider:
@@ -19620,8 +19620,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -19639,7 +19639,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &1894177371
 CapsuleCollider:
@@ -20946,8 +20946,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -20965,7 +20965,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &2006490174
 CapsuleCollider:
@@ -21995,8 +21995,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 1
-    damper: 1
+    spring: 0
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -22014,7 +22014,7 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 1
   m_EnablePreprocessing: 1
-  m_MassScale: 2
+  m_MassScale: 1
   m_ConnectedMassScale: 1
 --- !u!136 &2087619306
 CapsuleCollider:
