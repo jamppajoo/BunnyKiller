@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour {
         timeToNextTarget = 30f;
 	    jumpRequest = false;
         //jumpMultiplier = 2.0f;
-        jumpMultiplier = 10.0f;
+        jumpMultiplier = 2.5f;
         fallMultiplier = 1.5f;
         bunnySpeed = Random.value;
     }
@@ -92,13 +92,14 @@ public class Movement : MonoBehaviour {
 
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
-			//rb.AddForce(transform.up * 5f * Time.fixedDeltaTime*jumpMultiplier, ForceMode.Impulse);
-			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
-			rb.AddForce(transform.up * 60f*(jumpMultiplier-1)*Time.fixedDeltaTime, ForceMode.Impulse);
+            //randomExtra is a number that makes jumps more random every jump is 75% - 125% of normal jump
+            float randomExtra = Random.Range(0.75f, 1.25f);
+            rb.AddForce(transform.up * 5f* randomExtra * jumpMultiplier, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 1.25f*randomExtra, ForceMode.Impulse);
 
-			jumpRequest = false;
+            jumpRequest = false;
             targetRandomized = false;
-            jumpMultiplier = jumpMultiplier/3;
+            jumpMultiplier = 1.0f;
 		}
 
         //if bunny is low enough, it turns towards target
