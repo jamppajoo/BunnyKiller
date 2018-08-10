@@ -45,6 +45,7 @@ public class CarrotMaker : MonoBehaviour {
         carrot5.transform.parent = carrotParent.transform;
         */
         
+        /*
         GameObject carrot = Instantiate(carrotObject, new Vector3(-6.81f, 0.04f, -3.45f), Quaternion.identity);
         carrot.GetComponent<CarrotHealth>().health = health;
         carrot.transform.parent = carrotParent.transform;
@@ -64,6 +65,7 @@ public class CarrotMaker : MonoBehaviour {
         GameObject carrot5 = Instantiate(carrotObject, new Vector3(-3.82f, 0.04f, -0.32f), Quaternion.identity);
         carrot5.GetComponent<CarrotHealth>().health = health;
         carrot5.transform.parent = carrotParent.transform;
+        */
     }
 
     public void startGame2()
@@ -73,7 +75,9 @@ public class CarrotMaker : MonoBehaviour {
         {
             for(int j=0; j<10;j++)
             {
-                GameObject carrot = Instantiate(carrotObject, new Vector3(-6.81f+(i*0.7f), 0.04f, -3.45f+(j*0.7f)), Quaternion.identity);
+                //                GameObject carrot = Instantiate(carrotObject, new Vector3(-6.81f+(i*0.7f), 0.04f, -3.45f+(j*0.7f)), Quaternion.identity);
+                //GameObject carrot = Instantiate(carrotObject, new Vector3(-8.5f + (i * 1.6f), 0.04f, -5.45f + (j * 1.6f)), Quaternion.identity);
+                GameObject carrot = Instantiate(carrotObject, new Vector3(-16.1f + (i * 1.6f), 0.04f, -7.45f + (j * 1.6f)), Quaternion.identity);
                 carrot.isStatic = true;
                 carrot.GetComponent<CarrotHealth>().health = health;
                 carrot.transform.parent = carrotParent.transform;

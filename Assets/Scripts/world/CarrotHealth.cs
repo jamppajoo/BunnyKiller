@@ -59,6 +59,11 @@ public class CarrotHealth : MonoBehaviour {
             eatingBunnyAmount++;
             bunnyOnCarrot = true;
         }
+        else
+        {
+            print("OTUS trigger enter " + other.tag);
+            print("OTUSname trigger enter " + other.name);
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -68,6 +73,11 @@ public class CarrotHealth : MonoBehaviour {
             eatingBunnyAmount--;
             if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
         }
+        else
+        {
+            print("OTUS trigger exit " + other.tag);
+            print("OTUSname trigger exit " + other.name);
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -75,6 +85,11 @@ public class CarrotHealth : MonoBehaviour {
         if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
         {
             bunnyOnCarrot = true;
+        }
+        else
+        {
+            print("OTUS triggerstay " + other.tag);
+            print("OTUSname triggerstay " + other.name);
         }
     }
 
@@ -85,6 +100,11 @@ public class CarrotHealth : MonoBehaviour {
         {
             eatingBunnyAmount++;
         }
+        else
+        {
+            print("OTUS collision " + collision.gameObject.tag);
+            print("OTUSname collision " + collision.gameObject.name);
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -93,6 +113,11 @@ public class CarrotHealth : MonoBehaviour {
         {
             eatingBunnyAmount--;
             if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
+        }
+        else
+        {
+            print("OTUS collision " + collision.gameObject.tag);
+            print("OTUSname collision " + collision.gameObject.name);
         }
     }
 
