@@ -11,13 +11,27 @@ TagManager:
   - Stick12
   - Stick13
   - StickCollisionIgnore
-<<<<<<< HEAD
-  - Bunny
-=======
   - Stick132
+  - Bunny
   - Carrot
   - Granade
->>>>>>> master
+  - Stick
+  - Blade
+  - Barbedwire
+  - Baseballbat
+  - Glove
+  - CarrotsParent
+  - Weapon
+  - IgnoreHeightAdjustment
+  - Lucielle
+  - TeleportArea
+  - Cubes
+  - Spheres
+  - Leg
+  - Arm
+  - Saucers
+  - Torso
+  - OtherSaucers
   layers:
   - Default
   - TransparentFX
@@ -27,9 +41,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Environment
+  - Teleport
+<<<<<<< HEAD
+  - IgnoreTeleport
+=======
+  - Weapon
+>>>>>>> Jammus
   - 
   - 
   - 

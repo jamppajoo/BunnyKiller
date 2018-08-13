@@ -20,6 +20,7 @@ public class HealtSystem : MonoBehaviour
 
     private GameObject bunbun;
     private GameObject bodyParts;
+    private GameObject blood;
 
     private GameObject gameController;
     private float suicideTime;
@@ -46,6 +47,7 @@ public class HealtSystem : MonoBehaviour
             bodyParts = this.gameObject.transform.GetChild(2).gameObject;
             bodyParts.SetActive(false);
         }
+        if (this.gameObject.transform.GetChild(3).gameObject.name.Equals("FXHolder")) blood = this.gameObject.transform.GetChild(3).gameObject;
     }
 	
 	// Update is called once per frame
@@ -69,7 +71,15 @@ public class HealtSystem : MonoBehaviour
         }
     }
 
-	public void BaseballHit(float power)
+    public void Hit(float power, float maxPower)
+    {
+        if (power < maxPower) health -= power;
+        else health -= maxPower;
+
+        checkDeath();
+    }
+
+    public void BaseballHit(float power)
 	{
         if (power < 6) health -= 10f;
         else if(power > 16) health -= 200f;
@@ -134,5 +144,9 @@ public class HealtSystem : MonoBehaviour
         alive = false;
         bunbun.SetActive(false);
         bodyParts.SetActive(true);
+        bodyParts.transform.parent = deathBunnies.transform;
+        //blood.transform.parent = bodyParts.transform;
+
+        Destroy(bunbun.gameObject.transform.parent.gameObject);
     }
 }

@@ -20,17 +20,6 @@ public class ObjectCombinerRoom : MonoBehaviour {
         leftDoorClosedPosition = new Vector3(leftDoorOpenPosition.x, leftDoorOpenPosition.y, leftDoorOpenPosition.z +2);
         rightDoorClosedPosition = new Vector3(rightDoorOpenPosition.x, rightDoorOpenPosition.y, rightDoorOpenPosition.z -2);
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            OpenDoors();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CloseDoors();
-        }
-    }
 
     public void OpenDoors()
     {
@@ -44,6 +33,12 @@ public class ObjectCombinerRoom : MonoBehaviour {
         StartCoroutine(MoveDoor(leftDoor, leftDoorClosedPosition, timeToMoveDoors));
         StartCoroutine(MoveDoor(rightDoor, rightDoorClosedPosition, timeToMoveDoors));
     }
+
+    public bool IsPlayerOnGarage()
+    {
+        return playerIsInRoom;
+    }
+
     IEnumerator MoveDoor(GameObject door, Vector3 toPosition, float time)
     {
         float elapsedTime = 0;
