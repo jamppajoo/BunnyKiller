@@ -19,9 +19,9 @@ public class SplatterOnHit : MonoBehaviour {
 
 	void OnParticleCollision(GameObject other)
 	{
-		int numCollisionEvents = ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
+        int numCollisionEvents = ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
 
-		int i = 0;
+        int i = 0;
 		while (i < numCollisionEvents)
 		{
 			dropletDecalPool.ParticleHit(collisionEvents[i], particleColorGradient);

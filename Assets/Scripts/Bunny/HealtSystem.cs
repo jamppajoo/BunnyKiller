@@ -145,8 +145,8 @@ public class HealtSystem : MonoBehaviour
         bunbun.SetActive(false);
         bodyParts.SetActive(true);
         bodyParts.transform.parent = deathBunnies.transform;
-        blood.transform.parent = bodyParts.transform;
-        
+        //blood.transform.parent = bodyParts.transform;
+
         Destroy(bunbun.gameObject.transform.parent.gameObject);
     }
 }

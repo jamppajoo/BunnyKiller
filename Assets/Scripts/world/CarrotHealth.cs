@@ -61,8 +61,8 @@ public class CarrotHealth : MonoBehaviour {
         }
         else
         {
-            print("OTUS trigger enter " + other.tag);
-            print("OTUSname trigger enter " + other.name);
+            //print("OTUS trigger enter " + other.tag);
+            //print("OTUSname trigger enter " + other.name);
         }
     }
 
@@ -75,8 +75,8 @@ public class CarrotHealth : MonoBehaviour {
         }
         else
         {
-            print("OTUS trigger exit " + other.tag);
-            print("OTUSname trigger exit " + other.name);
+            //print("OTUS trigger exit " + other.tag);
+            //print("OTUSname trigger exit " + other.name);
         }
     }
 
@@ -88,12 +88,12 @@ public class CarrotHealth : MonoBehaviour {
         }
         else
         {
-            print("OTUS triggerstay " + other.tag);
-            print("OTUSname triggerstay " + other.name);
+            //print("OTUS triggerstay " + other.tag);
+            //print("OTUSname triggerstay " + other.name);
         }
     }
 
-
+    /*
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
@@ -120,7 +120,7 @@ public class CarrotHealth : MonoBehaviour {
             print("OTUSname collision " + collision.gameObject.name);
         }
     }
-
+    */
 
 }
 
