@@ -19,6 +19,9 @@ public class SplatterOnHit : MonoBehaviour {
 
 	void OnParticleCollision(GameObject other)
 	{
+        collisionEvents = new List<ParticleCollisionEvent>();
+        particleLauncher = FindObjectOfType<ParticleSpawner>().gameObject.GetComponent<ParticleSystem>();
+
         int numCollisionEvents = ParticlePhysicsExtensions.GetCollisionEvents(particleLauncher, other, collisionEvents);
 
         int i = 0;

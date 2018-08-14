@@ -56,9 +56,10 @@ public class HealtSystem : MonoBehaviour
         //when time is up, kill all the bunnies
         if (suicideActivated && suicideTime < 0 && alive)
         {
+            health -= 1000;
             transform.parent = deathBunnies.transform;
 
-            health -= 1000;
+            
             Collision hitt = null;
             this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
             Explode();
@@ -145,7 +146,7 @@ public class HealtSystem : MonoBehaviour
         bunbun.SetActive(false);
         bodyParts.SetActive(true);
         bodyParts.transform.parent = deathBunnies.transform;
-        //blood.transform.parent = bodyParts.transform;
+        blood.transform.parent = bodyParts.transform;
 
         Destroy(bunbun.gameObject.transform.parent.gameObject);
     }
