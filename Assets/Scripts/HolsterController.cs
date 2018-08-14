@@ -35,6 +35,32 @@ public class HolsterController : MonoBehaviour
         slot4DropZone = holster4.GetComponent<VRTK_SnapDropZone>();
     }
 
+    private void OnEnable()
+    {
+        EventManager.PlayerEnteredGarage += PlayerEnteredGarage;
+        EventManager.PlayerExitedGarage += PlayerExitedGarage;
+    }
+    private void OnDisable()
+    {
+        EventManager.PlayerEnteredGarage -= PlayerEnteredGarage;
+        EventManager.PlayerExitedGarage -= PlayerExitedGarage;
+    }
+    private void PlayerEnteredGarage()
+    {
+        holster1.GetComponent<Collider>().enabled = true;
+        holster2.GetComponent<Collider>().enabled = true;
+        holster3.GetComponent<Collider>().enabled = true;
+        holster4.GetComponent<Collider>().enabled = true;
+    }
+    private void PlayerExitedGarage()
+    {
+
+        holster1.GetComponent<Collider>().enabled = false;
+        holster2.GetComponent<Collider>().enabled = false;
+        holster3.GetComponent<Collider>().enabled = false;
+        holster4.GetComponent<Collider>().enabled = false;
+    }
+
     public VRTK_SnapDropZone GetEmptyDropZone()
     {
         CheckWeapons();

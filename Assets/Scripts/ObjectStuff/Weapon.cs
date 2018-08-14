@@ -33,8 +33,15 @@ public class Weapon : MonoBehaviour
         interactableObject.InteractableObjectSnappedToDropZone -= new InteractableObjectEventHandler(ObjectSnappedToDropZone);
         interactableObject.InteractableObjectUnsnappedFromDropZone -= new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
 
+        interactableObject.InteractableObjectEnteredSnapDropZone -= new InteractableObjectEventHandler(ObjectEnteredDropZone);
+        interactableObject.InteractableObjectExitedSnapDropZone -= new InteractableObjectEventHandler(ObjectExitedDropZone);
+
         interactableObject.InteractableObjectUngrabbed -= new InteractableObjectEventHandler(ObjectUnGrabbed);
         interactableObject.InteractableObjectGrabbed -= new InteractableObjectEventHandler(ObjectGrabbed);
+
+        interactableObject.InteractableObjectTouched -= new InteractableObjectEventHandler(ObjectTouched);
+        interactableObject.InteractableObjectUntouched -= new InteractableObjectEventHandler(ObjectUnTouched);
+
 
     }
     private void Awake()
@@ -48,6 +55,9 @@ public class Weapon : MonoBehaviour
         interactableObject.InteractableObjectSnappedToDropZone += new InteractableObjectEventHandler(ObjectSnappedToDropZone);
         interactableObject.InteractableObjectUnsnappedFromDropZone += new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
 
+        interactableObject.InteractableObjectEnteredSnapDropZone += new InteractableObjectEventHandler(ObjectEnteredDropZone);
+        interactableObject.InteractableObjectExitedSnapDropZone += new InteractableObjectEventHandler(ObjectExitedDropZone);
+
         interactableObject.InteractableObjectUngrabbed += new InteractableObjectEventHandler(ObjectUnGrabbed);
         interactableObject.InteractableObjectGrabbed += new InteractableObjectEventHandler(ObjectGrabbed);
 
@@ -56,6 +66,12 @@ public class Weapon : MonoBehaviour
 
     }
 
+    private void ObjectEnteredDropZone(object sender, InteractableObjectEventArgs e)
+    {
+    }
+    private void ObjectExitedDropZone(object sender, InteractableObjectEventArgs e)
+    {
+    }
     private void ObjectSnappedToDropZone(object sender, InteractableObjectEventArgs e)
     {
         mySnapDropZone = e.interactingObject.GetComponent<VRTK_SnapDropZone>();
@@ -89,8 +105,10 @@ public class Weapon : MonoBehaviour
     private IEnumerator HolsterWeapon()
     {
         yield return new WaitForEndOfFrame();
+        print("ASD1 ");
         if (canBeHolstered)
         {
+            print("ASD2 ");
             if (mySnapDropZone == null)
                 mySnapDropZone = holsterController.GetEmptyDropZone();
 
