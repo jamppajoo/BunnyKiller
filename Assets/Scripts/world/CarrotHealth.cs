@@ -14,6 +14,7 @@ public class CarrotHealth : MonoBehaviour {
     private AudioSource source;
     private float volLowRange = .5f;
     private float volHighRange = 1.0f;
+    private bool bunnyOnCarrot = false;
 
     // Use this for initialization
     void Start ()
@@ -25,11 +26,12 @@ public class CarrotHealth : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ChangeHealth(Time.deltaTime*eatingBunnyAmount);		
+        if(bunnyOnCarrot)ChangeHealth(Time.deltaTime*eatingBunnyAmount);
 	}
 
     void ChangeHealth(float amount)
     {
+        bunnyOnCarrot = false;
         health -= amount;
         if(amount>0)
         {
@@ -49,23 +51,77 @@ public class CarrotHealth : MonoBehaviour {
         }
     }
 
+    
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Bunny"))
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
         {
-            //ChangeHealth(1f);
             eatingBunnyAmount++;
+            bunnyOnCarrot = true;
+        }
+        else
+        {
+            //print("OTUS trigger enter " + other.tag);
+            //print("OTUSname trigger enter " + other.name);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Bunny"))
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
         {
-            //ChangeHealth(1f);
             eatingBunnyAmount--;
+            if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
+        }
+        else
+        {
+            //print("OTUS trigger exit " + other.tag);
+            //print("OTUSname trigger exit " + other.name);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Bunny") && other.GetComponentInParent<HealtSystem>().alive)
+        {
+            bunnyOnCarrot = true;
+        }
+        else
+        {
+            //print("OTUS triggerstay " + other.tag);
+            //print("OTUSname triggerstay " + other.name);
+        }
+    }
+
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
+        {
+            eatingBunnyAmount++;
+        }
+        else
+        {
+            print("OTUS collision " + collision.gameObject.tag);
+            print("OTUSname collision " + collision.gameObject.name);
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag.Equals("Bunny") && collision.gameObject.GetComponent<HealtSystem>().alive)
+        {
+            eatingBunnyAmount--;
+            if (eatingBunnyAmount < 0) eatingBunnyAmount = 0;
+        }
+        else
+        {
+            print("OTUS collision " + collision.gameObject.tag);
+            print("OTUSname collision " + collision.gameObject.name);
+        }
+    }
+    */
+
 }
 
 

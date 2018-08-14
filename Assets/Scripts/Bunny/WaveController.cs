@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Valve.VR.InteractionSystem;
 
 public class WaveController : MonoBehaviour
 {
@@ -28,7 +29,6 @@ public class WaveController : MonoBehaviour
         enemyParent = GameObject.Find("Enemies");
         teleportArea = FindObjectOfType<TeleportArea>();
         EventManager.eventManager.OnWaveHold();
-
     }
     private void Update()
     {
@@ -40,7 +40,6 @@ public class WaveController : MonoBehaviour
                 timeCountPanel.GetComponent<Text>().text = "" + (Mathf.Round(100*(waveLength-timer))/100);
                 EventManager.eventManager.OnWaveStarted();
             }
-
             else
             {
                 WaveEnded();
@@ -48,11 +47,14 @@ public class WaveController : MonoBehaviour
                 EventManager.eventManager.OnWaveStopped();
                 EventManager.eventManager.OnWaveHold();
             }
+
+
         }
         else timeCountPanel.GetComponent<Text>().text = "0";
     }
     public void StartWave()
     {
+        timer = 0;
         gameController.GetComponent<GameProgression>().addWave();
         waveNumber++;
         GetComponent<BunnyMaker>().amount = 10 + waveNumber;
@@ -62,21 +64,17 @@ public class WaveController : MonoBehaviour
         GetComponent<BunnyMaker>().maded = 0;
         
     }
-    private void WaveEnded()
+    public void WaveEnded()
     {
 //        print("Wave Ended");
         timer = 0;
+        timeCountPanel.GetComponent<Text>().text = "0";
         waveStarted = false;
         doorCloser.transform.GetComponent<ObjectCombinerRoom>().OpenDoors();
 
+        //kill all still alive bunnies. Kill them 4 by second
         HealtSystem[] allChildren = enemyParent.GetComponentsInChildren<HealtSystem>();
         float i = 0f;
-        /*
-        for(int j=0; j< allChildren.Length; j++)
-        {
-            allChildren[j].Suicide(i / 2);
-            i++;
-        }*/
         foreach (HealtSystem child in allChildren)
         {
             child.Suicide(i/4);

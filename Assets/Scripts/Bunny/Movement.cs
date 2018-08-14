@@ -26,12 +26,15 @@ public class Movement : MonoBehaviour {
 
 	public float gravityScale = 1.0f;
 	public static float globalGravity = -9.81f;
+    //private bool 
 	
 	void Start () {
 
         //Bunny will randomly choose which carrot it will eat
         carrotParent = GameObject.Find("carrotsParent");
         carrotCount = carrotParent.transform.childCount;
+
+        //if there isn't any carrots, bunny will target player
         if (carrotCount == 0)
         {
             targetCarrot = GameObject.Find("Camera");
@@ -44,8 +47,9 @@ public class Movement : MonoBehaviour {
 	    timeToNextJump = 2.5f;
         timeToNextTarget = 30f;
 	    jumpRequest = false;
-	    jumpMultiplier = 2.0f;
-	    fallMultiplier = 1.5f;
+        //jumpMultiplier = 2.0f;
+        jumpMultiplier = 2.5f;
+        fallMultiplier = 1.5f;
         bunnySpeed = Random.value;
     }
 	
@@ -88,18 +92,19 @@ public class Movement : MonoBehaviour {
 
 		if (jumpRequest&& GetComponent<HealtSystem>().alive)
 		{
-			rb.AddForce(transform.up * 5f, ForceMode.Impulse);
-			rb.velocity += -transform.forward * Physics.gravity.y * (jumpMultiplier - 1) * Time.fixedDeltaTime;
-			rb.AddForce(transform.up * 60f);
+            //randomExtra is a number that makes jumps more random every jump is 75% - 125% of normal jump
+            float randomExtra = Random.Range(0.75f, 1.25f);
+            rb.AddForce(transform.up * 5f* randomExtra * jumpMultiplier, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 1.25f*randomExtra, ForceMode.Impulse);
 
-			jumpRequest = false;
+            jumpRequest = false;
             targetRandomized = false;
+            jumpMultiplier = 1.0f;
 		}
 
-        else if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive && !targetRandomized) //if bunny is low enough, it turns towards target
+        //if bunny is low enough, it turns towards target
+        else if (transform.position.y < 0.2f && transform.position.y > -0.2 && GetComponent<HealtSystem>().alive && !targetRandomized) 
         {
-            //rb.velocity = Vector3.zero;
-            //rb.transform.Rotate(-90f, 0f, rb.rotation.z, Space.World);
             if(targetCarrot==null)
             {
                 carrotCount = carrotParent.transform.childCount;
@@ -116,6 +121,15 @@ public class Movement : MonoBehaviour {
                                        targetCarrot.transform.position.z);
 
             this.transform.LookAt(targetPostition);
+            //          this.transform.rotation=new Vector3(0f,targetPostition.y,0f);
+            /*this.transform.eulerAngles = new Vector3(
+                0f,
+                this.transform.eulerAngles.y,
+                0f);
+            */
+            //this.transform.eulerAngles = new Quaternion(30, transform.eulerAngles.y, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
+
             targetRandomized = true;
             //jumpRequest = true;
         }
@@ -128,11 +142,19 @@ public class Movement : MonoBehaviour {
                 this.transform.LookAt(targetPostition);
             //}
         }
+        //turn rabbit to normal rotation, only x and z, y still towards to target
+        transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
     }
 
     void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+    public void HitBunny(Vector3 direction, float force)
+    {
+        rb.AddForce(direction*force, ForceMode.Impulse);
+//        print("FORCE ADDED " + direction * force);
     }
     //void jump()
     //{

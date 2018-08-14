@@ -20,16 +20,21 @@ public class HealtSystem : MonoBehaviour
 
     private GameObject bunbun;
     private GameObject bodyParts;
+    private GameObject blood;
 
     private GameObject gameController;
     private float suicideTime;
     private bool suicideActivated=false;
     private GameObject deathBunnies;
+    private GameObject aliveBunnies;
+    private GameObject wavecontroller;
 
     // Use this for initialization
     void Start ()
 	{
         deathBunnies = GameObject.Find("Bodies");
+        aliveBunnies = GameObject.Find("Enemies");
+        wavecontroller = GameObject.Find("WaveController");
         bloodParticleSystem = GetComponentInChildren<ParticleSystem>();
 		bunnyRB = GetComponentInParent<Rigidbody>();
         head = this.gameObject.transform.GetChild(1).GetChild(1).gameObject;
@@ -42,16 +47,19 @@ public class HealtSystem : MonoBehaviour
             bodyParts = this.gameObject.transform.GetChild(2).gameObject;
             bodyParts.SetActive(false);
         }
+        if (this.gameObject.transform.GetChild(3).gameObject.name.Equals("FXHolder")) blood = this.gameObject.transform.GetChild(3).gameObject;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        //when time is up, kill all the bunnies
         if (suicideActivated && suicideTime < 0 && alive)
         {
+            health -= 1000;
             transform.parent = deathBunnies.transform;
 
-            health -= 1000;
+            
             Collision hitt = null;
             this.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood(hitt);
             Explode();
@@ -64,7 +72,15 @@ public class HealtSystem : MonoBehaviour
         }
     }
 
-	public void BaseballHit(float power)
+    public void Hit(float power, float maxPower)
+    {
+        if (power < maxPower) health -= power;
+        else health -= maxPower;
+
+        checkDeath();
+    }
+
+    public void BaseballHit(float power)
 	{
         if (power < 6) health -= 10f;
         else if(power > 16) health -= 200f;
@@ -118,13 +134,20 @@ public class HealtSystem : MonoBehaviour
         this.GetComponent<Rigidbody>().AddForce(transform.up * 60f);
 
         alive = false;
-        //this makes bunny flat if player hits it after it is dead
-        //if (this.transform.localScale.z > 0.02) this.transform.localScale += new Vector3(0.01f, 0.01f, -0.01f); 
+        if(aliveBunnies.transform.childCount==0)
+        {
+            //all bunnies has died, end wave
+            wavecontroller.GetComponent<WaveController>().WaveEnded();
+        }
     }
     public void Explode()
     {
         alive = false;
         bunbun.SetActive(false);
         bodyParts.SetActive(true);
+        bodyParts.transform.parent = deathBunnies.transform;
+        blood.transform.parent = bodyParts.transform;
+
+        Destroy(bunbun.gameObject.transform.parent.gameObject);
     }
 }
