@@ -11084,7 +11084,6 @@ GameObject:
   - component: {fileID: 1029974086}
   - component: {fileID: 1029974085}
   - component: {fileID: 1029974084}
-  - component: {fileID: 1029974081}
   m_Layer: 0
   m_Name: RightController
   m_TagString: Untagged
@@ -11092,23 +11091,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1029974081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1029974080}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cdac96da703d7488a11cc3bde08cbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToGrab: {fileID: 0}
-  objectIsPrefab: 1
-  cloneGrabbedObject: 0
-  alwaysCloneOnEnable: 0
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
 --- !u!114 &1029974084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19532,8 +19514,8 @@ MonoBehaviour:
   objectsToSpawnLeftHand:
   - {fileID: 1615065998470994, guid: 463d58bb40177eb4daef71cfb28cead7, type: 2}
   - {fileID: 1138495323767408, guid: cee9dc5fe8585674aa0c332a90b525bc, type: 2}
-  rightHandAutoGrab: {fileID: 1029974081}
-  leftHandAutoGrab: {fileID: 1999681966}
+  rightHandAutoGrab: {fileID: 0}
+  leftHandAutoGrab: {fileID: 0}
 --- !u!4 &1902994096
 Transform:
   m_ObjectHideFlags: 0
@@ -20260,8 +20242,6 @@ GameObject:
   - component: {fileID: 1999681970}
   - component: {fileID: 1999681969}
   - component: {fileID: 1999681968}
-  - component: {fileID: 1999681967}
-  - component: {fileID: 1999681966}
   m_Layer: 0
   m_Name: LeftController
   m_TagString: Untagged
@@ -20284,38 +20264,6 @@ Transform:
   m_Father: {fileID: 482143459}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1999681966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1999681964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58cdac96da703d7488a11cc3bde08cbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToGrab: {fileID: 0}
-  objectIsPrefab: 1
-  cloneGrabbedObject: 0
-  alwaysCloneOnEnable: 0
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
---- !u!114 &1999681967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1999681964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  useButton: 3
-  controllerEvents: {fileID: 0}
-  interactTouch: {fileID: 0}
-  interactGrab: {fileID: 0}
 --- !u!114 &1999681968
 MonoBehaviour:
   m_ObjectHideFlags: 0
