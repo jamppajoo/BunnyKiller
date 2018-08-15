@@ -45,6 +45,7 @@ public class HitBunny : MonoBehaviour
             hittedObject = collision.gameObject;
             Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
             float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
+            hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position - lastPosition), speed);
 
             hitBunny(direction, speed, hittedObject, collision);
         }
@@ -60,17 +61,17 @@ public class HitBunny : MonoBehaviour
         //if (other.gameObject.tag =="Bunny")
         //{
         //    print("hitted bunnyboi");
-        //    hittedObject = other.gameObject;
-        //    Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
-        //    float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
-        //    hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position - lastPosition), speed);
+        //hittedObject = other.gameObject;
+        //Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
+        //float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
+        //hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position - lastPosition), speed);
 
-        //    //.BaseballHit(hitPower);
-        //    //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
-        //    //other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
+        //.BaseballHit(hitPower);
+        //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
+        //other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
 
-        //    hitBunny(direction, speed, hittedObject);
-        //    TriggerHapticFeedBack(199);
+        //hitBunny(direction, speed, hittedObject);
+        //TriggerHapticFeedBack(199);
         //}
     }
 
@@ -94,7 +95,7 @@ public class HitBunny : MonoBehaviour
 
         float hitPower = speed;
         hittedObject.GetComponentInParent<HealtSystem>().Hit(hitPower, 100f);
-        print("Hit power " + hitPower);
+        //print("Hit power " + hitPower);
 
         bunny.transform.parent.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood();
         /*
