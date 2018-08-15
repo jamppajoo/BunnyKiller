@@ -46,7 +46,7 @@ public class HitBunny : MonoBehaviour
             Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
             float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
 
-            hitBunny(direction, speed, hittedObject);
+            hitBunny(direction, speed, hittedObject, collision);
         }
 
     }
@@ -74,23 +74,23 @@ public class HitBunny : MonoBehaviour
         //}
     }
 
-    private void hitBunny(Vector3 direction, float speed, GameObject bunny)
+    private void hitBunny(Vector3 direction, float speed, GameObject bunny, Collision collision)
     {
         controllerReference = VRTK_ControllerReference.GetControllerReference(this.gameObject);
 
-        //        float tes = collision.relativeVelocity.magnitude;
+                float tes = collision.relativeVelocity.magnitude;
 
-        //if (VRTK_ControllerReference.IsValid(controllerReference))
-        //{
-        //    collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier * 5;
-        //    var hapticStrength = collisionForce / maxCollisionForce;
-        //    VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
-        //}
-        //else
-        //{
-        //    //collisionForce = collision.relativeVelocity.magnitude * impactMagnifier * 5;
-        //    collisionForce = speed;
-        //}
+        if (VRTK_ControllerReference.IsValid(controllerReference))
+        {
+            collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier * 5;
+            var hapticStrength = collisionForce / maxCollisionForce;
+            VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
+        }
+        else
+        {
+            //collisionForce = collision.relativeVelocity.magnitude * impactMagnifier * 5;
+            collisionForce = speed;
+        }
 
         float hitPower = speed;
         hittedObject.GetComponentInParent<HealtSystem>().Hit(hitPower, 100f);

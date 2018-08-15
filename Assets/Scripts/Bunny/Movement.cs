@@ -46,7 +46,8 @@ public class Movement : MonoBehaviour {
         timeFromTargetChange = Time.time;
 	    timeToNextJump = 2.5f;
         timeToNextTarget = 30f;
-	    jumpRequest = false;
+        turnTowardsTargetCarrot();
+        jumpRequest = true;
         //jumpMultiplier = 2.0f;
         jumpMultiplier = 2.5f;
         fallMultiplier = 1.5f;
@@ -156,6 +157,31 @@ public class Movement : MonoBehaviour {
         rb.AddForce(direction*force, ForceMode.Impulse);
 //        print("FORCE ADDED " + direction * force);
     }
+
+    private void turnTowardsTargetCarrot()
+    {
+        if (targetCarrot == null)
+        {
+            carrotCount = carrotParent.transform.childCount;
+            if (carrotCount == 0)
+            {
+                targetCarrot = GameObject.Find("Camera");
+                if (targetCarrot == null) targetCarrot = GameObject.Find("Camera (head)");
+            }
+            else targetCarrot = carrotParent.transform.GetChild(Random.Range(0, carrotCount)).gameObject;
+        }
+
+        Vector3 targetPostition = new Vector3(targetCarrot.transform.position.x + (Random.value * 2 - 1),
+                                   0,
+                                   targetCarrot.transform.position.z);
+
+        this.transform.LookAt(targetPostition);
+        transform.eulerAngles = new Vector3(0f, this.transform.eulerAngles.y, 0f);
+
+        targetRandomized = true;
+    }
+
+
     //void jump()
     //{
     //    //print(transform.up);
