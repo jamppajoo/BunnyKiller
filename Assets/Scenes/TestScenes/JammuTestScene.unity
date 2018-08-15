@@ -120,6 +120,29 @@ GameObject:
   m_PrefabParentObject: {fileID: 1988093364532116, guid: 78d36f157435dd14c8a0c598021eac93,
     type: 2}
   m_PrefabInternal: {fileID: 858375735}
+--- !u!114 &21297773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 21297763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipOnTouch: {fileID: 0}
+  strengthOnTouch: 0
+  durationOnTouch: 0
+  intervalOnTouch: 0.05
+  clipOnGrab: {fileID: 0}
+  strengthOnGrab: 0
+  durationOnGrab: 0
+  intervalOnGrab: 0.05
+  clipOnUse: {fileID: 0}
+  strengthOnUse: 0
+  durationOnUse: 0
+  intervalOnUse: 0.05
 --- !u!1 &23886697
 GameObject:
   m_ObjectHideFlags: 0
@@ -9533,6 +9556,11 @@ Prefab:
         type: 2}
       propertyPath: canBeDestroyed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114659299113466228, guid: 78d36f157435dd14c8a0c598021eac93,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 78d36f157435dd14c8a0c598021eac93, type: 2}
@@ -19688,6 +19716,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseballbat: 1
   scythe: 0
+  weaponMass: 0
+  weaponKillMultipler: 0
 --- !u!64 &1933507644
 MeshCollider:
   m_ObjectHideFlags: 0
