@@ -7441,7 +7441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &567882822
 Transform:
   m_ObjectHideFlags: 0
@@ -8947,15 +8947,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed2aa1a29b92ca4f84a26a5f6e9218b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  operation: 0
-  checkType: -3
+  operation: 1
+  checkType: -4
   identifiers:
   - VRTK_DestinationPoint
-  - Baseballbat
-  - Bunny
-  - IgnoreHeightAdjustment
-  - Lucielle
-  - Weapon
 --- !u!114 &663592244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9004,7 +8999,7 @@ MonoBehaviour:
   customRaycast: {fileID: 0}
   layersToIgnore:
     serializedVersion: 2
-    m_Bits: 1029
+    m_Bits: 4294967039
   fallRestriction: 0
   gravityFallYThreshold: 0.15
   blinkYThreshold: 0.15
