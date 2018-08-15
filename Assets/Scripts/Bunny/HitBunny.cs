@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class HitBunny : MonoBehaviour {
+public class HitBunny : MonoBehaviour
+{
 
     private SteamVR_TrackedObject trackedObj;
     SteamVR_Controller.Device device;
@@ -23,63 +24,79 @@ public class HitBunny : MonoBehaviour {
     private Vector3 lastPosition;
 
 
+
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         lastPosition = transform.position;
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         lastPosition = transform.position;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        
+        if(collision.gameObject.tag == "Bunny")
+        {
+            hittedObject = collision.gameObject;
+            Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
+            float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
+
+            hitBunny(direction, speed, hittedObject);
+        }
+
+    }
+
+    private void TriggerHapticFeedBack()
+    {
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //if (other.gameObject.tag =="Bunny")
+        //{
+        //    print("hitted bunnyboi");
+        //    hittedObject = other.gameObject;
+        //    Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
+        //    float speed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
+        //    hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position - lastPosition), speed);
 
-        if(other.gameObject.tag.ToString().Equals("Bunny"))
-        {
-            hittedObject = other.gameObject;
-            Vector3 direction = (transform.position - lastPosition) / Time.deltaTime;
-            float speed = Vector3.Distance(transform.position, lastPosition)/Time.deltaTime;
-            hittedObject.GetComponentInParent<Movement>().HitBunny((transform.position- lastPosition), speed);
+        //    //.BaseballHit(hitPower);
+        //    //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
+        //    //other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
 
-            //.BaseballHit(hitPower);
-            //            other.GetComponent<Movement>().HitBunny((lastPosition-transform.position), Vector3.Distance(lastPosition, transform.position));
-            //other.gameObject.GetComponent<Movement>().HitBunny((lastPosition - transform.position), 10000f);
-
-            hitBunny(direction, speed, other);
-        }
+        //    hitBunny(direction, speed, hittedObject);
+        //    TriggerHapticFeedBack(199);
+        //}
     }
 
-    private void hitBunny(Vector3 direction, float speed, Collider collision)
+    private void hitBunny(Vector3 direction, float speed, GameObject bunny)
     {
         controllerReference = VRTK_ControllerReference.GetControllerReference(this.gameObject);
 
-//        float tes = collision.relativeVelocity.magnitude;
+        //        float tes = collision.relativeVelocity.magnitude;
 
-        if (VRTK_ControllerReference.IsValid(controllerReference))
-        {
-            collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier * 5;
-            var hapticStrength = collisionForce / maxCollisionForce;
-            VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
-        }
-        else
-        {
-            //collisionForce = collision.relativeVelocity.magnitude * impactMagnifier * 5;
-            collisionForce = speed;
-        }
+        //if (VRTK_ControllerReference.IsValid(controllerReference))
+        //{
+        //    collisionForce = VRTK_DeviceFinder.GetControllerVelocity(controllerReference).magnitude * impactMagnifier * 5;
+        //    var hapticStrength = collisionForce / maxCollisionForce;
+        //    VRTK_ControllerHaptics.TriggerHapticPulse(controllerReference, hapticStrength, 0.5f, 0.01f);
+        //}
+        //else
+        //{
+        //    //collisionForce = collision.relativeVelocity.magnitude * impactMagnifier * 5;
+        //    collisionForce = speed;
+        //}
 
         float hitPower = speed;
         hittedObject.GetComponentInParent<HealtSystem>().Hit(hitPower, 100f);
         print("Hit power " + hitPower);
 
-        collision.transform.parent.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood();
+        bunny.transform.parent.gameObject.GetComponentInChildren<ParticleSpawner>().spillBlood();
         /*
 
         if (collision.gameObject.tag == "Bunny")

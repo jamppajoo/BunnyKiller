@@ -14,6 +14,12 @@ public class Weapon : MonoBehaviour
 
     private HolsterController holsterController;
 
+    private bool objectBeingTouched = false;
+    private bool objectBeingGrabbed = false;
+
+    private bool canBeHolstered = false;
+
+
     private void OnEnable()
     {
         EventManager.WaveStarted += WaveStarted;
@@ -27,7 +33,16 @@ public class Weapon : MonoBehaviour
         interactableObject.InteractableObjectSnappedToDropZone -= new InteractableObjectEventHandler(ObjectSnappedToDropZone);
         interactableObject.InteractableObjectUnsnappedFromDropZone -= new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
 
+        interactableObject.InteractableObjectEnteredSnapDropZone -= new InteractableObjectEventHandler(ObjectEnteredDropZone);
+        interactableObject.InteractableObjectExitedSnapDropZone -= new InteractableObjectEventHandler(ObjectExitedDropZone);
+
         interactableObject.InteractableObjectUngrabbed -= new InteractableObjectEventHandler(ObjectUnGrabbed);
+        interactableObject.InteractableObjectGrabbed -= new InteractableObjectEventHandler(ObjectGrabbed);
+
+        interactableObject.InteractableObjectTouched -= new InteractableObjectEventHandler(ObjectTouched);
+        interactableObject.InteractableObjectUntouched -= new InteractableObjectEventHandler(ObjectUnTouched);
+
+
     }
     private void Awake()
     {
@@ -40,9 +55,23 @@ public class Weapon : MonoBehaviour
         interactableObject.InteractableObjectSnappedToDropZone += new InteractableObjectEventHandler(ObjectSnappedToDropZone);
         interactableObject.InteractableObjectUnsnappedFromDropZone += new InteractableObjectEventHandler(ObjectUnSnappedFromDropZone);
 
+        interactableObject.InteractableObjectEnteredSnapDropZone += new InteractableObjectEventHandler(ObjectEnteredDropZone);
+        interactableObject.InteractableObjectExitedSnapDropZone += new InteractableObjectEventHandler(ObjectExitedDropZone);
+
         interactableObject.InteractableObjectUngrabbed += new InteractableObjectEventHandler(ObjectUnGrabbed);
+        interactableObject.InteractableObjectGrabbed += new InteractableObjectEventHandler(ObjectGrabbed);
+
+        interactableObject.InteractableObjectTouched += new InteractableObjectEventHandler(ObjectTouched);
+        interactableObject.InteractableObjectUntouched += new InteractableObjectEventHandler(ObjectUnTouched);
+
     }
 
+    private void ObjectEnteredDropZone(object sender, InteractableObjectEventArgs e)
+    {
+    }
+    private void ObjectExitedDropZone(object sender, InteractableObjectEventArgs e)
+    {
+    }
     private void ObjectSnappedToDropZone(object sender, InteractableObjectEventArgs e)
     {
         mySnapDropZone = e.interactingObject.GetComponent<VRTK_SnapDropZone>();
@@ -56,12 +85,38 @@ public class Weapon : MonoBehaviour
     {
         if (!objectCombinerRoom.IsPlayerOnGarage())
         {
-            if (mySnapDropZone != null)
-                mySnapDropZone.ForceSnap(gameObject);
-            else
-                holsterController.GetEmptyDropZone().ForceSnap(gameObject);
+            canBeHolstered = true;
+            //HolsterWeapon();
+            StartCoroutine(HolsterWeapon());
         }
     }
+    private void ObjectGrabbed(object sender, InteractableObjectEventArgs e)
+    {
+        canBeHolstered = false;
+    }
+
+    private void ObjectTouched(object sender, InteractableObjectEventArgs e)
+    {
+    }
+    private void ObjectUnTouched(object sender, InteractableObjectEventArgs e)
+    {
+    }
+
+    private IEnumerator HolsterWeapon()
+    {
+        yield return new WaitForEndOfFrame();
+        print("ASD1 ");
+        if (canBeHolstered)
+        {
+            print("ASD2 ");
+            if (mySnapDropZone == null)
+                mySnapDropZone = holsterController.GetEmptyDropZone();
+
+            mySnapDropZone.ForceSnap(gameObject);
+        }
+    }
+
+
     private void WaveStarted()
     {
         waveOnHold = false;

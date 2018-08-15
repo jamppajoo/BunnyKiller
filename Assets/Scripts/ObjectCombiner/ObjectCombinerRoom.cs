@@ -58,6 +58,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             playerIsInRoom = true;
+            EventManager.eventManager.OnPlayerEnteredGarage();
 
         }
     }
@@ -70,6 +71,7 @@ public class ObjectCombinerRoom : MonoBehaviour {
             playerIsInRoom = false;
             CloseDoors();
             waveController.StartWave();
+            EventManager.eventManager.OnPlayerExitedGarage();
         }
     }
 
